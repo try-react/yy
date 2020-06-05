@@ -1,27 +1,31 @@
+import { DomainDataException } from "~/shared/exception/DomainDataException";
 import { InfraException } from "~/shared/exception/InfraException";
 import { InitData } from "~/shared/data/read/InitData";
 import { InfraData } from "~/shared/data/read/InfraData";
-import { ReadFromRepository, ReadFromInitData } from "~/shared/type";
 
-type Read = {
+type ReadModel = {
   object: { name: string; address: string; id: string; flg: boolean };
   payload: { id: number };
 };
 
 export type Repository = {
-  fetchMe: ReadFromRepository<
-    Read["payload"],
-    InfraData<Read["object"]>,
-    InfraException
-  >;
+  fetchMe: (
+    p: ReadModel["payload"]
+  ) => Promise<InfraData<ReadModel["object"]> | InfraException>;
 };
 
+type Resources = {
+  repository: Repository;
+};
 export type WorkFlow = {
-  fetchInitValue: (p: {
-    repository: Repository;
-  }) => ReadFromInitData<
-    Read["payload"],
-    InitData<Read["object"]>,
-    InfraException
-  >;
+  write: null;
+  query: {
+    fetchInitValue: (
+      p: Resources
+    ) => (
+      p: ReadModel["payload"]
+    ) => Promise<
+      InitData<ReadModel["object"]> | InfraException | DomainDataException
+    >;
+  };
 };
