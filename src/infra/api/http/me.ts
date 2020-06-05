@@ -1,6 +1,6 @@
 import { fetcher, findPath } from "~/infra/api/http/client";
-import { InfraData } from "~/shared/data/read/InfraData";
-import { InfraException } from "~/shared/exception/InfraException";
+import { InfraData } from "~/shared/CQRS/read/InfraData";
+import { InfraException } from "~/shared/CQRS/read/InfraException";
 
 const path = findPath("me");
 

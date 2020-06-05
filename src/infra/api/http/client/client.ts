@@ -1,9 +1,13 @@
-import { InfraException } from "~/shared/exception/InfraException";
-import { InfraData } from "~/shared/data/read/InfraData";
+import { InfraException } from "~/shared/CQRS/read/InfraException";
+import { InfraData } from "~/shared/CQRS/read/InfraData";
 import { env } from "~/shared/env";
 
 const onFulfilled = <T>(r: T) => InfraData.of(r);
-const onRejected = (e: unknown) => new InfraException(e);
+const onRejected = (error: unknown) =>
+  InfraException.of({
+    message: "InfraExceptionの例外が発生しました。",
+    error,
+  });
 
 type Fetcher = <T>(path: Path) => Promise<InfraData<T> | InfraException>;
 type FindPath = (p: Name) => Path;

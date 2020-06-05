@@ -2,9 +2,9 @@ import React, { lazy } from "react";
 import type { ReactElement, LazyExoticComponent } from "react";
 import { repository } from "~/infra/repo/me";
 import { workFlow } from "~/domain/me";
-import { InfraException } from "~/shared/exception/InfraException";
-import { DomainDataException } from "~/shared/exception/DomainDataException";
-import { InitData } from "~/shared/data/read/InitData";
+import { InfraException } from "~/shared/CQRS/read/InfraException";
+import { DomainDataException } from "~/shared/CQRS/read/DomainDataException";
+import { DomainData } from "~/shared/CQRS/read/DomainData";
 
 const useCase = {
   fetchInitValue: workFlow.query.fetchInitValue({ repository }),
@@ -17,7 +17,7 @@ export const create: Create = () =>
     useCase
       .fetchInitValue(useCase.getEnv())
       .then(async (res) => {
-        if (res instanceof InitData) {
+        if (res instanceof DomainData) {
           const { Content } = await import("~/ui/components/Me/Content");
           const Component = () => <Content {...res.value} />;
 

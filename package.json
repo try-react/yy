@@ -21,6 +21,7 @@
     "@testing-library/react-hooks": "3.2.1",
     "@types/jest": "25.2.3",
     "babel-plugin-react-remove-properties": "0.3.0",
+    "core-js": "3.6.5",
     "eslint-plugin-jest": "23.13.2",
     "husky": "4.2.5",
     "jest": "26.0.1",
