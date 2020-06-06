@@ -120,22 +120,22 @@ if (obj instanceof InfraData) {
 
 ## 用語の整理
 
-- Domain の WorkFlow
+- Domain の WorkFlow  
   useCase から、実行される処理の流れです。バリデートのみや、保存のみではなく**バリデートして保存する。**をあらわします。
 
-- Domain の Repository
+- Domain の Repository  
   Domain からみて扱いやすいデータの集合です。CRUD に準拠するメソッドがはえています。実装はありません。実装は Infra にまかせます。  
   保存先や取得先の隠蔽がメリットです。  
   オンメモリのような感じで扱える事を目的としています。  
   粒度は、整合性の単位です。(DB で言う所の、トランザクション相当)
 
-- Infra の Repository
+- Infra の Repository  
   Domain の Repository 向けの実装です。しかしここに処理を書くよりは、更に先に書いてそれを利用します。
 
-- Entity
+- Entity  
   id が同一であれば、同じとみなす object です。
 
-- ValueObject
+- ValueObject  
   deepEqual で同じなら、同じとみなす object です。
 
 ## state の種類
@@ -158,3 +158,5 @@ if (obj instanceof InfraData) {
 - selectors  
   計算が必要な値`is` `has` `can` のような prefix がつく  
   domain の state に応じて生成される場合が多い
+
+<object type="image/svg+xml" data="https://raw.githubusercontent.com/try-react/yy/f27d6667d2bb300c1cf8908067179fdd031ebdab/doc/src/graph.svg?token=AD75ZUHVKJJOOVSRDIOFL4S63NLIW" width="256" height="256"></object>
