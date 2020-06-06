@@ -157,4 +157,4 @@ if (obj instanceof InfraData) {
 
 ## 全体像
 
-<img src="https://raw.githubusercontent.com/try-react/yy/fb4feb07454704156e0cad7d205749b0b381ff70/doc/src/graph.svg?token=AD75ZUH6VY3TUIXDSZULXZS63NNCU">
+- https://github.com/try-react/yy/tree/master/doc/src
