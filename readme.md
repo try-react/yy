@@ -3,11 +3,7 @@
 - 正常系, 想定内のエラー(Exception), 想定外のエラー(Error)を考慮しています。
 - src/配下のディレクトリをレイヤーとみなし、データの受け渡しを厳格にしています。
 
-> モジュールの依存関係は「変わりやすいもの」が「変わりにくいもの」に依存するようにせよ
-
-## 各レイヤー
-
-主要なディレクトリの役割解説です。
+---
 
 ### pages/
 
@@ -42,7 +38,7 @@
 
 ### src/controller/
 
-- pages/から`import`され Component を提供します。
+- pages/から`import`され Component 生成処理を提供します。
 - ui の初期値などはここで、取得します。
 - 処理の内容は、src/domain/の workFlow に記載しています。domain を API として利用しています。
 
@@ -76,7 +72,7 @@
 
 ### src/shared/
 
-- 全レイヤーで仕様する処理を置いています。
+- 全レイヤーで使用する処理を置いています。
 
 ## データの流れと TypeGuard
 
@@ -121,7 +117,7 @@ if (obj instanceof InfraData) {
 ## 用語の整理
 
 - Domain の WorkFlow  
-  useCase から、実行される処理の流れです。バリデートのみや、保存のみではなく**バリデートして保存する。**をあらわします。
+  useCase や controller から、import されます。処理の流れを書いています。
 
 - Domain の Repository  
   Domain からみて扱いやすいデータの集合です。CRUD に準拠するメソッドがはえています。実装はありません。実装は Infra にまかせます。  
@@ -159,6 +155,6 @@ if (obj instanceof InfraData) {
   計算が必要な値`is` `has` `can` のような prefix がつく  
   domain の state に応じて生成される場合が多い
 
----
+## 全体像
 
 <img src="https://raw.githubusercontent.com/try-react/yy/f27d6667d2bb300c1cf8908067179fdd031ebdab/doc/src/graph.svg?token=AD75ZUHVKJJOOVSRDIOFL4S63NLIW">
