@@ -38,11 +38,17 @@
 
 ---
 
-### src/useCase/
+### src/controller/
 
-- pages/から`import`され Component や、hooks を提供します。
+- pages/から`import`され Component を提供します。
 - ui の初期値などはここで、取得します。
 - 処理の内容は、src/domain/の workFlow に記載しています。domain を API として利用しています。
+
+---
+
+### src/useCase/
+
+- hooks を提供します。
 
 ---
 
