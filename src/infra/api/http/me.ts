@@ -1,4 +1,5 @@
-import { fetcher, findPath } from "~/infra/api/http/client";
+import { findPath } from "~/infra/api/http/client/util";
+import { httpClient } from "~/infra/api/http/client";
 import { InfraData } from "~/shared/CQRS/read/InfraData";
 import { InfraException } from "~/shared/CQRS/read/InfraException";
 
@@ -33,6 +34,7 @@ const toMe = (r: OResponse): Me => ({
 
 type FetchMe = (p: { id: number }) => Promise<InfraData<Me> | InfraException>;
 export const fetchMe: FetchMe = (_) =>
-  fetcher<OResponse>(path)
+  httpClient
+    .get<OResponse>(path)
     .then((r) => (r instanceof InfraData ? InfraData.of(toMe(r.value)) : r))
     .catch<never>((e) => e);

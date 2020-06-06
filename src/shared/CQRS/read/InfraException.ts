@@ -1,5 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type errObj = { message: string; error: any };
+type errObj = { message: string; error: Response };
 
 export class InfraException extends Error {
   public name = InfraException.name;
