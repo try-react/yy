@@ -9,7 +9,7 @@
     "export": "next export",
     "// コードからの生成": "",
     "doc": "yarn code-dependency --source ./src  --ts-config ./tsconfig.json",
-    "madge:src": "yarn madge --extensions ts,tsx --image doc/src/graph.svg src",
+    "madge:src": "yarn madge --image doc/src/graph.svg  --exclude 'shared/' src",
     "// CI向けの検証": "",
     "valid:type": "yarn tsc --noEmit",
     "valid:lint": "yarn eslint --fix '{src,pages}/**/*.{ts,tsx}'",

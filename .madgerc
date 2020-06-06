@@ -11,5 +11,6 @@
 			"mixedImports": true
 		}
 	},
-    "tsConfig" : "tsconfig.json"
+    "tsConfig" : "tsconfig.json",
+	"fileExtensions": ["ts", "tsx"]
 }
