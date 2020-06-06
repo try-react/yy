@@ -150,22 +150,3 @@ if (obj instanceof InfraData) {
 - selectors  
   計算が必要な値`is` `has` `can` のような prefix がつく  
   domain の state に応じて生成される場合が多い
-
-## 用語の整理 2
-
-- actions  
-  reducers のパラメタの型
-
-- reducers  
-  新しい state を生成
-
-- operations  
-  まとめて state を更新
-
-- selecors  
-  計算された state
-
-## Q & A
-
-- reducer の再利用は、OK
-- reducer の中身の再利用も OK
