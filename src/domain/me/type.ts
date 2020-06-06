@@ -16,14 +16,11 @@ export type Repository = {
 };
 
 export type WorkFlow = {
-  write: null;
-  query: {
-    fetchInitValue: (p: {
-      repository: Repository;
-    }) => (
-      p: ReadModel_["payload"]
-    ) => Promise<
-      DomainData<ReadModel_["object"]> | InfraException | DomainDataException
-    >;
-  };
+  fetchInitValue: (p: {
+    repository: Repository;
+  }) => (
+    p: ReadModel_["payload"]
+  ) => Promise<
+    DomainData<ReadModel_["object"]> | InfraException | DomainDataException
+  >;
 };

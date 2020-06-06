@@ -7,7 +7,7 @@ import { DomainDataException } from "~/shared/CQRS/read/DomainDataException";
 import { DomainData } from "~/shared/CQRS/read/DomainData";
 
 const useCase = {
-  fetchInitValue: workFlow.query.fetchInitValue({ repository }),
+  fetchInitValue: workFlow.fetchInitValue({ repository }),
   getEnv: () => ({ id: 123 }), // locationなど
 };
 
