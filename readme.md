@@ -16,6 +16,8 @@
 
 ### src/ui/
 
+![-](./doc/src/ui/graph.svg)
+
 #### components/
 
 - Stateless Component の置き場です。
@@ -38,6 +40,8 @@
 
 ### src/controller/
 
+![-](./doc/src/controller/graph.svg)
+
 - pages/から`import`され Component 生成処理を提供します。
 - ui の初期値などはここで、取得します。
 - 処理の内容は、src/domain/の workFlow に記載しています。domain を API として利用しています。
@@ -46,11 +50,15 @@
 
 ### src/useCase/
 
+![-](./doc/src/useCase/graph.svg)
+
 - hooks を提供します。
 
 ---
 
 ### src/domain/
+
+![-](./doc/src/domain/graph.svg)
 
 - class ベースではなく、関数ベースで実装いています。処理の流れを意識しています。
 - `type WorkFlow`は、`query`や`write`をトップレベルのキーとして持ちます。
@@ -59,6 +67,8 @@
 ---
 
 ### src/infra/
+
+![-](./doc/src/infra/graph.svg)
 
 #### repo/
 
@@ -157,26 +167,4 @@ if (obj instanceof InfraData) {
 
 ## 依存関係
 
-### src
-
 ![-](./doc/src/graph.svg)
-
-### src/controller
-
-![-](./doc/src/controller/graph.svg)
-
-### src/domain
-
-![-](./doc/src/domain/graph.svg)
-
-### src/infra
-
-![-](./doc/src/infra/graph.svg)
-
-### src/ui
-
-![-](./doc/src/ui/graph.svg)
-
-### src/useCase
-
-![-](./doc/src/useCase/graph.svg)
