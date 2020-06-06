@@ -7,8 +7,6 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "// コードからの生成": "",
-    "doc": "yarn code-dependency --source ./src  --ts-config ./tsconfig.json",
     "// コードからの生成:madge": "",
     "madge:src/controller": "yarn madge --exclude 'shared/' --image doc/src/controller/graph.svg src/controller",
     "madge:src/domain": "yarn madge --exclude 'shared/' --image doc/src/domain/graph.svg src/domain",
@@ -21,13 +19,11 @@
     "valid:test": "yarn jest"
   },
   "dependencies": {
-    "@code-dependency/cli": "0.5.0",
     "@cybozu/eslint-config": "10.0.4",
     "@testing-library/react": "10.2.1",
     "@testing-library/react-hooks": "3.3.0",
     "@types/jest": "25.2.3",
     "babel-plugin-react-remove-properties": "0.3.0",
-    "core-js": "3.6.5",
     "eslint-plugin-jest": "23.13.2",
     "husky": "4.2.5",
     "jest": "26.0.1",
