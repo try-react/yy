@@ -1,6 +1,9 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
-const me = (_req: NextApiRequest, res: NextApiResponse): void => {
+const sleep = () => new Promise((resolve) => setTimeout(resolve, 2000));
+
+const me = async (_req: NextApiRequest, res: NextApiResponse): void => {
+  await sleep();
   res.setHeader("content-type", "application/json");
   res.status(200);
   res.end(

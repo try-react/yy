@@ -1,7 +1,7 @@
 import type { Repository } from "~/domain/me";
 import { fetchMe } from "~/infra/api/http/me";
-import { InfraData } from "~/shared/CQRS/read/InfraData";
-import { InfraException } from "~/shared/CQRS/read/InfraException";
+import { InfraData } from "~/shared/CQRS/read/Data/InfraData";
+import { InfraException } from "~/shared/CQRS/read/Exception/InfraException";
 
 /**
  * Domain.Repositoryが欲しい型に変更

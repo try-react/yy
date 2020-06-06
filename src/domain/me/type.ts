@@ -1,7 +1,7 @@
-import { DomainDataException } from "~/shared/CQRS/read/DomainDataException";
-import { InfraException } from "~/shared/CQRS/read/InfraException";
-import { DomainData } from "~/shared/CQRS/read/DomainData";
-import { InfraData } from "~/shared/CQRS/read/InfraData";
+import { DomainDataException } from "~/shared/CQRS/read/Exception/DomainDataException";
+import { InfraException } from "~/shared/CQRS/read/Exception/InfraException";
+import { DomainData } from "~/shared/CQRS/read/Data/DomainData";
+import { InfraData } from "~/shared/CQRS/read/Data/InfraData";
 import { ReadModel } from "~/shared/CQRS/read/Model";
 
 type ReadModel_ = ReadModel<
