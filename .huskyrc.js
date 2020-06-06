@@ -1,6 +1,6 @@
 module.exports = {
     hooks: {
-      // run-allしてもいいけど...
+      // TODO npm-run-allにしようかしら...
       "pre-commit": `
         yarn madge:src/controller && \
         yarn madge:src/domain && \

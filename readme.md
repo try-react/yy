@@ -164,7 +164,3 @@ if (obj instanceof InfraData) {
 - selectors  
   計算が必要な値`is` `has` `can` のような prefix がつく  
   domain の state に応じて生成される場合が多い
-
-## 依存関係
-
-![-](./doc/src/graph.svg)
