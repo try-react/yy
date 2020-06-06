@@ -1,5 +1,5 @@
 import React, { lazy } from "react";
-import type { ReactElement, LazyExoticComponent } from "react";
+import type { LazyExoticComponent } from "react";
 import { repository } from "~/infra/repo/me";
 import { workFlow } from "~/domain/me";
 import { InfraException } from "~/shared/CQRS/read/InfraException";
@@ -11,7 +11,7 @@ const useCase = {
   getEnv: () => ({ id: 123 }), // locationなど
 };
 
-type Create = () => LazyExoticComponent<() => ReactElement>;
+type Create = () => LazyExoticComponent<React.FC>;
 export const create: Create = () =>
   lazy(() =>
     useCase

@@ -141,7 +141,7 @@ if (obj instanceof InfraData) {
 
 - app  
   ローディング中  
-  ログイン状態
+  ログイン者
 
 - domain  
   domain 特有のステート  
