@@ -1,1 +1,1 @@
-export const useMe = (): void => {};
+export const useMe = () => {};
