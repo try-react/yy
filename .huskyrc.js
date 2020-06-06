@@ -1,7 +1,7 @@
 module.exports = {
     hooks: {
+      // run-allしてもいいけど...
       "pre-commit": `
-        yarn madge:src && \
         yarn madge:src/controller && \
         yarn madge:src/domain && \
         yarn madge:src/infra && \
@@ -12,4 +12,3 @@ module.exports = {
         `,
     },
 }
-
