@@ -14,6 +14,16 @@
 
 ---
 
+### src/controller/
+
+![-](./doc/src/controller/graph.svg)
+
+- pages/から`import`され Component 生成処理を提供します。
+- ui の初期値などはここで、取得します。
+- 処理の内容は、src/domain/の workFlow に記載しています。domain を API として利用しています。
+
+---
+
 ### src/ui/
 
 ![-](./doc/src/ui/graph.svg)
@@ -35,16 +45,6 @@
 #### containers/
 
 - ui に関わるが、特殊な TSX を配置しています。例えば Error ハンドリング用の Component です。
-
----
-
-### src/controller/
-
-![-](./doc/src/controller/graph.svg)
-
-- pages/から`import`され Component 生成処理を提供します。
-- ui の初期値などはここで、取得します。
-- 処理の内容は、src/domain/の workFlow に記載しています。domain を API として利用しています。
 
 ---
 
