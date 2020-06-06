@@ -155,6 +155,28 @@ if (obj instanceof InfraData) {
   計算が必要な値`is` `has` `can` のような prefix がつく  
   domain の state に応じて生成される場合が多い
 
-## 全体像
+## 依存関係
+
+### src
 
 ![-](./doc/src/graph.svg)
+
+### src/controller
+
+![-](./doc/src/controller/graph.svg)
+
+### src/domain
+
+![-](./doc/src/domain/graph.svg)
+
+### src/infra
+
+![-](./doc/src/infra/graph.svg)
+
+### src/ui
+
+![-](./doc/src/ui/graph.svg)
+
+### src/useCase
+
+![-](./doc/src/useCase/graph.svg)
