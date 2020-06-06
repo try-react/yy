@@ -1,0 +1,15 @@
+{
+	"fontSize": "15px",
+	"graphVizOptions": {
+		"G": {
+			"rankdir": "LR"
+		}
+	},
+    "detectiveOptions": {
+		"ts": {
+            "skipTypeImports": true,
+			"mixedImports": true
+		}
+	},
+    "tsConfig" : "tsconfig.json"
+}
