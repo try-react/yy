@@ -157,4 +157,4 @@ if (obj instanceof InfraData) {
 
 ## 全体像
 
-- https://github.com/try-react/yy/tree/master/doc/src
+![-](./doc/src/graph.svg)
