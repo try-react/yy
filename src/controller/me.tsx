@@ -18,14 +18,18 @@ export const create: Create = () =>
       .fetchInitValue(useCase.getEnv())
       .then(async (res) => {
         if (res instanceof DomainData) {
-          const { Content } = await import("~/ui/components/Me/Content");
+          const { Content } = await import(
+            "~/ui/components/environment/Me/Content"
+          );
           const Component = () => <Content {...res.value} />;
 
           return { default: Component };
         }
 
         if (res instanceof InfraException) {
-          const { Exception } = await import("~/ui/components/Me/Exception");
+          const { Exception } = await import(
+            "~/ui/components/environment/Me/Exception"
+          );
           const Component = () => <Exception />;
 
           return { default: Component };

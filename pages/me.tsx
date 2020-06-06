@@ -4,9 +4,11 @@ import type { NextPage } from "next";
 import dynamic from "next/dynamic";
 import { create } from "~/controller/me";
 
-type Props = ComponentProps<typeof import("~/ui/components/Me")["Me"]>;
+type Props = ComponentProps<
+  typeof import("~/ui/components/environment/Me")["Me"]
+>;
 const Me = dynamic<Props>(
-  () => import("~/ui/components/Me").then((_) => _.Me),
+  () => import("~/ui/components/environment/Me").then((_) => _.Me),
   { ssr: false }
 );
 
