@@ -159,4 +159,6 @@ if (obj instanceof InfraData) {
   計算が必要な値`is` `has` `can` のような prefix がつく  
   domain の state に応じて生成される場合が多い
 
-<object type="image/svg+xml" data="https://raw.githubusercontent.com/try-react/yy/f27d6667d2bb300c1cf8908067179fdd031ebdab/doc/src/graph.svg?token=AD75ZUHVKJJOOVSRDIOFL4S63NLIW" width="256" height="256"></object>
+---
+
+<img src="https://raw.githubusercontent.com/try-react/yy/f27d6667d2bb300c1cf8908067179fdd031ebdab/doc/src/graph.svg?token=AD75ZUHVKJJOOVSRDIOFL4S63NLIW">
