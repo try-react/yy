@@ -176,11 +176,18 @@ JSON.parse(JSON.stringify(obj));
 
 ## DDD と Clean Architecture のマッチング
 
-- src/domain/type/の`Repository`  
-  Clean Architecture で言う gateways
+- DDD の UserInterface は
+  - 外側の水色
+- DDD の Application は
+  - 緑と赤
+- DDD の Domain は、
+  - 赤と黄色
+- DDD の Infrastructure は、
+  - GateWays と接する水色
+- DDD の domain の Repository は、
+  - Gateways
 
-- src/domain  
-  Entities
+![-](./doc/img/dddlayers.png)
 
 ## データ取得までの流れ
 
