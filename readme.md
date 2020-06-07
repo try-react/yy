@@ -48,8 +48,6 @@ CleanArchitecture の構成に寄せています。特に意識している点�
 
 ### src/presenter/
 
-src/presenter/ecosystem/me は、useCase/useMe から`props`をもらいます。
-
 - React の Component
 - AtomicComponent によせています。
 
@@ -62,7 +60,7 @@ src/presenter/ecosystem/me は、useCase/useMe から`props`をもらいます�
 
 ```bash
 -  components
-└──-  Me
+└──  Me
    ├──  Content.tsx # 正常系
    ├──  Exception.tsx # 例外系
    ├──  index.ts # 利用して欲しいComponentのみ`export`
@@ -71,16 +69,14 @@ src/presenter/ecosystem/me は、useCase/useMe から`props`をもらいます�
 
 #### containers/
 
-- ui に関わるが、特殊な TSX を配置しています。例えば Error ハンドリング用の Component です。
+- 特殊な TSX を配置しています。例えば Error ハンドリング用の Component です。
 
 ---
 
 ### src/useCase/
 
-useCase/useMe は、src/presenter/ecosystem/me に`state`を提供します。
-
-- CustomHooks を置き場
-- controller に、interactor を提供します。
+- CustomHooks 置き場
+- interactor 置き場
 
 ![-](./doc/madge/useCase/graph.svg)
 
