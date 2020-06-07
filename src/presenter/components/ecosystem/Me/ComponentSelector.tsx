@@ -7,10 +7,9 @@ import {
 import { DomainData } from "~/shared/typeGuard/read/Data";
 import type { LazyExoticComponent, FC } from "react";
 import type { UseMe } from "~/useCase/useMe/type";
-import type { WorkFlow } from "~/domain/me";
 
 type ComponentSelectorP = {
-  service: { fetch: ReturnType<WorkFlow["getLatestInformationAboutMe"]> };
+  service: Parameters<UseMe>[0]["service"];
   useMe: UseMe;
 };
 type ComponentSelectorR = LazyExoticComponent<FC>;
@@ -25,7 +24,9 @@ export const ComponentSelector: ComponentSelectorType = ({ service, useMe }) =>
           const { Content } = await import(
             "~/presenter/components/ecosystem/Me/Content"
           );
-          const Component = () => <Content {...useMe({ ...res.value })} />;
+          const Component = () => (
+            <Content {...useMe({ initData: { ...res.value }, service })} />
+          );
           return { default: Component };
         }
 

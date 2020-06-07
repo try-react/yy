@@ -7,7 +7,6 @@ import { useMe } from "~/useCase/useMe";
 import { workFlow } from "~/domain/me";
 import { ComponentSelector } from "~/presenter/components/ecosystem/Me/ComponentSelector";
 
-// -------------------------------------------
 type Props = ComponentProps<
   typeof import("~/presenter/components/ecosystem/Me")["Me"]
 >;
@@ -25,7 +24,6 @@ const service = {
     payload: getParam(),
   }),
 };
-// -------------------------------------------
 
 const Page: NextPage = () => (
   // eslint-disable-next-line new-cap

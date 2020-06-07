@@ -5,7 +5,9 @@ type GetLatestInformationAboutMeR = ReturnType<
   WorkFlow["getLatestInformationAboutMe"]
 >;
 
-type UseMeP = ReturnType<GetLatestInformationAboutMeR> extends Promise<infer U>
+type InitData = ReturnType<GetLatestInformationAboutMeR> extends Promise<
+  infer U
+>
   ? U extends DomainData<infer V>
     ? V
     : never
@@ -18,4 +20,10 @@ type UseMeR = {
   flg: boolean;
 };
 
+type UseMeP = {
+  initData: InitData;
+  service: {
+    fetch: ReturnType<WorkFlow["getLatestInformationAboutMe"]>;
+  };
+};
 export type UseMe = (p: UseMeP) => UseMeR;
