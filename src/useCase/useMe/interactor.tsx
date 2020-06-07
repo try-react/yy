@@ -33,7 +33,6 @@ export const interactor: Interactor = ({ repository, useMe, envParam }) =>
           return { default: Component };
         }
 
-        // Exception なまえ
         if (
           res instanceof GatewayDataException ||
           res instanceof ExternalInterfaceDataException ||

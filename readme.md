@@ -49,15 +49,6 @@ CleanArchitecture の構成に寄せています。特に意識している点�
 - Stateless Component の置き場です。
 - 正常系の Component, 例外系 Component, 取得中の Component を準備しています。
 
-```bash
--  components
-└──  Me
-   ├──  Content.tsx # 正常系
-   ├──  Exception.tsx # 例外系
-   ├──  index.ts # 利用して欲しいComponentのみ`export`
-   └──  Me.tsx # 取得中
-```
-
 #### containers/
 
 - 特殊な TSX を配置しています。例えば Error ハンドリング用の Component です。
@@ -76,7 +67,6 @@ CleanArchitecture の構成に寄せています。特に意識している点�
 ### src/domain/
 
 - class ベースではなく、関数ベースで実装いています。処理の流れを意識しています。
-- `type WorkFlow`は、`query`や`write`をトップレベルのキーとして持ちます。
 - repository をもらい、repository 用のパラメタをもらい、実行結果を返す。ような流れの型です。
 
 ![-](./doc/madge/domain/graph.svg)
@@ -104,28 +94,13 @@ CleanArchitecture の構成に寄せています。特に意識している点�
 データは、class にいれて受け渡します。ただの箱として扱い、出し入れ用のメソッドしかありません。
 
 ```ts
-InfraData.of({ id: 123, name: `tommy`, type: human });
-```
-
-```ts
-class InfraData<T> {
-  private constructor(private _value: T) {}
-
-  get value(): T {
-    return { ...this._value };
-  }
-
-  static of<V>(v: V): InfraData<V> {
-    return new InfraData(v);
-  }
-}
+GatewayData.of({ id: 123, name: `tommy`, type: human });
 ```
 
 利点は、TypeGuard を利用して正常系か、例外系かのデータが判断しやすいためです。
 
 ```ts
-const obj = { isErr: false, data: "ok" };
-if (!obj.isErr) {
+if (obj instanceof GatewayData) {
   // 正常系データ
 }
 ```
@@ -133,8 +108,8 @@ if (!obj.isErr) {
 `isErr`などを付与せずに済ます。
 
 ```ts
-const obj = InfraData.of({ data: "ok" });
-if (obj instanceof InfraData) {
+const obj = { isErr: false, data: "ok" };
+if (!obj.isErr) {
   // 正常系データ
 }
 ```
