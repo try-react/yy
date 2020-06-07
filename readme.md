@@ -176,20 +176,13 @@ if (!obj.isErr) {
 JSON.parse(JSON.stringify(obj));
 ```
 
-## DDD と Clean Architecture のマッチング
-
-- DDD の UserInterface は
-  - 外側の水色
-- DDD の Application は
-  - 緑と赤
-- DDD の Domain は、
-  - 赤と黄色
-- DDD の Infrastructure は、
-  - GateWays と接する水色
-- DDD の domain の Repository は、
-  - Gateways
+## DDD Layer のマッチング
 
 ![-](./doc/img/dddlayers.png)
+
+## DDD と Clean Architecture のマッチング
+
+![-](./doc/img/layer.png.png)
 
 ## 画面表示までの流れ
 
