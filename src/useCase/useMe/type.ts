@@ -1,18 +1,12 @@
-import type { WorkFlow } from "~/domain/me/type";
-import type { DomainData } from "~/shared/typeGuard/read/Data/DomainData";
+import type { WorkFlow, Repository, ReadModel } from "~/domain/me/type";
 
-export type Interactor = {
+export type Interactor = (p: {
+  repository: Repository;
+}) => {
   fetchInitValue: ReturnType<WorkFlow["fetchInitValue"]>;
-  getEnv: () => { id: number }; // locationなど
 };
 
-export type InitData = ReturnType<Interactor["fetchInitValue"]> extends Promise<
-  infer U
->
-  ? U extends DomainData<infer V>
-    ? V
-    : never
-  : never;
+export type InitData = ReadModel["object"];
 
 export type State = {
   name: string;

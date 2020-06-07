@@ -6,11 +6,12 @@ import {
 import { DomainData } from "~/shared/typeGuard/read/Data";
 import { useMe, interactor } from "~/useCase/useMe";
 import { Create } from "./type";
+import { repository } from "~/gateway/me";
 
 export const create: Create = () =>
   lazy(() =>
-    interactor
-      .fetchInitValue(interactor.getEnv())
+    interactor({ repository })
+      .fetchInitValue({ id: 123 }) // location などから取得
       .then(async (res) => {
         if (res instanceof DomainData) {
           const { Content } = await import(

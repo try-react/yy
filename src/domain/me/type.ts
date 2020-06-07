@@ -2,25 +2,25 @@ import { DomainDataException } from "~/shared/typeGuard/read/Exception/DomainDat
 import { InfraException } from "~/shared/typeGuard/read/Exception/InfraException";
 import { DomainData } from "~/shared/typeGuard/read/Data/DomainData";
 import { InfraData } from "~/shared/typeGuard/read/Data/InfraData";
-import { ReadModel } from "~/shared/typeGuard/read/Model";
+import { ReadModel as ReadModel_ } from "~/shared/typeGuard/read/Model";
 
-type ReadModel_ = ReadModel<
+export type ReadModel = ReadModel_<
   { name: string; address: string; id: string; flg: boolean },
   { id: number }
 >;
 
 export type Repository = {
   fetchMe: (
-    p: ReadModel_["payload"]
-  ) => Promise<InfraData<ReadModel_["object"]> | InfraException>;
+    p: ReadModel["payload"]
+  ) => Promise<InfraData<ReadModel["object"]> | InfraException>;
 };
 
 export type WorkFlow = {
   fetchInitValue: (p: {
     repository: Repository;
   }) => (
-    p: ReadModel_["payload"]
+    p: ReadModel["payload"]
   ) => Promise<
-    DomainData<ReadModel_["object"]> | InfraException | DomainDataException
+    DomainData<ReadModel["object"]> | InfraException | DomainDataException
   >;
 };

@@ -2,16 +2,14 @@ module.exports = {
     hooks: {
       // TODO npm-run-allにしようかしら...
       "pre-commit": `
-
+          yarn madge:domain && \
+          yarn madge:useCase && \
+          yarn madge:controller && \
+          yarn madge:presenter && \
+          yarn madge:gateway && \
+          yarn madge:externalInterface && \
           git add ./doc && \
           yarn lint-staged
         `,
     },
 }
-
-
-// yarn madge:src/domain && \
-// yarn madge:src/useCase && \
-// yarn madge:src/controller && \
-// yarn madge:src/presenter && \
-// yarn madge:src/infra && \
