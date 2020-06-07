@@ -2,7 +2,7 @@ import React from "react";
 import type { ComponentProps } from "react";
 import type { NextPage } from "next";
 import dynamic from "next/dynamic";
-import { interactor } from "~/useCase/useMe";
+import { interactor, useMe } from "~/useCase/useMe";
 import { repository } from "~/gateway/me";
 
 type Props = ComponentProps<
@@ -14,7 +14,7 @@ const Presenter = dynamic<Props>(
 );
 
 const Page: NextPage = () => (
-  <Presenter Component={interactor({ repository })} />
+  <Presenter Component={interactor({ repository, useMe })} />
 );
 
 export default Page;

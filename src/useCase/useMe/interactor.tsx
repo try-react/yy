@@ -4,14 +4,17 @@ import {
   DomainDataException,
 } from "~/shared/typeGuard/read/Exception";
 import { DomainData } from "~/shared/typeGuard/read/Data";
-import { useMe } from "~/useCase/useMe/useMe";
 import type { LazyExoticComponent, FC } from "react";
 import { workFlow } from "~/domain/me";
 import { Repository } from "~/domain/me/type";
+import type { UseMe } from "./type";
 
-type Interactor = (p: { repository: Repository }) => LazyExoticComponent<FC>;
+type Interactor = (p: {
+  repository: Repository;
+  useMe: UseMe;
+}) => LazyExoticComponent<FC>;
 
-export const interactor: Interactor = ({ repository }) =>
+export const interactor: Interactor = ({ repository, useMe }) =>
   lazy(() => {
     // useMeに渡す？
     const service = workFlow.fetchInitValue({ repository });
