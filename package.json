@@ -15,6 +15,7 @@
     "madge:presenter": "yarn madge --exclude 'shared/' --image doc/madge/presenter/graph.svg src/presenter",
     "madge:gateway": "yarn madge --exclude 'shared/' --image doc/madge/gateway/graph.svg src/gateway",
     "madge:externalInterface": "yarn madge --exclude 'shared/' --image doc/madge/externalInterface/graph.svg src/externalInterface",
+    "madge:pages": "yarn madge --exclude 'shared/' --image doc/madge/pages/graph.svg pages",
     "// =============================================================================== ": "",
     "// CI向けの検証": "",
     "valid:type": "yarn tsc --noEmit",

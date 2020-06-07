@@ -4,35 +4,36 @@
 
 CleanArchitecture の構成に寄せています。特に意識している点は下記の通りです。
 
-- domain/について
-  - shared/と他の domain/以外に依存しない
-  - ライブラリの依存を控える
-- データの永続化は、gateway で抽象化する
-- src/配下のディレクトリをレイヤーとみなし、データの受け渡しを厳格にする
-- データの種類について
-  - どこで作られたデータかをわかりやすくする
-  - 正常系, 想定内のエラー(Exception), 想定外のエラー(Error)を考慮する。
+### domain について
 
-最重要事項として、 **このルールを必ず守る必要はありません。**  
-選択肢が無いのであればこの方針で実装します。
+- 依存するのは、shared/と他の domain/以外に依存しない
+- ライブラリの依存を控える
 
-## ディレクトリ構成
+### データの永続化や取得
 
-非 SSR での動作を想定しています。  
-React や Next 独自の部分として UI 周りの依存関係は、下記の通りです。
+- domain の repository や、gateway で抽象化する
 
-- pages/
-  - src/presenter/
-    - src/presenter/components/ecosystem/
-  - src/controller/
-    - src/presenter/components/ecosystem/
+### データの種類について
+
+- どこで作られたデータかをわかりやすくする
+- 正常系, 想定内のエラー(Exception), 想定外のエラー(Error)を考慮する。
+
+### その他
+
+- ディレクトリ名は、だいたい単数で、小文字
+
+### ディレクトリ構成
+
+- 非 SSR での動作を想定しています。
 
 ### pages/
 
 - Next.js の`pages`です。
 - src/pages/でも OK だが、単体テスト対象外なので、page/に配置しています。
 - SSR しない想定で実装しています。
-- CleanArchitecture で言う所の、UI
+- CleanArchitecture で言う所の、UI や Web
+
+![-](./doc/madge/pages/graph.svg)
 
 ---
 
