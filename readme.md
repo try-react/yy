@@ -163,7 +163,7 @@ if (!obj.isErr) {
   Action は起こったイベントを表す
 
 - Reducer
-  Action と前の state から次の state を生成する
+  Action と前の state から次の state を生成する  
   再利用 OK むしろ推奨 HOF で再利用も OK
 
 - State  
@@ -181,8 +181,6 @@ JSON.parse(JSON.stringify(obj));
 
 - src/domain  
   Entities
-
-![-](./doc/img/CleanArchitecture.png)
 
 ## データ取得までの流れ
 
