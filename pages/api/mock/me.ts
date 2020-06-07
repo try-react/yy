@@ -13,7 +13,7 @@ const me = async (
     JSON.stringify({
       id_x_: "string",
       name_x_: "tommy",
-      address_x_: "Github星 CleanArchitecture島 D-D-D",
+      address_x_: "Github星 CleanArchitecture島 DDD丁目",
     })
   );
 };

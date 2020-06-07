@@ -9,50 +9,24 @@ import { ReadModel as ReadModel_ } from "~/shared/typeGuard/read/Model";
 type Me = { name: string; address: string; id: string; flg: boolean };
 type ReadModel = ReadModel_<Me, { id: number }>;
 
-// --------------------------------------------
-/**
- * Meの情報がある`Repository`のKey
- */
-type RepositoryKey = "fetchMe";
-
-type RepositoryP = {
-  fetchMe: ReadModel["payload"];
-};
-
-type RepositoryR = {
-  fetchMe:
+export type Repository = {
+  fetchMe: (
+    p: ReadModel["payload"]
+  ) => Promise<
     | GatewayData<ReadModel["object"]>
     | GatewayDataException
-    | ExternalInterfaceDataException;
+    | ExternalInterfaceDataException
+  >;
 };
 
-export type Repository = Record<
-  RepositoryKey,
-  (p: RepositoryP[RepositoryKey]) => Promise<RepositoryR[RepositoryKey]>
->;
-
-// --------------------------------------------
-/**
- * Meの情報を取得
- */
-type WorkFlowKey = "getLatestInformationAboutMe";
-
-type WorkFlowP = {
-  getLatestInformationAboutMe: {
+export type WorkFlow = {
+  getLatestInformationAboutMe: (p: {
     repository: Repository;
     payload: ReadModel["payload"];
-  };
-};
-
-type WorkFlowR = {
-  getLatestInformationAboutMe:
+  }) => () => Promise<
     | DomainData<ReadModel["object"]>
     | DomainDataException
     | GatewayDataException
-    | ExternalInterfaceDataException;
+    | ExternalInterfaceDataException
+  >;
 };
-
-export type WorkFlow = Record<
-  WorkFlowKey,
-  (p: WorkFlowP[WorkFlowKey]) => () => Promise<WorkFlowR[WorkFlowKey]>
->;
