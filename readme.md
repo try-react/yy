@@ -2,12 +2,12 @@
 
 ## 概要
 
-DDD や、CleanArchitecture の構成に寄せています。特に意識している点は下記の通りです。
+CleanArchitecture の構成に寄せています。特に意識している点は下記の通りです。
 
 - domain/について
   - shared/と他の domain/以外に依存しない
   - ライブラリの依存を控える
-- データの永続化は、domain/の Repository で抽象化する
+- データの永続化は、gateway で抽象化する
 - src/配下のディレクトリをレイヤーとみなし、データの受け渡しを厳格にする
 - データの種類について
   - どこで作られたデータかをわかりやすくする
@@ -41,7 +41,7 @@ React や Next 独自の部分として UI 周りの依存関係は、下記の�
 - pages/から`import`され Component 生成処理を提供します。
 - presenter の初期値などはここで、取得します。
 
-![-](./doc/src/controller/graph.svg)
+![-](./doc/madge/controller/graph.svg)
 
 ---
 
@@ -52,7 +52,7 @@ src/presenter/ecosystem/me は、useCase/useMe から`props`をもらいます�
 - React の Component
 - AtomicComponent によせています。
 
-![-](./doc/src/presenter/graph.svg)
+![-](./doc/madge/presenter/graph.svg)
 
 #### components/
 
@@ -81,7 +81,7 @@ useCase/useMe は、src/presenter/ecosystem/me に`state`を提供します。
 - CustomHooks を置き場
 - controller に、interactor を提供します。
 
-![-](./doc/src/useCase/graph.svg)
+![-](./doc/madge/useCase/graph.svg)
 
 ---
 
@@ -91,23 +91,21 @@ useCase/useMe は、src/presenter/ecosystem/me に`state`を提供します。
 - `type WorkFlow`は、`query`や`write`をトップレベルのキーとして持ちます。
 - repository をもらい、repository 用のパラメタをもらい、実行結果を返す。ような流れの型です。
 
-![-](./doc/src/domain/graph.svg)
+![-](./doc/madge/domain/graph.svg)
 
 ---
 
-### src/infra/
-
-![-](./doc/src/infra/graph.svg)
-
-#### repo/
+#### src/gateway/
 
 - src/domain/の`type Repository`の実装です。
 
-#### api/
+![-](./doc/madge/gateway/graph.svg)
 
-- src/infra/repo/からよばれます。
+#### src/externalInterface/
 
----
+- src/gateway/からよばれます。
+
+## ![-](./doc/madge/externalInterface/graph.svg)
 
 ### src/shared/
 
@@ -159,12 +157,12 @@ if (obj instanceof InfraData) {
   処理の流れを書いています。validate して save などです。
 
 - Domain の Repository  
-  Domain からみて扱いやすいデータの集合です。CRUD に準拠するメソッドがはえています。実装はありません。実装は Infra にまかせます。  
+  Domain からみて扱いやすいデータの集合です。CRUD に準拠するメソッドがはえています。実装はありません。
   保存先や取得先の隠蔽がメリットです。  
   オンメモリのような感じで扱える事を目的としています。  
   粒度は、整合性の単位です。(DB で言う所の、トランザクション相当)
 
-- Infra の Repository  
+- gateway
   Domain の Repository 向けの実装です。しかしここに処理を書くよりは、更に先に書いてそれを利用します。
 
 - Entity  
@@ -213,18 +211,12 @@ if (obj instanceof InfraData) {
 JSON.parse(JSON.stringify(obj));
 ```
 
-## DDD や Clean Architecture と この構成を比較して
+## DDD と Clean Architecture のマッチング
 
 - src/domain/type/の`Repository`  
-  Clean Architecture で言う Data Access IF
-
-- src/infra/repo  
-  Data Access
+  Clean Architecture で言う gateways
 
 - src/domain  
   Entities
-
-- src/domain/type  
-  WorkFlow は、UseCase の要素を含んでいる
 
 ![-](./doc/img/CleanArchitecture.png)
