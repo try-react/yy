@@ -1,9 +1,26 @@
 # React アプリ
 
-- 正常系, 想定内のエラー(Exception), 想定外のエラー(Error)を考慮しています。
-- src/配下のディレクトリをレイヤーとみなし、データの受け渡しを厳格にしています。
+## 概要
 
----
+DDD や、CleanArchitecture の構成に寄せています。特に意識している点は下記の通りです。
+
+- domain/について
+  - shared/と他の domain/以外に依存しない
+  - ライブラリの依存を控える
+- データの永続化は、domain/の Repository で抽象化する
+- src/配下のディレクトリをレイヤーとみなし、データの受け渡しを厳格にする
+- データの種類について
+  - どこで作られたデータかをわかりやすくする
+  - 正常系, 想定内のエラー(Exception), 想定外のエラー(Error)を考慮する。
+
+TODO 見た目部分のディレクトリ構成
+
+最重要事項として、 **このルールを必ず守る必要はありません。**  
+選択肢が無いのであればこの方針で実装します。
+
+## ディレクトリ構成
+
+非 SSR での動作を想定しています。
 
 ### pages/
 
@@ -144,7 +161,9 @@ if (obj instanceof InfraData) {
 - ValueObject  
   deepEqual で同じなら、同じとみなす object です。
 
-## state の種類
+## State
+
+### State の種類
 
 - ui  
   トグルの開閉、モーダルの切り替え
@@ -164,3 +183,30 @@ if (obj instanceof InfraData) {
 - selectors  
   計算が必要な値`is` `has` `can` のような prefix がつく  
   domain の state に応じて生成される場合が多い
+
+### State の操作
+
+- Action  
+  Action は起こったイベントを表す
+
+- Reducer
+  Action と前の state から次の state を生成する
+  再利用 OK むしろ推奨 HOF で再利用も OK
+
+- State  
+  State は JSON serializable なインターフェース（クラスや関数がない、オブジェクトや配列は OK）で、プログラムの状態を表す  
+  [これ](https://stackoverflow.com/questions/122102/what-is-the-most-efficient-way-to-deep-clone-an-object-in-javascript/122704#122704)で壊れないデータにしてね
+
+```js
+JSON.parse(JSON.stringify(obj));
+```
+
+## DDD や Clean Architecture と この構成を比較して
+
+![-](./doc/img/CleanArchitecture.png)
+
+- src/domain/type/の`Repository`とは  
+  Clean Architecture で言う Data Access IF
+
+- src/infra/repo とは  
+  Data Access
