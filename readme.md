@@ -32,20 +32,25 @@ React や Next 独自の部分として UI 周りの依存関係は、下記の�
 - Next.js の`pages`です。
 - src/pages/でも OK だが、単体テスト対象外なので、page/に配置しています。
 - SSR しない想定で実装しています。
+- CleanArchitecture で言う所の、UI
 
 ---
 
 ### src/controller/
 
-![-](./doc/src/controller/graph.svg)
-
 - pages/から`import`され Component 生成処理を提供します。
 - presenter の初期値などはここで、取得します。
-- 処理の内容は、src/domain/の workFlow に記載しています。domain を API として利用しています。
+
+![-](./doc/src/controller/graph.svg)
 
 ---
 
 ### src/presenter/
+
+src/presenter/ecosystem/me は、useCase/useMe から`props`をもらいます。
+
+- React の Component
+- AtomicComponent によせています。
 
 ![-](./doc/src/presenter/graph.svg)
 
@@ -71,19 +76,22 @@ React や Next 独自の部分として UI 周りの依存関係は、下記の�
 
 ### src/useCase/
 
-![-](./doc/src/useCase/graph.svg)
+useCase/useMe は、src/presenter/ecosystem/me に`state`を提供します。
 
-- hooks を提供します。
+- CustomHooks を置き場
+- controller に、interactor を提供します。
+
+![-](./doc/src/useCase/graph.svg)
 
 ---
 
 ### src/domain/
 
-![-](./doc/src/domain/graph.svg)
-
 - class ベースではなく、関数ベースで実装いています。処理の流れを意識しています。
 - `type WorkFlow`は、`query`や`write`をトップレベルのキーとして持ちます。
 - repository をもらい、repository 用のパラメタをもらい、実行結果を返す。ような流れの型です。
+
+![-](./doc/src/domain/graph.svg)
 
 ---
 
@@ -148,7 +156,7 @@ if (obj instanceof InfraData) {
 ## 用語の整理
 
 - Domain の WorkFlow  
-  useCase や controller から、import されます。処理の流れを書いています。
+  処理の流れを書いています。validate して save などです。
 
 - Domain の Repository  
   Domain からみて扱いやすいデータの集合です。CRUD に準拠するメソッドがはえています。実装はありません。実装は Infra にまかせます。  
@@ -207,10 +215,16 @@ JSON.parse(JSON.stringify(obj));
 
 ## DDD や Clean Architecture と この構成を比較して
 
-![-](./doc/img/CleanArchitecture.png)
-
-- src/domain/type/の`Repository`とは  
+- src/domain/type/の`Repository`  
   Clean Architecture で言う Data Access IF
 
-- src/infra/repo とは  
+- src/infra/repo  
   Data Access
+
+- src/domain  
+  Entities
+
+- src/domain/type  
+  WorkFlow は、UseCase の要素を含んでいる
+
+![-](./doc/img/CleanArchitecture.png)
