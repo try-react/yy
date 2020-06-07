@@ -110,7 +110,7 @@ if (obj instanceof GatewayData) {
 `isErr`などを付与せずに済ます。
 
 ```ts
-const obj = { isErr: false, data: "ok" };
+const obj = { isErr: false, id: 123, name: `tommy`, type: human };
 if (!obj.isErr) {
   // 正常系データ
 }
