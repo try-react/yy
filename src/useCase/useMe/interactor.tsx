@@ -4,7 +4,7 @@ import {
   DomainDataException,
 } from "~/shared/typeGuard/read/Exception";
 import { DomainData } from "~/shared/typeGuard/read/Data";
-import { useMe } from "~/useCase/useMe";
+import { useMe } from "~/useCase/useMe/useMe";
 import type { LazyExoticComponent, FC } from "react";
 import { workFlow } from "~/domain/me";
 import { Repository } from "~/domain/me/type";
