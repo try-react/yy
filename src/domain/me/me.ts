@@ -1,9 +1,10 @@
 import type { WorkFlow } from "./type";
 import {
   DomainDataException,
-  InfraException,
+  GatewayDataException,
+  ExternalInterfaceDataException,
 } from "~/shared/typeGuard/read/Exception";
-import { InfraData, DomainData } from "~/shared/typeGuard/read/Data";
+import { GatewayData, DomainData } from "~/shared/typeGuard/read/Data";
 
 type InFn = ReturnType<WorkFlow["fetchInitValue"]>;
 type P = Parameters<InFn>[0];
@@ -14,10 +15,13 @@ export const workFlow: WorkFlow = {
     repository
       .fetchMe(p)
       .then((res) => {
-        if (res instanceof InfraData) {
+        if (res instanceof GatewayData) {
           return DomainData.of(res.value);
         }
-        if (res instanceof InfraException) {
+        if (res instanceof GatewayDataException) {
+          return res;
+        }
+        if (res instanceof ExternalInterfaceDataException) {
           return res;
         }
         return DomainDataException.of({

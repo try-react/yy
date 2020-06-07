@@ -1,2 +1,3 @@
 export * from "./DomainDataException";
-export * from "./InfraException";
+export * from "./ExternalInterfaceDataException";
+export * from "./GatewayDataException";

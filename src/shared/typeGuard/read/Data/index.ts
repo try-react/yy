@@ -1,2 +1,3 @@
 export * from "./DomainData";
-export * from "./InfraData";
+export * from "./GatewayData";
+export * from "./ExternalInterfaceData";

@@ -13,8 +13,12 @@ const Presenter = dynamic<Props>(
   { ssr: false }
 );
 
+// location などから取得
+const getParam = () => ({ id: 123 });
 const Page: NextPage = () => (
-  <Presenter Component={interactor({ repository, useMe })} />
+  <Presenter
+    Component={interactor({ repository, useMe, envParam: getParam() })}
+  />
 );
 
 export default Page;

@@ -1,7 +1,7 @@
 import { findPath } from "~/externalInterface/api/http/client/util";
 import { httpClient } from "~/externalInterface/api/http/client";
-import { InfraData } from "~/shared/typeGuard/read/Data";
-import { InfraException } from "~/shared/typeGuard/read/Exception";
+import { ExternalInterfaceData } from "~/shared/typeGuard/read/Data";
+import { ExternalInterfaceDataException } from "~/shared/typeGuard/read/Exception";
 
 const path = findPath("me");
 
@@ -26,15 +26,21 @@ type Me = {
   address: string;
 };
 
-const toMe = (r: OResponse): Me => ({
+const orm = (r: OResponse): Me => ({
   id: r.id_x_,
   name: r.name_x_,
   address: r.address_x_,
 });
 
-type FetchMe = (p: { id: number }) => Promise<InfraData<Me> | InfraException>;
+type FetchMe = (p: {
+  id: number;
+}) => Promise<ExternalInterfaceData<Me> | ExternalInterfaceDataException>;
 export const fetchMe: FetchMe = (_) =>
   httpClient
     .get<OResponse>(path)
-    .then((r) => (r instanceof InfraData ? InfraData.of(toMe(r.value)) : r))
+    .then((r) =>
+      r instanceof ExternalInterfaceData
+        ? ExternalInterfaceData.of(orm(r.value))
+        : r
+    )
     .catch<never>((e) => e);

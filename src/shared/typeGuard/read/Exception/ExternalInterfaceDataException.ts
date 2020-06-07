@@ -1,7 +1,7 @@
 type errObj = { message: string; error: Response };
 
-export class InfraException extends Error {
-  public name = InfraException.name;
+export class ExternalInterfaceDataException extends Error {
+  public name = ExternalInterfaceDataException.name;
 
   private constructor(private _errObj: errObj) {
     super(JSON.stringify(_errObj));
@@ -11,8 +11,8 @@ export class InfraException extends Error {
     return this._errObj;
   }
 
-  static of(e: errObj): InfraException {
-    return new InfraException(e);
+  static of(e: errObj): ExternalInterfaceDataException {
+    return new ExternalInterfaceDataException(e);
   }
 
   /**
@@ -20,6 +20,6 @@ export class InfraException extends Error {
    */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types
   static isMaybeDomainDataException(v: any): boolean {
-    return v?.name === InfraException.name;
+    return v?.name === ExternalInterfaceDataException.name;
   }
 }
