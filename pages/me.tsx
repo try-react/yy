@@ -3,8 +3,9 @@ import type { ComponentProps } from "react";
 import type { NextPage } from "next";
 import dynamic from "next/dynamic";
 import { repository } from "~/gateway/me";
-import { interactor, useMe } from "~/useCase/useMe";
+import { useMe } from "~/useCase/useMe";
 import { workFlow } from "~/domain/me";
+import { ComponentSelector } from "~/presenter/components/ecosystem/Me/ComponentSelector";
 
 // -------------------------------------------
 type Props = ComponentProps<
@@ -26,8 +27,9 @@ const service = {
 };
 // -------------------------------------------
 
-const Page: NextPage = () => {
-  return <Presenter Component={interactor({ service, useMe })} />;
-};
+const Page: NextPage = () => (
+  // eslint-disable-next-line new-cap
+  <Presenter Component={ComponentSelector({ service, useMe })} />
+);
 
 export default Page;

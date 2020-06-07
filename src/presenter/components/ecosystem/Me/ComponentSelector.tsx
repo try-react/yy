@@ -5,9 +5,18 @@ import {
   ExternalInterfaceDataException,
 } from "~/shared/typeGuard/read/Exception";
 import { DomainData } from "~/shared/typeGuard/read/Data";
-import { Interactor } from "./type";
+import type { LazyExoticComponent, FC } from "react";
+import type { UseMe } from "~/useCase/useMe/type";
+import type { WorkFlow } from "~/domain/me";
 
-export const interactor: Interactor = ({ service, useMe }) =>
+type ComponentSelectorP = {
+  service: { fetch: ReturnType<WorkFlow["getLatestInformationAboutMe"]> };
+  useMe: UseMe;
+};
+type ComponentSelectorR = LazyExoticComponent<FC>;
+type ComponentSelectorType = (p: ComponentSelectorP) => ComponentSelectorR;
+
+export const ComponentSelector: ComponentSelectorType = ({ service, useMe }) =>
   lazy(() =>
     service
       .fetch()
