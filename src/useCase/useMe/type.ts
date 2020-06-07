@@ -6,26 +6,24 @@ type GetLatestInformationAboutMeR = ReturnType<
   WorkFlow["getLatestInformationAboutMe"]
 >;
 
-type InitData = ReturnType<GetLatestInformationAboutMeR> extends Promise<
-  infer U
->
+type UseMeP = ReturnType<GetLatestInformationAboutMeR> extends Promise<infer U>
   ? U extends DomainData<infer V>
     ? V
     : never
   : never;
 
-export type State = {
+type UseMeR = {
   name: string;
   address: string;
   id: string;
   flg: boolean;
 };
 
-export type UseMe = (p: InitData) => State;
+export type UseMe = (p: UseMeP) => UseMeR;
 
-type P = Parameters<WorkFlow["getLatestInformationAboutMe"]>[0];
-export type Interactor = (p: {
-  useMe: UseMe;
-  repository: P["repository"];
-  payload: P["payload"];
-}) => LazyExoticComponent<FC>;
+type InteractorP = {
+  service: { fetch: GetLatestInformationAboutMeR };
+};
+
+type InteractorR = LazyExoticComponent<FC>;
+export type Interactor = (p: InteractorP) => InteractorR;

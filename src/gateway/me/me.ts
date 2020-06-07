@@ -10,8 +10,7 @@ import {
 } from "~/shared/typeGuard/read/Exception";
 
 /**
- * Domain.Repositoryが欲しい型に変更
- * 特に意味はないが、`flg`を付与
+ * 外の世界から取得した値を、こちらの世界のDomainのDomain.Repositoryが欲しい型に変更
  */
 export const repository: Repository = {
   fetchMe: (p) =>

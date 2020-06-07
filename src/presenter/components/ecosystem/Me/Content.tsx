@@ -1,7 +1,8 @@
 import React from "react";
 import type { FC } from "react";
-import { State as Props } from "~/useCase/useMe/type";
+import { UseMe } from "~/useCase/useMe/type";
 
+type Props = ReturnType<UseMe>;
 export const Content: FC<Props> = (props) => (
   <>
     <span data-testid="Content" />

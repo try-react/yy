@@ -3,11 +3,13 @@ import type { ComponentProps } from "react";
 import type { NextPage } from "next";
 import dynamic from "next/dynamic";
 import { repository } from "~/gateway/me";
-import { Me } from "~/presenter/components/environment/Me";
+import { interactor } from "~/useCase/useMe";
+import { workFlow } from "~/domain/me";
 
 type Props = ComponentProps<
   typeof import("~/presenter/components/ecosystem/Me")["Me"]
 >;
+
 const Presenter = dynamic<Props>(
   () => import("~/presenter/components/ecosystem/Me").then((_) => _.Me),
   { ssr: false }
@@ -15,9 +17,15 @@ const Presenter = dynamic<Props>(
 
 // location などから取得
 const getParam = () => ({ id: 123 });
-const Page: NextPage = () => (
-  // eslint-disable-next-line new-cap
-  <Presenter Component={Me({ repository, payload: getParam() })} />
-);
+const service = {
+  fetch: workFlow.getLatestInformationAboutMe({
+    repository,
+    payload: getParam(),
+  }),
+};
+
+const Page: NextPage = () => {
+  return <Presenter Component={interactor({ service })} />;
+};
 
 export default Page;

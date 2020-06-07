@@ -5,18 +5,13 @@ import {
   ExternalInterfaceDataException,
 } from "~/shared/typeGuard/read/Exception";
 import { DomainData } from "~/shared/typeGuard/read/Data";
-import { workFlow } from "~/domain/me";
 import { Interactor } from "./type";
+import { useMe } from "~/useCase/useMe";
 
-export const interactor: Interactor = ({ repository, useMe, payload }) =>
-  lazy(() => {
-    // useMeに渡す？
-    const service = workFlow.getLatestInformationAboutMe({
-      repository,
-      payload,
-    });
-
-    return service()
+export const interactor: Interactor = ({ service }) =>
+  lazy(() =>
+    service
+      .fetch()
       .then(async (res) => {
         if (res instanceof DomainData) {
           const { Content } = await import(
@@ -42,5 +37,5 @@ export const interactor: Interactor = ({ repository, useMe, payload }) =>
 
         return Promise.reject(res);
       })
-      .catch<never>((e) => e);
-  });
+      .catch<never>((e) => e)
+  );
