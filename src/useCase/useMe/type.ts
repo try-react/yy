@@ -3,9 +3,13 @@ import type { WorkFlow } from "~/domain/me";
 import type { LazyExoticComponent, FC } from "react";
 import { DomainData } from "~/shared/typeGuard/read/Data";
 
-type FetchInitValueR = ReturnType<WorkFlow["fetchInitValue"]>;
+type GetLatestInformationAboutMeR = ReturnType<
+  WorkFlow["getLatestInformationAboutMe"]
+>;
 
-type InitData = ReturnType<FetchInitValueR> extends Promise<infer U>
+type InitData = ReturnType<GetLatestInformationAboutMeR> extends Promise<
+  infer U
+>
   ? U extends DomainData<infer V>
     ? V
     : never
@@ -23,5 +27,5 @@ export type UseMe = (p: InitData) => State;
 export type Interactor = (p: {
   repository: Repository;
   useMe: UseMe;
-  envParam: Parameters<FetchInitValueR>[0];
+  envParam: Parameters<GetLatestInformationAboutMeR>[0];
 }) => LazyExoticComponent<FC>;

@@ -6,10 +6,8 @@ import {
 import { DomainData, GatewayData } from "~/shared/typeGuard/read/Data";
 import { ReadModel as ReadModel_ } from "~/shared/typeGuard/read/Model";
 
-type ReadModel = ReadModel_<
-  { name: string; address: string; id: string; flg: boolean },
-  { id: number }
->;
+type Me = { name: string; address: string; id: string; flg: boolean };
+type ReadModel = ReadModel_<Me, { id: number }>;
 
 export type Repository = {
   fetchMe: (
@@ -22,7 +20,7 @@ export type Repository = {
 };
 
 export type WorkFlow = {
-  fetchInitValue: (p: {
+  getLatestInformationAboutMe: (p: {
     repository: Repository;
   }) => (
     p: ReadModel["payload"]

@@ -6,12 +6,12 @@ import {
 } from "~/shared/typeGuard/read/Exception";
 import { GatewayData, DomainData } from "~/shared/typeGuard/read/Data";
 
-type InFn = ReturnType<WorkFlow["fetchInitValue"]>;
+type InFn = ReturnType<WorkFlow["getLatestInformationAboutMe"]>;
 type P = Parameters<InFn>[0];
 type R = ReturnType<InFn>;
 
 export const workFlow: WorkFlow = {
-  fetchInitValue: ({ repository }) => (p: P): R =>
+  getLatestInformationAboutMe: ({ repository }) => (p: P): R =>
     repository
       .fetchMe(p)
       .then((res) => {

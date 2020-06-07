@@ -11,7 +11,7 @@ import { Interactor } from "./type";
 export const interactor: Interactor = ({ repository, useMe, envParam }) =>
   lazy(() => {
     // useMeに渡す？
-    const service = workFlow.fetchInitValue({ repository });
+    const service = workFlow.getLatestInformationAboutMe({ repository });
 
     return service(envParam)
       .then(async (res) => {
@@ -20,7 +20,6 @@ export const interactor: Interactor = ({ repository, useMe, envParam }) =>
             "~/presenter/components/ecosystem/Me/Content"
           );
           const Component = () => <Content {...useMe({ ...res.value })} />;
-
           return { default: Component };
         }
 
