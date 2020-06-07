@@ -208,3 +208,7 @@ JSON.parse(JSON.stringify(obj));
   Entities
 
 ![-](./doc/img/CleanArchitecture.png)
+
+## データ取得までの流れ
+
+![-](./doc/img/CleanArchitecture3.png)
