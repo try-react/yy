@@ -37,6 +37,15 @@ CleanArchitecture の構成に寄せています。特に意識している点�
 
 ---
 
+### src/controller/
+
+- React の Component
+- AtomicComponent によせています。
+
+![-](./doc/madge/controller/graph.svg)
+
+---
+
 ### src/presenter/
 
 - React の Component

@@ -2,8 +2,8 @@ import React from "react";
 import type { ComponentProps } from "react";
 import type { NextPage } from "next";
 import dynamic from "next/dynamic";
-import { interactor, useMe } from "~/useCase/useMe"; // useCaseと接するのは、しょうがない
 import { repository } from "~/gateway/me";
+import { controller } from "~/controller/me";
 
 type Props = ComponentProps<
   typeof import("~/presenter/components/ecosystem/Me")["Me"]
@@ -16,9 +16,7 @@ const Presenter = dynamic<Props>(
 // location などから取得
 const getParam = () => ({ id: 123 });
 const Page: NextPage = () => (
-  <Presenter
-    Component={interactor({ repository, useMe, envParam: getParam() })}
-  />
+  <Presenter Component={controller({ repository, envParam: getParam() })} />
 );
 
 export default Page;
