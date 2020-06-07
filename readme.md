@@ -37,15 +37,6 @@ CleanArchitecture の構成に寄せています。特に意識している点�
 
 ---
 
-### src/controller/
-
-- pages/から`import`され Component 生成処理を提供します。
-- presenter の初期値などはここで、取得します。
-
-![-](./doc/madge/controller/graph.svg)
-
----
-
 ### src/presenter/
 
 - React の Component
