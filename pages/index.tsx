@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Component: NextPage = () => (
   <Link href="/me">
-    <a>Lazy & Suspenseへ 1</a>
+    <a>me</a>
   </Link>
 );
 

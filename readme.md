@@ -13,21 +13,25 @@ DDD や、CleanArchitecture の構成に寄せています。特に意識して�
   - どこで作られたデータかをわかりやすくする
   - 正常系, 想定内のエラー(Exception), 想定外のエラー(Error)を考慮する。
 
-TODO 見た目部分のディレクトリ構成
-
 最重要事項として、 **このルールを必ず守る必要はありません。**  
 選択肢が無いのであればこの方針で実装します。
 
 ## ディレクトリ構成
 
-非 SSR での動作を想定しています。
+非 SSR での動作を想定しています。  
+React や Next 独自の部分として UI 周りの依存関係は、下記の通りです。
+
+- pages/
+  - src/presenter/
+    - src/presenter/components/ecosystem/
+  - src/controller/
+    - src/presenter/components/ecosystem/
 
 ### pages/
 
 - Next.js の`pages`です。
 - src/pages/でも OK だが、単体テスト対象外なので、page/に配置しています。
 - SSR しない想定で実装しています。
-- src/ui/へ`props`の提供をします。
 
 ---
 
@@ -36,14 +40,14 @@ TODO 見た目部分のディレクトリ構成
 ![-](./doc/src/controller/graph.svg)
 
 - pages/から`import`され Component 生成処理を提供します。
-- ui の初期値などはここで、取得します。
+- presenter の初期値などはここで、取得します。
 - 処理の内容は、src/domain/の workFlow に記載しています。domain を API として利用しています。
 
 ---
 
-### src/ui/
+### src/presenter/
 
-![-](./doc/src/ui/graph.svg)
+![-](./doc/src/presenter/graph.svg)
 
 #### components/
 

@@ -1,34 +1,27 @@
 import React, { lazy } from "react";
-import type { LazyExoticComponent } from "react";
-import { repository } from "~/infra/repo/me";
-import { workFlow } from "~/domain/me";
 import { InfraException } from "~/shared/CQRS/read/Exception/InfraException";
 import { DomainDataException } from "~/shared/CQRS/read/Exception/DomainDataException";
 import { DomainData } from "~/shared/CQRS/read/Data/DomainData";
+import { useMe, interactor } from "~/useCase/useMe";
+import { Create } from "./type";
 
-const useCase = {
-  fetchInitValue: workFlow.fetchInitValue({ repository }),
-  getEnv: () => ({ id: 123 }), // locationなど
-};
-
-type Create = () => LazyExoticComponent<React.FC>;
 export const create: Create = () =>
   lazy(() =>
-    useCase
-      .fetchInitValue(useCase.getEnv())
+    interactor
+      .fetchInitValue(interactor.getEnv())
       .then(async (res) => {
         if (res instanceof DomainData) {
           const { Content } = await import(
-            "~/ui/components/environment/Me/Content"
+            "~/presenter/components/ecosystem/Me/Content"
           );
-          const Component = () => <Content {...res.value} />;
+          const Component = () => <Content {...useMe({ ...res.value })} />;
 
           return { default: Component };
         }
 
         if (res instanceof InfraException) {
           const { Exception } = await import(
-            "~/ui/components/environment/Me/Exception"
+            "~/presenter/components/ecosystem/Me/Exception"
           );
           const Component = () => <Exception />;
 

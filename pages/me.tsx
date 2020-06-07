@@ -5,13 +5,13 @@ import dynamic from "next/dynamic";
 import { create } from "~/controller/me";
 
 type Props = ComponentProps<
-  typeof import("~/ui/components/environment/Me")["Me"]
+  typeof import("~/presenter/components/ecosystem/Me")["Me"]
 >;
-const Me = dynamic<Props>(
-  () => import("~/ui/components/environment/Me").then((_) => _.Me),
+const Presenter = dynamic<Props>(
+  () => import("~/presenter/components/ecosystem/Me").then(({ Me }) => Me),
   { ssr: false }
 );
 
-const Page: NextPage = () => <Me Component={create()} />;
+const Page: NextPage = () => <Presenter Component={create()} />;
 
 export default Page;
