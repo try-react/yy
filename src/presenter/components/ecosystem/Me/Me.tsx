@@ -1,5 +1,5 @@
-import React, { Suspense } from "react";
 import type { FC } from "react";
+import React, { Suspense } from "react";
 import { Placeholder } from "./Placeholder";
 
 type Props = {

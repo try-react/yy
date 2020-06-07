@@ -60,12 +60,12 @@ src/presenter/ecosystem/me は、useCase/useMe から`props`をもらいます�
 - 正常系の Component, 例外系 Component, 取得中の Component を準備しています。
 
 ```bash
-  components
-└──   Me
-   ├──   Content.tsx # 正常系
-   ├──   Exception.tsx # 例外系
-   ├──   index.ts # 利用して欲しいComponentのみ`export`
-   └──   Me.tsx # 取得中
+-  components
+└──-  Me
+   ├──  Content.tsx # 正常系
+   ├──  Exception.tsx # 例外系
+   ├──  index.ts # 利用して欲しいComponentのみ`export`
+   └──  Me.tsx # 取得中
 ```
 
 #### containers/

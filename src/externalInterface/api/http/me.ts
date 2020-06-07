@@ -1,7 +1,7 @@
-import { findPath } from "~/infra/api/http/client/util";
-import { httpClient } from "~/infra/api/http/client";
-import { InfraData } from "~/shared/CQRS/read/Data/InfraData";
-import { InfraException } from "~/shared/CQRS/read/Exception/InfraException";
+import { findPath } from "~/externalInterface/api/http/client/util";
+import { httpClient } from "~/externalInterface/api/http/client";
+import { InfraData } from "~/shared/typeGuard/read/Data";
+import { InfraException } from "~/shared/typeGuard/read/Exception";
 
 const path = findPath("me");
 

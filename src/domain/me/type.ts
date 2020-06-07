@@ -1,8 +1,8 @@
-import { DomainDataException } from "~/shared/CQRS/read/Exception/DomainDataException";
-import { InfraException } from "~/shared/CQRS/read/Exception/InfraException";
-import { DomainData } from "~/shared/CQRS/read/Data/DomainData";
-import { InfraData } from "~/shared/CQRS/read/Data/InfraData";
-import { ReadModel } from "~/shared/CQRS/read/Model";
+import { DomainDataException } from "~/shared/typeGuard/read/Exception/DomainDataException";
+import { InfraException } from "~/shared/typeGuard/read/Exception/InfraException";
+import { DomainData } from "~/shared/typeGuard/read/Data/DomainData";
+import { InfraData } from "~/shared/typeGuard/read/Data/InfraData";
+import { ReadModel } from "~/shared/typeGuard/read/Model";
 
 type ReadModel_ = ReadModel<
   { name: string; address: string; id: string; flg: boolean },

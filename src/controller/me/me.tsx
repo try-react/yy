@@ -1,7 +1,9 @@
 import React, { lazy } from "react";
-import { InfraException } from "~/shared/CQRS/read/Exception/InfraException";
-import { DomainDataException } from "~/shared/CQRS/read/Exception/DomainDataException";
-import { DomainData } from "~/shared/CQRS/read/Data/DomainData";
+import {
+  InfraException,
+  DomainDataException,
+} from "~/shared/typeGuard/read/Exception";
+import { DomainData } from "~/shared/typeGuard/read/Data";
 import { useMe, interactor } from "~/useCase/useMe";
 import { Create } from "./type";
 

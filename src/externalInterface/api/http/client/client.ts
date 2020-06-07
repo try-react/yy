@@ -1,5 +1,5 @@
-import { InfraException } from "~/shared/CQRS/read/Exception/InfraException";
-import { InfraData } from "~/shared/CQRS/read/Data/InfraData";
+import { InfraException } from "~/shared/typeGuard/read/Exception";
+import { InfraData } from "~/shared/typeGuard/read/Data";
 import { env } from "~/shared/env";
 import type { Path } from "./util";
 

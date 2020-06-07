@@ -1,4 +1,4 @@
-import { repository } from "~/infra/repo/me";
+import { repository } from "~/gateway/me";
 import { workFlow } from "~/domain/me";
 import { Interactor } from "./type";
 

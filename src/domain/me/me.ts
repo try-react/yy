@@ -1,8 +1,9 @@
 import type { WorkFlow } from "./type";
-import { DomainData } from "~/shared/CQRS/read/Data/DomainData";
-import { InfraException } from "~/shared/CQRS/read/Exception/InfraException";
-import { DomainDataException } from "~/shared/CQRS/read/Exception/DomainDataException";
-import { InfraData } from "~/shared/CQRS/read/Data/InfraData";
+import {
+  DomainDataException,
+  InfraException,
+} from "~/shared/typeGuard/read/Exception";
+import { InfraData, DomainData } from "~/shared/typeGuard/read/Data";
 
 type InFn = ReturnType<WorkFlow["fetchInitValue"]>;
 type P = Parameters<InFn>[0];

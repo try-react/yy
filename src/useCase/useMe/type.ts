@@ -1,5 +1,5 @@
 import type { WorkFlow } from "~/domain/me/type";
-import type { DomainData } from "~/shared/CQRS/read/Data/DomainData";
+import type { DomainData } from "~/shared/typeGuard/read/Data/DomainData";
 
 export type Interactor = {
   fetchInitValue: ReturnType<WorkFlow["fetchInitValue"]>;
