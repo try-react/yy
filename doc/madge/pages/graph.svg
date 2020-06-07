@@ -180,20 +180,20 @@
 <!-- ../src/useCase/useMe/index.ts -->
 <g id="node18" class="node">
 <title>../src/useCase/useMe/index.ts</title>
-<path fill="none" stroke="#ff6c60" d="M432.1008,-109.374C432.1008,-109.374 232.2645,-109.374 232.2645,-109.374 228.0146,-109.374 223.7646,-105.1241 223.7646,-100.8742 223.7646,-100.8742 223.7646,-92.3743 223.7646,-92.3743 223.7646,-88.1244 228.0146,-83.8745 232.2645,-83.8745 232.2645,-83.8745 432.1008,-83.8745 432.1008,-83.8745 436.3507,-83.8745 440.6006,-88.1244 440.6006,-92.3743 440.6006,-92.3743 440.6006,-100.8742 440.6006,-100.8742 440.6006,-105.1241 436.3507,-109.374 432.1008,-109.374"/>
-<text text-anchor="middle" x="332.1826" y="-93.2485" font-family="Arial" font-size="15.00" fill="#ff6c60">../src/useCase/useMe/index.ts</text>
+<path fill="none" stroke="#c6c5fe" d="M432.1008,-109.374C432.1008,-109.374 232.2645,-109.374 232.2645,-109.374 228.0146,-109.374 223.7646,-105.1241 223.7646,-100.8742 223.7646,-100.8742 223.7646,-92.3743 223.7646,-92.3743 223.7646,-88.1244 228.0146,-83.8745 232.2645,-83.8745 232.2645,-83.8745 432.1008,-83.8745 432.1008,-83.8745 436.3507,-83.8745 440.6006,-88.1244 440.6006,-92.3743 440.6006,-92.3743 440.6006,-100.8742 440.6006,-100.8742 440.6006,-105.1241 436.3507,-109.374 432.1008,-109.374"/>
+<text text-anchor="middle" x="332.1826" y="-93.2485" font-family="Arial" font-size="15.00" fill="#c6c5fe">../src/useCase/useMe/index.ts</text>
 </g>
 <!-- ../src/useCase/useMe/interactor.tsx -->
 <g id="node19" class="node">
 <title>../src/useCase/useMe/interactor.tsx</title>
-<path fill="none" stroke="#ff6c60" d="M839.8213,-109.374C839.8213,-109.374 606.3051,-109.374 606.3051,-109.374 602.0552,-109.374 597.8053,-105.1241 597.8053,-100.8742 597.8053,-100.8742 597.8053,-92.3743 597.8053,-92.3743 597.8053,-88.1244 602.0552,-83.8745 606.3051,-83.8745 606.3051,-83.8745 839.8213,-83.8745 839.8213,-83.8745 844.0713,-83.8745 848.3212,-88.1244 848.3212,-92.3743 848.3212,-92.3743 848.3212,-100.8742 848.3212,-100.8742 848.3212,-105.1241 844.0713,-109.374 839.8213,-109.374"/>
-<text text-anchor="middle" x="723.0632" y="-93.2485" font-family="Arial" font-size="15.00" fill="#ff6c60">../src/useCase/useMe/interactor.tsx</text>
+<path fill="none" stroke="#c6c5fe" d="M839.8213,-109.374C839.8213,-109.374 606.3051,-109.374 606.3051,-109.374 602.0552,-109.374 597.8053,-105.1241 597.8053,-100.8742 597.8053,-100.8742 597.8053,-92.3743 597.8053,-92.3743 597.8053,-88.1244 602.0552,-83.8745 606.3051,-83.8745 606.3051,-83.8745 839.8213,-83.8745 839.8213,-83.8745 844.0713,-83.8745 848.3212,-88.1244 848.3212,-92.3743 848.3212,-92.3743 848.3212,-100.8742 848.3212,-100.8742 848.3212,-105.1241 844.0713,-109.374 839.8213,-109.374"/>
+<text text-anchor="middle" x="723.0632" y="-93.2485" font-family="Arial" font-size="15.00" fill="#c6c5fe">../src/useCase/useMe/interactor.tsx</text>
 </g>
 <!-- ../src/useCase/useMe/index.ts&#45;&gt;../src/useCase/useMe/interactor.tsx -->
 <g id="edge12" class="edge">
 <title>../src/useCase/useMe/index.ts&#45;&gt;../src/useCase/useMe/interactor.tsx</title>
-<path fill="none" stroke="#757575" d="M440.805,-90.5049C486.2569,-89.7992 539.5713,-89.6858 587.551,-90.1646"/>
-<polygon fill="#757575" stroke="#757575" points="587.6659,-93.666 597.7036,-90.2758 587.7426,-86.6664 587.6659,-93.666"/>
+<path fill="none" stroke="#757575" d="M440.805,-96.6243C486.2569,-96.6243 539.5713,-96.6243 587.551,-96.6243"/>
+<polygon fill="#757575" stroke="#757575" points="587.7036,-100.1244 597.7036,-96.6243 587.7036,-93.1244 587.7036,-100.1244"/>
 </g>
 <!-- ../src/useCase/useMe/useMe.ts -->
 <g id="node20" class="node">
@@ -214,7 +214,7 @@
 <polygon fill="#757575" stroke="#757575" points="1000.337,-127.4754 1010.6322,-124.9735 1001.0238,-120.5092 1000.337,-127.4754"/>
 </g>
 <!-- ../src/useCase/useMe/interactor.tsx&#45;&gt;../src/useCase/useMe/type.ts -->
-<g id="edge17" class="edge">
+<g id="edge16" class="edge">
 <title>../src/useCase/useMe/interactor.tsx&#45;&gt;../src/useCase/useMe/type.ts</title>
 <path fill="none" stroke="#757575" d="M848.1955,-96.6243C1001.1727,-96.6243 1257.9406,-96.6243 1406.1385,-96.6243"/>
 <polygon fill="#757575" stroke="#757575" points="1406.1795,-100.1244 1416.1794,-96.6243 1406.1794,-93.1244 1406.1795,-100.1244"/>
@@ -225,14 +225,8 @@
 <path fill="none" stroke="#757575" d="M848.4099,-84.2673C896.4063,-79.5357 951.4131,-74.113 1000.5617,-69.2679"/>
 <polygon fill="#757575" stroke="#757575" points="1001.0238,-72.7394 1010.6322,-68.2751 1000.337,-65.7731 1001.0238,-72.7394"/>
 </g>
-<!-- ../src/useCase/useMe/interactor.tsx&#45;&gt;../src/useCase/useMe/index.ts -->
-<g id="edge16" class="edge">
-<title>../src/useCase/useMe/interactor.tsx&#45;&gt;../src/useCase/useMe/index.ts</title>
-<path fill="none" stroke="#757575" d="M597.7036,-102.9728C550.6483,-103.5347 497.3457,-103.5068 450.9105,-102.8891"/>
-<polygon fill="#757575" stroke="#757575" points="450.8544,-99.388 440.805,-102.7436 450.7536,-106.3873 450.8544,-99.388"/>
-</g>
 <!-- ../src/useCase/useMe/useMe.ts&#45;&gt;../src/useCase/useMe/type.ts -->
-<g id="edge18" class="edge">
+<g id="edge17" class="edge">
 <title>../src/useCase/useMe/useMe.ts&#45;&gt;../src/useCase/useMe/type.ts</title>
 <path fill="none" stroke="#757575" d="M1252.1565,-19.414C1282.0259,-22.5213 1314.072,-27.0442 1343.2964,-33.6243 1392.6512,-44.7369 1447.1851,-65.3778 1482.6767,-80.0016"/>
 <polygon fill="#757575" stroke="#757575" points="1481.585,-83.3384 1492.162,-83.9537 1484.2774,-76.8768 1481.585,-83.3384"/>
@@ -244,7 +238,7 @@
 <text text-anchor="middle" x="58.4309" y="-306.2485" font-family="Arial" font-size="15.00" fill="#c6c5fe">_app.tsx</text>
 </g>
 <!-- _app.tsx&#45;&gt;../src/presenter/containers/ErrorBoundary.tsx -->
-<g id="edge19" class="edge">
+<g id="edge18" class="edge">
 <title>_app.tsx&#45;&gt;../src/presenter/containers/ErrorBoundary.tsx</title>
 <path fill="none" stroke="#757575" d="M94.783,-309.6243C113.8699,-309.6243 138.769,-309.6243 165.2467,-309.6243"/>
 <polygon fill="#757575" stroke="#757575" points="165.4631,-313.1244 175.4631,-309.6243 165.463,-306.1244 165.4631,-313.1244"/>
@@ -268,25 +262,25 @@
 <text text-anchor="middle" x="58.4309" y="-199.2485" font-family="Arial" font-size="15.00" fill="#c6c5fe">me.tsx</text>
 </g>
 <!-- me.tsx&#45;&gt;../src/domain/me/index.ts -->
-<g id="edge20" class="edge">
+<g id="edge19" class="edge">
 <title>me.tsx&#45;&gt;../src/domain/me/index.ts</title>
 <path fill="none" stroke="#757575" d="M80.9584,-215.3027C99.6321,-225.2103 127.1809,-238.4632 152.8618,-245.6243 177.6507,-252.5366 204.9835,-257.1752 230.6788,-260.2875"/>
 <polygon fill="#757575" stroke="#757575" points="230.4819,-263.7877 240.8151,-261.4479 231.2781,-256.8331 230.4819,-263.7877"/>
 </g>
 <!-- me.tsx&#45;&gt;../src/gateway/me/index.ts -->
-<g id="edge21" class="edge">
+<g id="edge20" class="edge">
 <title>me.tsx&#45;&gt;../src/gateway/me/index.ts</title>
 <path fill="none" stroke="#757575" d="M88.7731,-204.9519C122.1135,-207.5095 177.5233,-211.7601 227.0603,-215.5601"/>
 <polygon fill="#757575" stroke="#757575" points="226.9674,-219.0632 237.2058,-216.3384 227.5029,-212.0837 226.9674,-219.0632"/>
 </g>
 <!-- me.tsx&#45;&gt;../src/presenter/components/ecosystem/Me/index.ts -->
-<g id="edge22" class="edge">
+<g id="edge21" class="edge">
 <title>me.tsx&#45;&gt;../src/presenter/components/ecosystem/Me/index.ts</title>
 <path fill="none" stroke="#757575" d="M88.7731,-200.1858C108.4091,-198.6078 135.7002,-196.4145 164.9382,-194.0648"/>
 <polygon fill="#757575" stroke="#757575" points="165.2327,-197.5525 174.9201,-193.2626 164.6719,-190.575 165.2327,-197.5525"/>
 </g>
 <!-- me.tsx&#45;&gt;../src/useCase/useMe/index.ts -->
-<g id="edge23" class="edge">
+<g id="edge22" class="edge">
 <title>me.tsx&#45;&gt;../src/useCase/useMe/index.ts</title>
 <path fill="none" stroke="#757575" d="M83.7673,-189.9498C102.6034,-180.7412 129.0537,-168.2569 152.8618,-158.6243 195.7061,-141.2897 245.4527,-124.3323 281.6655,-112.5458"/>
 <polygon fill="#757575" stroke="#757575" points="283.0667,-115.7712 291.5035,-109.3625 280.9117,-109.1111 283.0667,-115.7712"/>

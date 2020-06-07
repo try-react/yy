@@ -6,9 +6,8 @@ import {
 } from "~/shared/typeGuard/read/Exception";
 import { DomainData } from "~/shared/typeGuard/read/Data";
 import { Interactor } from "./type";
-import { useMe } from "~/useCase/useMe";
 
-export const interactor: Interactor = ({ service }) =>
+export const interactor: Interactor = ({ service, useMe }) =>
   lazy(() =>
     service
       .fetch()

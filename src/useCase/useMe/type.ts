@@ -23,6 +23,7 @@ export type UseMe = (p: UseMeP) => UseMeR;
 
 type InteractorP = {
   service: { fetch: GetLatestInformationAboutMeR };
+  useMe: UseMe;
 };
 
 type InteractorR = LazyExoticComponent<FC>;
