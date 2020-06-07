@@ -1,6 +1,5 @@
-import { Repository } from "~/domain/me/type";
-import type { WorkFlow } from "~/domain/me";
 import type { LazyExoticComponent, FC } from "react";
+import type { WorkFlow } from "~/domain/me";
 import { DomainData } from "~/shared/typeGuard/read/Data";
 
 type GetLatestInformationAboutMeR = ReturnType<
@@ -24,8 +23,9 @@ export type State = {
 
 export type UseMe = (p: InitData) => State;
 
+type P = Parameters<WorkFlow["getLatestInformationAboutMe"]>[0];
 export type Interactor = (p: {
-  repository: Repository;
   useMe: UseMe;
-  envParam: Parameters<GetLatestInformationAboutMeR>[0];
+  repository: P["repository"];
+  payload: P["payload"];
 }) => LazyExoticComponent<FC>;

@@ -8,12 +8,15 @@ import { DomainData } from "~/shared/typeGuard/read/Data";
 import { workFlow } from "~/domain/me";
 import { Interactor } from "./type";
 
-export const interactor: Interactor = ({ repository, useMe, envParam }) =>
+export const interactor: Interactor = ({ repository, useMe, payload }) =>
   lazy(() => {
     // useMeに渡す？
-    const service = workFlow.getLatestInformationAboutMe({ repository });
+    const service = workFlow.getLatestInformationAboutMe({
+      repository,
+      payload,
+    });
 
-    return service(envParam)
+    return service()
       .then(async (res) => {
         if (res instanceof DomainData) {
           const { Content } = await import(

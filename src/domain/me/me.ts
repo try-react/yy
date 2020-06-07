@@ -7,13 +7,12 @@ import {
 import { GatewayData, DomainData } from "~/shared/typeGuard/read/Data";
 
 type InFn = ReturnType<WorkFlow["getLatestInformationAboutMe"]>;
-type P = Parameters<InFn>[0];
 type R = ReturnType<InFn>;
 
 export const workFlow: WorkFlow = {
-  getLatestInformationAboutMe: ({ repository }) => (p: P): R =>
+  getLatestInformationAboutMe: ({ repository, payload }) => (): R =>
     repository
-      .fetchMe(p)
+      .fetchMe(payload)
       .then((res) => {
         if (res instanceof GatewayData) {
           return DomainData.of(res.value);

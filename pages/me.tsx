@@ -17,7 +17,7 @@ const Presenter = dynamic<Props>(
 const getParam = () => ({ id: 123 });
 const Page: NextPage = () => (
   // eslint-disable-next-line new-cap
-  <Presenter Component={Me({ repository, envParam: getParam() })} />
+  <Presenter Component={Me({ repository, payload: getParam() })} />
 );
 
 export default Page;

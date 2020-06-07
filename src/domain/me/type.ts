@@ -22,9 +22,8 @@ export type Repository = {
 export type WorkFlow = {
   getLatestInformationAboutMe: (p: {
     repository: Repository;
-  }) => (
-    p: ReadModel["payload"]
-  ) => Promise<
+    payload: ReadModel["payload"];
+  }) => () => Promise<
     | DomainData<ReadModel["object"]>
     | GatewayDataException
     | DomainDataException
