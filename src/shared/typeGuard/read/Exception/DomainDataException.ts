@@ -15,4 +15,12 @@ export class DomainDataException extends Error {
   static of(e: errObj): DomainDataException {
     return new DomainDataException(e);
   }
+
+  /**
+   *  `instanceof`で判定出来ない場合用
+   */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types
+  static isMaybeDomainDataException(v: any): boolean {
+    return v?.name === DomainDataException.name;
+  }
 }

@@ -20,3 +20,12 @@ describe("元データから変更がないか確認", () => {
     expect(exception.errObj).toEqual(createData());
   });
 });
+
+describe("JSON.stringify -> JSON.parseして objectの検証", () => {
+  it("maybeDomainDataValue", () => {
+    const exception = DomainDataException.of(createData());
+    const obj = JSON.parse(JSON.stringify(exception));
+
+    expect(DomainDataException.isMaybeDomainDataException(obj)).toEqual(true);
+  });
+});

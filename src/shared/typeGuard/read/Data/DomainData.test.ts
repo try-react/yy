@@ -23,3 +23,13 @@ describe("元データから変更がないか確認", () => {
     expect(domainData.value).toEqual(createData());
   });
 });
+
+describe("JSON.stringify -> JSON.parseして objectの検証", () => {
+  it("maybeDomainDataValue", () => {
+    const domainData = DomainData.of(createData());
+    const obj = JSON.parse(JSON.stringify(domainData));
+
+    expect(DomainData.isMaybeDomainData(obj)).toEqual(true);
+    expect(DomainData.getMaybeDomainDataValue(obj)).toEqual(domainData.value);
+  });
+});
