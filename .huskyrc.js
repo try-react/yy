@@ -5,7 +5,6 @@ module.exports = {
           yarn madge:domain && \
           yarn madge:useCase && \
           yarn madge:presenter && \
-          yarn madge:controller && \
           yarn madge:gateway && \
           yarn madge:externalInterface && \
           yarn madge:pages && \

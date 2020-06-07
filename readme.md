@@ -37,14 +37,6 @@ CleanArchitecture の構成に寄せています。特に意識している点�
 
 ---
 
-### src/controller/
-
-- pages とのつなぎ
-
-![-](./doc/madge/controller/graph.svg)
-
----
-
 ### src/presenter/
 
 - React の Component
