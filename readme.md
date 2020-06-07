@@ -26,6 +26,8 @@ CleanArchitecture の構成に寄せています。特に意識している点�
 
 - 非 SSR での動作を想定しています。
 
+![-](./doc/madge/graph.svg)
+
 ### pages/
 
 - Next.js の`pages`です。

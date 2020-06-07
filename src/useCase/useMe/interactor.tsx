@@ -29,7 +29,7 @@ export const interactor: Interactor = ({ repository, useMe, envParam }) =>
           res instanceof ExternalInterfaceDataException ||
           res instanceof DomainDataException
         ) {
-          console.dir(res);
+          // console.dir(res);
           const { Exception } = await import(
             "~/presenter/components/ecosystem/Me/Exception"
           );

@@ -8,6 +8,7 @@ module.exports = {
           yarn madge:gateway && \
           yarn madge:externalInterface && \
           yarn madge:pages && \
+          yarn madge:all && \
           git add ./doc && \
           yarn lint-staged
         `,
