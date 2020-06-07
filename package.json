@@ -11,7 +11,6 @@
     "// ================================================================================": "",
     "madge:domain": "yarn madge --exclude 'shared/' --image doc/madge/domain/graph.svg src/domain",
     "madge:useCase": "yarn madge --exclude 'shared/' --image doc/madge/useCase/graph.svg src/useCase",
-    "madge:controller": "yarn madge --exclude 'shared/' --image doc/madge/controller/graph.svg src/controller",
     "madge:presenter": "yarn madge --exclude 'shared/' --image doc/madge/presenter/graph.svg src/presenter",
     "madge:gateway": "yarn madge --exclude 'shared/' --image doc/madge/gateway/graph.svg src/gateway",
     "madge:externalInterface": "yarn madge --exclude 'shared/' --image doc/madge/externalInterface/graph.svg src/externalInterface",

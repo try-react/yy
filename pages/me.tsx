@@ -2,7 +2,8 @@ import React from "react";
 import type { ComponentProps } from "react";
 import type { NextPage } from "next";
 import dynamic from "next/dynamic";
-import { create } from "~/controller/me";
+import { interactor } from "~/useCase/useMe";
+import { repository } from "~/gateway/me";
 
 type Props = ComponentProps<
   typeof import("~/presenter/components/ecosystem/Me")["Me"]
@@ -12,6 +13,8 @@ const Presenter = dynamic<Props>(
   { ssr: false }
 );
 
-const Page: NextPage = () => <Presenter Component={create()} />;
+const Page: NextPage = () => (
+  <Presenter Component={interactor({ repository })} />
+);
 
 export default Page;
