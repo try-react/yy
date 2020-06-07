@@ -4,6 +4,14 @@ import { State as Props } from "~/useCase/useMe/type";
 
 export const Content: FC<Props> = (props) => (
   <>
-    名前:<span data-testid="authorName">{props.name}</span>
+    <span data-testid="Content" />
+    <ul>
+      <li>
+        名前:<span>{props.name}</span>
+      </li>
+      <li>
+        住所:<span>{props.address}</span>
+      </li>
+    </ul>
   </>
 );

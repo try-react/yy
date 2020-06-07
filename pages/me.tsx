@@ -2,7 +2,7 @@ import React from "react";
 import type { ComponentProps } from "react";
 import type { NextPage } from "next";
 import dynamic from "next/dynamic";
-import { interactor, useMe } from "~/useCase/useMe";
+import { interactor, useMe } from "~/useCase/useMe"; // useCaseと接するのは、しょうがない
 import { repository } from "~/gateway/me";
 
 type Props = ComponentProps<
