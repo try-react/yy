@@ -176,13 +176,9 @@ if (!obj.isErr) {
 JSON.parse(JSON.stringify(obj));
 ```
 
-## DDD Layer のマッチング
-
-![-](./doc/img/dddlayers.png)
-
 ## DDD と Clean Architecture のマッチング
 
-![-](./doc/img/layer.png.png)
+![-](./doc/img/layer.png)
 
 ## 画面表示までの流れ
 
