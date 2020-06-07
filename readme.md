@@ -39,8 +39,7 @@ CleanArchitecture の構成に寄せています。特に意識している点�
 
 ### src/controller/
 
-- React の Component
-- AtomicComponent によせています。
+- pages とのつなぎ
 
 ![-](./doc/madge/controller/graph.svg)
 
@@ -198,6 +197,6 @@ JSON.parse(JSON.stringify(obj));
 
 ![-](./doc/img/dddlayers.png)
 
-## データ取得までの流れ
+## 画面表示までの流れ
 
-![-](./doc/img/CleanArchitecture3.png)
+![-](./doc/img/CleanArchitecture.png)

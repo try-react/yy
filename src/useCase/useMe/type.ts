@@ -1,9 +1,15 @@
-import type { ReadModel } from "~/domain/me/type";
 import { Repository } from "~/domain/me/type";
 import type { WorkFlow } from "~/domain/me";
 import type { LazyExoticComponent, FC } from "react";
+import { DomainData } from "~/shared/typeGuard/read/Data";
 
-type InitData = ReadModel["object"];
+type FetchInitValueR = ReturnType<WorkFlow["fetchInitValue"]>;
+
+type InitData = ReturnType<FetchInitValueR> extends Promise<infer U>
+  ? U extends DomainData<infer V>
+    ? V
+    : never
+  : never;
 
 export type State = {
   name: string;
@@ -17,5 +23,5 @@ export type UseMe = (p: InitData) => State;
 export type Interactor = (p: {
   repository: Repository;
   useMe: UseMe;
-  envParam: Parameters<ReturnType<WorkFlow["fetchInitValue"]>>[0];
+  envParam: Parameters<FetchInitValueR>[0];
 }) => LazyExoticComponent<FC>;
