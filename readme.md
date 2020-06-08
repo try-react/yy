@@ -34,6 +34,14 @@ CleanArchitecture の構成に寄せています。特に意識している点�
 
 ---
 
+### src/controller/
+
+- Component の選択や初期値の準備をします
+
+![-](./doc/madge/controller/graph.svg)
+
+---
+
 ### src/presenter/
 
 - React の Component

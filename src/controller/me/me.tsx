@@ -6,25 +6,22 @@ import {
 } from "~/shared/typeGuard/Exception";
 import { DomainData } from "~/shared/typeGuard/Data";
 import type { LazyExoticComponent, FC } from "react";
-import { useMe } from "../../../../useCase/me/useMe";
-import { repository } from "~/gateway/me";
-import { workFlow } from "~/domain/me";
+import { useMe } from "~/useCase/me/useMe";
+import { interactor as _interactor } from "~/useCase/me/interactor";
 import type { UseReRender } from "~/presenter/hooks/useReRender";
+import { repository } from "~/gateway/me";
 
-const service = {
-  fetch: workFlow.getLatestInformationAboutMe({
-    repository,
-    payload: { id: 123 }, // location などから取得
-  }),
-};
+// このしょりは、 lazyのメソッド内でもOK
+const interactor = _interactor({
+  repository,
+  // location などから取得
+  payload: { id: 123 },
+});
 
-type ComponentInteractorType = (
-  p: ReturnType<UseReRender>
-) => LazyExoticComponent<FC>;
-
-export const ComponentInteractor: ComponentInteractorType = ({ reRender }) =>
+type Me = (p: ReturnType<UseReRender>) => LazyExoticComponent<FC>;
+export const me: Me = ({ reRender }) =>
   lazy(() =>
-    service
+    interactor
       .fetch()
       .then(async (res) => {
         if (res instanceof DomainData) {
@@ -33,7 +30,7 @@ export const ComponentInteractor: ComponentInteractorType = ({ reRender }) =>
           );
           const Component = () => (
             <Content
-              {...useMe({ initData: { ...res.value }, service, reRender })}
+              {...useMe({ initData: { ...res.value }, reRender, interactor })}
             />
           );
           return { default: Component };

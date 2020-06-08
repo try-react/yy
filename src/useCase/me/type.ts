@@ -1,7 +1,8 @@
 import type { WorkFlow, Me } from "~/domain/me";
 import { DomainData } from "~/shared/typeGuard/Data";
-type Status = "started" | "done" | "failed";
+import type { Interactor } from "./interactor";
 
+type Status = "started" | "done" | "failed";
 type GetLatestInformationAboutMeR = ReturnType<
   WorkFlow["getLatestInformationAboutMe"]
 >;
@@ -49,9 +50,7 @@ type UseMeR = {
 type UseMeP = {
   initData: InitData;
   reRender: () => void;
-  service: {
-    fetch: ReturnType<WorkFlow["getLatestInformationAboutMe"]>;
-  };
+  interactor: ReturnType<Interactor>;
 };
 
 export type UseMe = (p: UseMeP) => UseMeR;

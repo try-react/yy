@@ -30,7 +30,7 @@ export const useMe: UseMe = (props) => {
     if (reFetchFlg === undefined) return () => {};
     setStatus("started");
     let deletedFlg = false;
-    props.service
+    props.interactor
       .fetch()
       .then((r) => {
         if (deletedFlg) {
@@ -50,7 +50,7 @@ export const useMe: UseMe = (props) => {
         return e;
       });
     return () => (deletedFlg = true);
-  }, [props.service, reFetchFlg, setStatus]);
+  }, [props.interactor, reFetchFlg, setStatus]);
 
   return {
     domain: {

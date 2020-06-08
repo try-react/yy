@@ -2,7 +2,7 @@ import React from "react";
 import type { ComponentProps } from "react";
 import type { NextPage } from "next";
 import dynamic from "next/dynamic";
-import { ComponentInteractor } from "~/presenter/components/ecosystem/Me/ComponentInteractor";
+import { me } from "~/controller/me/me";
 import { useReRender } from "~/presenter/hooks/useReRender";
 
 type Props = ComponentProps<
@@ -16,7 +16,7 @@ const Presenter = dynamic<Props>(
 
 const Page: NextPage = () => (
   // eslint-disable-next-line new-cap
-  <Presenter Component={ComponentInteractor({ ...useReRender() })} />
+  <Presenter Component={me({ ...useReRender() })} />
 );
 
 export default Page;
