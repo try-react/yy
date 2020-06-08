@@ -3,8 +3,8 @@ import {
   DomainDataException,
   GatewayDataException,
   ExternalInterfaceDataException,
-} from "~/shared/typeGuard/read/Exception";
-import { GatewayData, DomainData } from "~/shared/typeGuard/read/Data";
+} from "~/shared/typeGuard/Exception";
+import { GatewayData, DomainData } from "~/shared/typeGuard/Data";
 
 type InFn = ReturnType<WorkFlow["getLatestInformationAboutMe"]>;
 type R = ReturnType<InFn>;

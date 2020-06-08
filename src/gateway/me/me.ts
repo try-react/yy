@@ -3,11 +3,11 @@ import { fetchMe } from "~/externalInterface/api/http/me";
 import {
   ExternalInterfaceData,
   GatewayData,
-} from "~/shared/typeGuard/read/Data";
+} from "~/shared/typeGuard/Data";
 import {
   ExternalInterfaceDataException,
   GatewayDataException,
-} from "~/shared/typeGuard/read/Exception";
+} from "~/shared/typeGuard/Exception";
 
 /**
  * 外の世界から取得した値を、こちらの世界のDomain.Repositoryが欲しい型に変更

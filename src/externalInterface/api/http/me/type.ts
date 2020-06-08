@@ -1,5 +1,5 @@
-import { ExternalInterfaceDataException } from "~/shared/typeGuard/read/Exception";
-import { ExternalInterfaceData } from "~/shared/typeGuard/read/Data";
+import { ExternalInterfaceDataException } from "~/shared/typeGuard/Exception";
+import { ExternalInterfaceData } from "~/shared/typeGuard/Data";
 
 /**
  * オリジナルのレスポンス

@@ -3,8 +3,8 @@ import {
   GatewayDataException,
   DomainDataException,
   ExternalInterfaceDataException,
-} from "~/shared/typeGuard/read/Exception";
-import { DomainData } from "~/shared/typeGuard/read/Data";
+} from "~/shared/typeGuard/Exception";
+import { DomainData } from "~/shared/typeGuard/Data";
 import type { LazyExoticComponent, FC } from "react";
 import type { UseMe } from "~/useCase/useMe/type";
 

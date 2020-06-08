@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { UseMe } from "./type";
-import { DomainData } from "~/shared/typeGuard/read/Data";
+import { DomainData } from "~/shared/typeGuard/Data";
 
 type Status = ReturnType<UseMe>["app"]["status"];
 

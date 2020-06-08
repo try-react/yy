@@ -1,6 +1,6 @@
 import { findPath } from "~/externalInterface/api/http/client/util";
 import { httpClient } from "~/externalInterface/api/http/client";
-import { ExternalInterfaceData } from "~/shared/typeGuard/read/Data";
+import { ExternalInterfaceData } from "~/shared/typeGuard/Data";
 import type { OResponse, Me, FetchMe } from "./type";
 
 const path = findPath("me");

@@ -1,10 +1,10 @@
-import { DomainDataException } from "~/shared/typeGuard/read/Exception/DomainDataException";
+import { DomainDataException } from "~/shared/typeGuard/Exception/DomainDataException";
 import {
   GatewayDataException,
   ExternalInterfaceDataException,
-} from "~/shared/typeGuard/read/Exception";
-import { DomainData, GatewayData } from "~/shared/typeGuard/read/Data";
-import { ReadModel as ReadModel_ } from "~/shared/typeGuard/read/Model";
+} from "~/shared/typeGuard/Exception";
+import { DomainData, GatewayData } from "~/shared/typeGuard/Data";
+import { ReadModel as ReadModel_ } from "~/shared/typeGuard/Model";
 
 export type Me = {
   id: string;
