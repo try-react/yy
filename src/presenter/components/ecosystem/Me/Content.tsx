@@ -3,16 +3,18 @@ import type { FC } from "react";
 import { UseMe } from "~/useCase/useMe/type";
 
 type Props = ReturnType<UseMe>;
+
 export const Content: FC<Props> = (props) => (
   <>
     <span data-testid="Content" />
     <ul>
       <li>
-        名前:<span>{props.name}</span>
+        名前:<span>{props.domain.name}</span>
       </li>
       <li>
-        住所:<span>{props.address}</span>
+        住所:<span>{props.domain.address}</span>
       </li>
     </ul>
+    <button onClick={props.operations.reFetch}>Re</button>
   </>
 );

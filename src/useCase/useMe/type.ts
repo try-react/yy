@@ -14,10 +14,15 @@ type InitData = ReturnType<GetLatestInformationAboutMeR> extends Promise<
   : never;
 
 type UseMeR = {
-  name: string;
-  address: string;
-  id: string;
-  flg: boolean;
+  domain: {
+    name: string;
+    address: string;
+    id: string;
+    flg: boolean;
+  };
+  operations: {
+    reFetch: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  };
 };
 
 type UseMeP = {

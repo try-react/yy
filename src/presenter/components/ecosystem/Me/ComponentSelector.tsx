@@ -35,7 +35,6 @@ export const ComponentSelector: ComponentSelectorType = ({ service, useMe }) =>
           res instanceof ExternalInterfaceDataException ||
           res instanceof DomainDataException
         ) {
-          // console.dir(res);
           const { Exception } = await import(
             "~/presenter/components/ecosystem/Me/Exception"
           );
