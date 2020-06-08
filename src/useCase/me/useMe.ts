@@ -17,9 +17,6 @@ type Status = ReturnType<UseMe>["app"]["status"];
  *
  * ## `lazy`, `Dynamic import`を使用した場合
  * 癖が強いが入り口から分けられるのは良い
- *
- * - https://github.com/try-react/xx/blob/master/src/useCase/util/hooks/useLazyComponent.ts
- * - https://github.com/try-react/xx/blob/master/pages/profile.tsx
  */
 export const useMe: UseMe = (props) => {
   const [data, setData] = useState(props.initData);
