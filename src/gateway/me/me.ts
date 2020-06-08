@@ -10,7 +10,7 @@ import {
 } from "~/shared/typeGuard/read/Exception";
 
 /**
- * 外の世界から取得した値を、こちらの世界のDomainのDomain.Repositoryが欲しい型に変更
+ * 外の世界から取得した値を、こちらの世界のDomain.Repositoryが欲しい型に変更
  */
 export const repository: Repository = {
   fetchMe: (p) =>

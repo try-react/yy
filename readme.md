@@ -6,8 +6,8 @@ CleanArchitecture の構成に寄せています。特に意識している点�
 
 ### domain について
 
-- 依存するのは、shared/と他の domain/以外に依存しない
 - ライブラリの依存を控える
+- class ベースでは無く関数で流れを表すようにする
 
 ### データの永続化や取得
 
@@ -16,23 +16,18 @@ CleanArchitecture の構成に寄せています。特に意識している点�
 ### データの種類について
 
 - どこで作られたデータかをわかりやすくする
-- 正常系, 想定内のエラー(Exception), 想定外のエラー(Error)を考慮する。
-
-### その他
-
-- ディレクトリ名は、だいたい単数で、小文字
+- 正常系, 想定内のエラー(Exception), 想定外のエラー(Error)を考慮する
 
 ### ディレクトリ構成
 
-- 非 SSR での動作を想定しています。
+- 非 SSR での動作を想定しています
 
 ![-](./doc/madge/graph.svg)
 
 ### pages/
 
-- Next.js の`pages`です。
-- src/pages/でも OK だが、単体テスト対象外なので、page/に配置しています。
-- SSR しない想定で実装しています。
+- Next.js の`pages`です
+- SSR しない想定で実装しています
 - CleanArchitecture で言う所の、UI や Web
 
 ![-](./doc/madge/pages/graph.svg)
@@ -42,25 +37,26 @@ CleanArchitecture の構成に寄せています。特に意識している点�
 ### src/presenter/
 
 - React の Component
-- AtomicComponent によせています。
+- AtomicComponent によせています
+- 1 つの ecosystem が、1 つのカスタム hooks を使用する
 
 ![-](./doc/madge/presenter/graph.svg)
 
 #### components/
 
-- Stateless Component の置き場です。
-- 正常系の Component, 例外系 Component, 取得中の Component を準備しています。
+- StatelessComponent にしています
+- 正常系の Component, 例外系 Component, API からデータ取得中の Component を準備しています
 
 #### containers/
 
-- 特殊な TSX を配置しています。例えば Error ハンドリング用の Component です。
+- 特殊な Component や TSX を配置しています。例えば Error ハンドリング用の Component です
 
 ---
 
 ### src/useCase/
 
 - CustomHooks 置き場
-- interactor 置き場
+- 1 つのカスタム hooks が、1 つの ecosystem を使用する
 
 ![-](./doc/madge/useCase/graph.svg)
 
@@ -68,8 +64,8 @@ CleanArchitecture の構成に寄せています。特に意識している点�
 
 ### src/domain/
 
-- class ベースではなく、関数ベースで実装いています。処理の流れを意識しています。
-- repository をもらい、repository 用のパラメタをもらい、実行結果を返す。ような流れの型です。
+- class ベースではなく、関数ベースで実装いています。処理の流れを意識しています
+- repository とパラメタをもらい、実行結果を返す。ような流れです
 
 ![-](./doc/madge/domain/graph.svg)
 
@@ -77,7 +73,7 @@ CleanArchitecture の構成に寄せています。特に意識している点�
 
 #### src/gateway/
 
-- src/domain/の`type Repository`の実装です。
+- src/domain/の`type Repository`の実装です
 
 ![-](./doc/madge/gateway/graph.svg)
 
@@ -119,16 +115,17 @@ if (!obj.isErr) {
 ## 用語の整理
 
 - Domain の WorkFlow  
-  処理の流れを書いています。validate して save などです。
+  処理の流れを書いています。UseCase から使用されます  
+  Domain に対しての API です
 
 - Domain の Repository  
   Domain からみて扱いやすいデータの集合です。CRUD に準拠するメソッドがはえています。実装はありません。
-  保存先や取得先の隠蔽がメリットです。  
-  オンメモリのような感じで扱える事を目的としています。  
+  保存先や取得先の隠蔽する事が目的です  
+  オンメモリのような感じで扱える事を目的としています  
   粒度は、整合性の単位です。(DB で言う所の、トランザクション相当)
 
 - gateway
-  Domain の Repository 向けの実装です。しかしここに処理を書くよりは、更に先に書いてそれを利用します。
+  Domain の Repository 向けの実装です。外界から入ってきたデータをこちらの世界にいれる際の中継役です
 
 - Entity  
   id が同一であれば、同じとみなす object です。
@@ -158,27 +155,6 @@ if (!obj.isErr) {
 - selectors  
   計算が必要な値`is` `has` `can` のような prefix がつく  
   domain の state に応じて生成される場合が多い
-
-### State の操作
-
-- Action  
-  Action は起こったイベントを表す
-
-- Reducer
-  Action と前の state から次の state を生成する  
-  再利用 OK むしろ推奨 HOF で再利用も OK
-
-- State  
-  State は JSON serializable なインターフェース（クラスや関数がない、オブジェクトや配列は OK）で、プログラムの状態を表す  
-  [これ](https://stackoverflow.com/questions/122102/what-is-the-most-efficient-way-to-deep-clone-an-object-in-javascript/122704#122704)で壊れないデータにしてね
-
-```js
-JSON.parse(JSON.stringify(obj));
-```
-
-## DDD と Clean Architecture のマッチング
-
-![-](./doc/img/layer.png)
 
 ## 画面表示までの流れ
 
