@@ -2,17 +2,22 @@ import { useState, useEffect } from "react";
 import { UseMe } from "./type";
 import { DomainData } from "~/shared/typeGuard/read/Data";
 
-type Status = "done" | "failed" | "started";
+type Status = ReturnType<UseMe>["app"]["status"];
 
 /**
- * 再取得に関しての整理
+ * 再取得に関しての整理 例えば、**もっとみる** などの事
  *
- * `useEffect`
- * 状態管理が複雑すぎる
+ * ## `useEffect`を使用した場合
+ * 一応書いてみたがぜんぜんだめ
+ *
+ * しっかり書くと状態管理が複雑すぎる
+ * 再取得失敗した場合に、正常系Componentに任せる事になるので全然だめ
  *
  * ---
  *
- * 再帰処理の応用のこのほうが良い
+ * ## `lazy`, `Dynamic import`を使用した場合
+ * 癖が強いが入り口から分けられるのは良い
+ *
  * - https://github.com/try-react/xx/blob/master/src/useCase/util/hooks/useLazyComponent.ts
  * - https://github.com/try-react/xx/blob/master/pages/profile.tsx
  */
@@ -37,8 +42,8 @@ export const useMe: UseMe = (props) => {
           setStatus("done");
           return;
         }
-
-        Promise.reject(r);
+        // eslint-disable-next-line consistent-return
+        return Promise.reject(r);
       })
       .catch<never>((e) => {
         setStatus("failed");
