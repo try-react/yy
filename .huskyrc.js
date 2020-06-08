@@ -2,6 +2,7 @@ module.exports = {
     hooks: {
       // TODO npm-run-allにしようかしら...
       "pre-commit": `
+          yarn jscpd src && \
           yarn madge:domain && \
           yarn madge:useCase && \
           yarn madge:controller && \
