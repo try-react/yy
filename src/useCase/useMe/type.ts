@@ -1,5 +1,7 @@
-import type { WorkFlow } from "~/domain/me";
+import type { WorkFlow, Me } from "~/domain/me";
 import { DomainData } from "~/shared/typeGuard/read/Data";
+
+type Status = "started" | "done" | "failed";
 
 type GetLatestInformationAboutMeR = ReturnType<
   WorkFlow["getLatestInformationAboutMe"]
@@ -14,13 +16,29 @@ type InitData = ReturnType<GetLatestInformationAboutMeR> extends Promise<
   : never;
 
 type UseMeR = {
+  /**
+   * meの情報
+   */
   domain: {
-    name: string;
-    address: string;
-    id: string;
-    flg: boolean;
+    me: Me;
+  };
+  app: {
+    /**
+     * 再取得中の状態の**テキスト**
+     * デバッグ用に表示
+     */
+    status: Status;
+  };
+  selectors: {
+    /**
+     * 再取得中の状態 デバッグ用に表示
+     */
+    isAsync: boolean;
   };
   operations: {
+    /**
+     * 再取得処理の発火
+     */
     reFetch: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   };
 };
@@ -31,4 +49,5 @@ type UseMeP = {
     fetch: ReturnType<WorkFlow["getLatestInformationAboutMe"]>;
   };
 };
+
 export type UseMe = (p: UseMeP) => UseMeR;

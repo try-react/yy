@@ -9,12 +9,18 @@ export const Content: FC<Props> = (props) => (
     <span data-testid="Content" />
     <ul>
       <li>
-        名前:<span>{props.domain.name}</span>
+        名前:<span>{props.domain.me.name}</span>
       </li>
       <li>
-        住所:<span>{props.domain.address}</span>
+        住所:<span>{props.domain.me.address}</span>
       </li>
     </ul>
-    <button onClick={props.operations.reFetch}>Re</button>
+    <button
+      onClick={props.operations.reFetch}
+      disabled={props.selectors.isAsync}
+    >
+      Re
+    </button>
+    <span>{props.app.status}</span>
   </>
 );

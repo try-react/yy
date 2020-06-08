@@ -6,7 +6,19 @@ import {
 import { DomainData, GatewayData } from "~/shared/typeGuard/read/Data";
 import { ReadModel as ReadModel_ } from "~/shared/typeGuard/read/Model";
 
-type Me = { name: string; address: string; id: string; flg: boolean };
+export type Me = {
+  id: string;
+  /**
+   * meの名前
+   */
+  name: string;
+  /**
+   * 住所
+   */
+  address: string;
+  flg: boolean;
+};
+
 type ReadModel = ReadModel_<Me, { id: number }>;
 
 export type Repository = {
