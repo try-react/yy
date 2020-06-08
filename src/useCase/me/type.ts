@@ -39,11 +39,16 @@ type UseMeR = {
      * 再取得処理の発火
      */
     reFetch: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+    /**
+     * 画面の再レンダリング
+     */
+    reRender: () => void;
   };
 };
 
 type UseMeP = {
   initData: InitData;
+  reRender: () => void;
   service: {
     fetch: ReturnType<WorkFlow["getLatestInformationAboutMe"]>;
   };

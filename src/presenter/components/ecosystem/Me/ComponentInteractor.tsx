@@ -6,26 +6,35 @@ import {
 } from "~/shared/typeGuard/Exception";
 import { DomainData } from "~/shared/typeGuard/Data";
 import type { LazyExoticComponent, FC } from "react";
-import type { UseMe } from "~/useCase/useMe/type";
+import { useMe } from "../../../../useCase/me/useMe";
+import { repository } from "~/gateway/me";
+import { workFlow } from "~/domain/me";
+import type { UseReRender } from "~/presenter/hooks/useReRender";
 
-type ComponentSelectorP = {
-  service: Parameters<UseMe>[0]["service"];
-  useMe: UseMe;
+const service = {
+  fetch: workFlow.getLatestInformationAboutMe({
+    repository,
+    payload: { id: 123 }, // location などから取得
+  }),
 };
-type ComponentSelectorR = LazyExoticComponent<FC>;
-type ComponentSelectorType = (p: ComponentSelectorP) => ComponentSelectorR;
 
-export const ComponentSelector: ComponentSelectorType = ({ service, useMe }) =>
+type ComponentInteractorType = (
+  p: ReturnType<UseReRender>
+) => LazyExoticComponent<FC>;
+
+export const ComponentInteractor: ComponentInteractorType = ({ reRender }) =>
   lazy(() =>
     service
       .fetch()
       .then(async (res) => {
         if (res instanceof DomainData) {
           const { Content } = await import(
-            "~/presenter/components/domain/Me/Content"
+            "~/presenter/components/ecosystem/Me/Content"
           );
           const Component = () => (
-            <Content {...useMe({ initData: { ...res.value }, service })} />
+            <Content
+              {...useMe({ initData: { ...res.value }, service, reRender })}
+            />
           );
           return { default: Component };
         }
@@ -36,7 +45,7 @@ export const ComponentSelector: ComponentSelectorType = ({ service, useMe }) =>
           res instanceof DomainDataException
         ) {
           const { Exception } = await import(
-            "~/presenter/components/domain/Me/Exception"
+            "~/presenter/components/ecosystem/Me/Exception"
           );
           const Component = () => <Exception />;
 

@@ -1,9 +1,6 @@
 import type { Repository } from "~/domain/me";
 import { fetchMe } from "~/externalInterface/api/http/me";
-import {
-  ExternalInterfaceData,
-  GatewayData,
-} from "~/shared/typeGuard/Data";
+import { ExternalInterfaceData, GatewayData } from "~/shared/typeGuard/Data";
 import {
   ExternalInterfaceDataException,
   GatewayDataException,

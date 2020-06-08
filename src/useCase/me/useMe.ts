@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { UseMe } from "./type";
+import type { UseMe } from "~/useCase/me/type";
 import { DomainData } from "~/shared/typeGuard/Data";
 
 type Status = ReturnType<UseMe>["app"]["status"];
@@ -68,6 +68,7 @@ export const useMe: UseMe = (props) => {
       reFetch: () => {
         setReFetchFlg(!reFetchFlg);
       },
+      reRender: props.reRender,
     },
   };
 };
