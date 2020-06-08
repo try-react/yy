@@ -1,6 +1,5 @@
 import type { WorkFlow, Me } from "~/domain/me";
 import { DomainData } from "~/shared/typeGuard/read/Data";
-
 type Status = "started" | "done" | "failed";
 
 type GetLatestInformationAboutMeR = ReturnType<

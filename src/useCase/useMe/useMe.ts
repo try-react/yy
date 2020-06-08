@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { UseMe } from "./type";
 import { DomainData } from "~/shared/typeGuard/read/Data";
 
-type Status = ReturnType<UseMe>["app"]["status"];
+type Status = "done" | "failed" | "started";
 
 /**
  * 再取得に関しての整理
@@ -45,7 +45,7 @@ export const useMe: UseMe = (props) => {
         return e;
       });
     return () => (deletedFlg = true);
-  }, [props.service, reFetchFlg]);
+  }, [props.service, reFetchFlg, setStatus]);
 
   return {
     domain: {

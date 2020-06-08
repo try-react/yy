@@ -37,8 +37,7 @@ CleanArchitecture の構成に寄せています。特に意識している点�
 ### src/presenter/
 
 - React の Component
-- AtomicComponent によせています
-- 1 つの ecosystem が、1 つのカスタム hooks を使用する
+- domain コンポーネントと、useCase のカスタムフックスが 1:1
 
 ![-](./doc/madge/presenter/graph.svg)
 
@@ -56,7 +55,6 @@ CleanArchitecture の構成に寄せています。特に意識している点�
 ### src/useCase/
 
 - CustomHooks 置き場
-- 1 つのカスタム hooks が、1 つの ecosystem を使用する
 
 ![-](./doc/madge/useCase/graph.svg)
 

@@ -5,14 +5,14 @@ import dynamic from "next/dynamic";
 import { repository } from "~/gateway/me";
 import { useMe } from "~/useCase/useMe";
 import { workFlow } from "~/domain/me";
-import { ComponentSelector } from "~/presenter/components/ecosystem/Me/ComponentSelector";
+import { ComponentSelector } from "~/presenter/components/domain/Me/ComponentSelector";
 
 type Props = ComponentProps<
-  typeof import("~/presenter/components/ecosystem/Me")["Me"]
+  typeof import("~/presenter/components/domain/Me")["Me"]
 >;
 
 const Presenter = dynamic<Props>(
-  () => import("~/presenter/components/ecosystem/Me").then((_) => _.Me),
+  () => import("~/presenter/components/domain/Me").then((_) => _.Me),
   { ssr: false }
 );
 

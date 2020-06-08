@@ -22,7 +22,7 @@ export const ComponentSelector: ComponentSelectorType = ({ service, useMe }) =>
       .then(async (res) => {
         if (res instanceof DomainData) {
           const { Content } = await import(
-            "~/presenter/components/ecosystem/Me/Content"
+            "~/presenter/components/domain/Me/Content"
           );
           const Component = () => (
             <Content {...useMe({ initData: { ...res.value }, service })} />
@@ -36,7 +36,7 @@ export const ComponentSelector: ComponentSelectorType = ({ service, useMe }) =>
           res instanceof DomainDataException
         ) {
           const { Exception } = await import(
-            "~/presenter/components/ecosystem/Me/Exception"
+            "~/presenter/components/domain/Me/Exception"
           );
           const Component = () => <Exception />;
 
