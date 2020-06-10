@@ -4,12 +4,9 @@ import type { NextPage } from "next";
 import dynamic from "next/dynamic";
 import { controller } from "~/app/controller/Me";
 import { useReRender } from "~/app/presenter/hooks/common/useReRender";
+import type { Me } from "~/app/presenter/components/Me";
 
-type Props = ComponentProps<
-  typeof import("~/app/presenter/components/Me")["Me"]
->;
-
-const Presenter = dynamic<Props>(
+const Presenter = dynamic<ComponentProps<typeof Me>>(
   () => import("~/app/presenter/components/Me").then((_) => _.Me),
   { ssr: false }
 );
