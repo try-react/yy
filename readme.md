@@ -1,7 +1,5 @@
 # Web アプリ
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/1576bb54-010d-4250-945c-ff9c5b2612fe/deploy-status)](https://app.netlify.com/sites/yy-jscpd/deploys)
-
 ## 概要
 
 CleanArchitecture の構成に寄せています。特に意識している点は下記の通りです。
@@ -173,3 +171,5 @@ if (!obj.isErr) {
 ## コードの重複度合い
 
 - https://yy-jscpd.netlify.app/jscpd/jscpd-report
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1576bb54-010d-4250-945c-ff9c5b2612fe/deploy-status)](https://app.netlify.com/sites/yy-jscpd/deploys)
