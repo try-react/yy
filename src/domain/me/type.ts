@@ -14,15 +14,16 @@ export type Me = {
   flg: boolean;
 };
 
+type Payload = { id: number };
 export type Repository = {
-  fetchMe: (p: {
-    id: number;
-  }) => Promise<GatewayData<Me> | ExternalInterfaceDataException>;
+  fetchMe: (
+    p: Payload
+  ) => Promise<GatewayData<Me> | ExternalInterfaceDataException>;
 };
 
 export type WorkFlow = {
   getLatestInformationAboutMe: (p: {
     repository: Repository;
-    payload: { id: number };
+    payload: Payload;
   }) => () => ReturnType<Repository["fetchMe"]>;
 };

@@ -4,13 +4,10 @@ import { GatewayData } from "~/shared/typeGuard/Data";
 import type { LazyExoticComponent, FC } from "react";
 import { useMe } from "~/app/presenter/hooks/me";
 import { interactor } from "~/useCase/me/interactor";
-import type { UseReRender } from "~/app/presenter/hooks/common/useReRender";
 import { repository } from "~/app/gateway/repository/me";
+import type { InputData } from "~/useCase/me/type";
 
-type MeType = (
-  p: ReturnType<UseReRender> & { id: number }
-) => LazyExoticComponent<FC>;
-
+type MeType = (p: InputData) => LazyExoticComponent<FC>;
 const Me: MeType = ({ reRender, id }) =>
   lazy(() => {
     const service = interactor({

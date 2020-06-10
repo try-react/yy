@@ -1,21 +1,9 @@
-import type { WorkFlow, Me } from "~/domain/me";
-import { DomainData } from "~/shared/typeGuard/Data";
-import type { Interactor } from "~/useCase/me/type";
+import type { Me } from "~/domain/me";
+import type { InitData } from "~/useCase/me/type";
 
 type Status = "started" | "done" | "failed";
-type GetLatestInformationAboutMeR = ReturnType<
-  WorkFlow["getLatestInformationAboutMe"]
->;
 
-type InitData = ReturnType<GetLatestInformationAboutMeR> extends Promise<
-  infer U
->
-  ? U extends DomainData<infer V>
-    ? V
-    : never
-  : never;
-
-type UseMeR = {
+type State = {
   /**
    * meの情報
    */
@@ -47,10 +35,4 @@ type UseMeR = {
   };
 };
 
-type UseMeP = {
-  initData: InitData;
-  reRender: () => void;
-  service: ReturnType<Interactor>;
-};
-
-export type UseMe = (p: UseMeP) => UseMeR;
+export type UseMe = (p: InitData) => State;
