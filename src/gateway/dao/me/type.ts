@@ -11,6 +11,9 @@ export type OResponse = {
   address_x_: string;
 };
 
+/**
+ * スネークケースから、キャメルケースに変更します
+ */
 type Me = {
   id: string;
   name: string;
@@ -20,8 +23,6 @@ type Me = {
 type FetchMeR = ExternalInterfaceData<Me> | ExternalInterfaceDataException;
 
 /**
- * こちらの世界で扱いやすいようにする
- * 例えば、スネークケースから、キャメルケースに変更
  * ここでは、Repositoryの事は、意識しない
  */
 export type ORM = (r: OResponse) => Me;
