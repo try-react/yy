@@ -1,7 +1,8 @@
 import { ExternalInterfaceDataException } from "~/shared/typeGuard/Exception";
 import { GatewayData } from "~/shared/typeGuard/Data";
+import { ReadonlyDeep } from "type-fest";
 
-export type Me = {
+export type Me = ReadonlyDeep<{
   id: string;
   /**
    * meの名前
@@ -12,18 +13,18 @@ export type Me = {
    */
   address: string;
   flg: boolean;
-};
+}>;
 
 type Payload = { id: number };
-export type Repository = {
+export type Repository = ReadonlyDeep<{
   fetchMe: (
     p: Payload
   ) => Promise<GatewayData<Me> | ExternalInterfaceDataException>;
-};
+}>;
 
-export type WorkFlow = {
+export type WorkFlow = ReadonlyDeep<{
   getLatestInformationAboutMe: (p: {
     repository: Repository;
     payload: Payload;
   }) => () => ReturnType<Repository["fetchMe"]>;
-};
+}>;
