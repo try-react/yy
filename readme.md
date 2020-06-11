@@ -4,27 +4,25 @@
 
 CleanArchitecture の構成に寄せています。特に意識している点は下記の通りです。
 
-### domain について
+- domain について
 
-- ライブラリの依存を控える
-- class ベースでは無く関数で流れを表すようにする
+  - ライブラリの依存を控える
+  - class ベースでは無く関数で流れを表すようにする
 
-### データの永続化や取得
+- データの永続化や取得
 
-- domain の repository と、gateway で抽象化する
+  - domain の repository と、gateway で抽象化する
 
-### 動作環境
+- `catch` どこで必要か？
 
-- **非**SSR での使用を想定
+  - 一番外側のレイヤーでする。内側のレイヤーでは`catch`を不要にする
 
----
+- `repository`はどこでもらうか？
 
-### pages/
+  - controller でもらう
 
-- Next.js の`pages`です
-- CleanArchitecture で言う所の UI です。しかしアプリの特性上 presenter も兼ねています
-
-![-](https://yy-jscpd.netlify.app/madge/pages/graph.svg)
+- 動作環境
+  - **非**SSR での使用を想定
 
 ---
 
@@ -81,6 +79,13 @@ CleanArchitecture の構成に寄せています。特に意識している点�
 ### src/shared/
 
 - 全レイヤーで使用する処理を置いています。
+
+### pages/
+
+- Next.js の`pages`です
+- CleanArchitecture で言う所の UI です。しかしアプリの特性上 presenter も兼ねています
+
+![-](https://yy-jscpd.netlify.app/madge/pages/graph.svg)
 
 ### 全体像
 
@@ -164,15 +169,6 @@ if (!obj.isErr) {
 ## 役割
 
 ![-](./doc/img/CleanArchitecture2.png)
-
-## 方針など
-
-- `catch` どこで必要か？
-
-  - 一番外側のレイヤーでする
-
-- `repository`はどこでもらうか？
-  - controller でもらう
 
 ## コードの重複度合い
 
