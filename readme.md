@@ -24,72 +24,13 @@ CleanArchitecture の構成に寄せています。特に意識している点�
 
 ## 依存関係と責務
 
-### src/controller/
-
-- Component の選択や初期値の準備をします
-
-![-](https://yy-jscpd.netlify.app/madge/controller/graph.svg)
-
-### src/presenter/
-
-- components
-  - StatelessComponent です
-  - 正常系の Component, 例外系 Component, 取得中 Component を準備しています。
-- containers
-  - 特殊な Component や TSX を配置しています。例えば Error ハンドリング用の Component です
-- hooks
-  - hooks を配置しています
-
-![-](https://yy-jscpd.netlify.app/madge/presenter/graph.svg)
-
-#### src/gateway/
-
-- src/domain/の`type Repository`の実装
-- 外部に通信する際の中継役
-
-![-](https://yy-jscpd.netlify.app/madge/gateway/graph.svg)
-
----
-
-### src/useCase/
-
-- domain と app の中継役
-
-![-](https://yy-jscpd.netlify.app/madge/useCase/graph.svg)
-
----
-
-### src/domain/
-
-- class ベースではなく、関数ベースで実装いています。処理の流れを意識しています
-- repository とパラメタをもらい、実行結果を返す。ような流れです
-
-![-](https://yy-jscpd.netlify.app/madge/domain/graph.svg)
-
----
-
-#### src/externalInterface/
-
-- src/gateway/からよばれます
-
-![-](https://yy-jscpd.netlify.app/madge/externalInterface/graph.svg)
-
-### src/shared/
-
-- 全レイヤーで使用する処理を置いています。
-
-### pages/
-
-- Next.js の`pages`です
-- CleanArchitecture で言う所の UI です。しかしアプリの特性上 presenter も兼ねています
-
-![-](https://yy-jscpd.netlify.app/madge/pages/graph.svg)
-
 ### 全体像
 
 ![-](https://yy-jscpd.netlify.app/madge/graph.svg)
 
----
+### pages/
+
+![-](https://yy-jscpd.netlify.app/madge/pages/graph.svg)
 
 ## データの流れと TypeGuard
 
