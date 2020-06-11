@@ -2,16 +2,10 @@ import type { Repository } from "~/domain/me/type";
 import { DomainData } from "~/shared/typeGuard/Data";
 
 /**
- * controllerが外部からもらう値
- * SPAだと、URLパラメタやpagesからもらう値
- */
-export type InputData = {
-  id: number;
-  reRender: () => void;
-};
-
-/**
- * domainのworkFlowを使い値を生成する
+ * `controller`でキックされます
+ * `hooks`や`Component`の初期値を取得します
+ * 初期値を後は、自分自身を、`hooks`や`Component`に渡します
+ * その後再取得処理などで利用します
  */
 export type Interactor = (p: {
   repository: Repository;
@@ -20,13 +14,14 @@ export type Interactor = (p: {
   fetch: () => ReturnType<Repository["fetchMe"]>;
 };
 
-// ----------------
-
-type InitData = ReturnType<Repository["fetchMe"]> extends Promise<infer U>
-  ? U extends DomainData<infer V>
-    ? V
-    : never
-  : never;
+/**
+ * controllerが外部からもらう値
+ * SPAだと、URLパラメタやpagesからもらう値
+ */
+export type InputData = {
+  id: number;
+  reRender: () => void;
+};
 
 /**
  * presenter向けの初期値
@@ -38,3 +33,9 @@ export type Props = {
   initData: InitData;
   reRender: () => void;
 };
+
+type InitData = ReturnType<Repository["fetchMe"]> extends Promise<infer U>
+  ? U extends DomainData<infer V>
+    ? V
+    : never
+  : never;
