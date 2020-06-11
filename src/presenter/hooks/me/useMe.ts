@@ -6,7 +6,7 @@ import { GatewayData } from "~/shared/typeGuard/Data";
 type Status = ReturnType<UseMe>["app"]["status"];
 export const useMe: UseMe = ({ initData, service, reRender }) => {
   const [data, setData] = useState(initData);
-  const { status, setReFetchFlg, reFetchFlg } = useRefetch({
+  const { status, reFetch } = useRefetch({
     service,
     setData,
   });
@@ -24,9 +24,7 @@ export const useMe: UseMe = ({ initData, service, reRender }) => {
       isAsync: status !== "done",
     },
     operations: {
-      reFetch: () => {
-        setReFetchFlg(!reFetchFlg);
-      },
+      reFetch,
       reRender,
     },
   };
@@ -37,8 +35,7 @@ type UseRefetch = (p: {
   setData: Dispatch<SetStateAction<Parameters<UseMe>[0]["initData"]>>;
 }) => {
   status: Status;
-  setReFetchFlg: Dispatch<SetStateAction<boolean | undefined>>;
-  reFetchFlg: boolean | undefined;
+  reFetch: () => void;
 };
 /**
  * 再取得に関して (**もっとみる** などの事)
@@ -78,5 +75,10 @@ const useRefetch: UseRefetch = ({ service, setData }) => {
     return () => (deletedFlg = true);
   }, [reFetchFlg, service, setData]);
 
-  return { status, setReFetchFlg, reFetchFlg };
+  return {
+    status,
+    reFetch: () => {
+      setReFetchFlg(!reFetchFlg);
+    },
+  };
 };
