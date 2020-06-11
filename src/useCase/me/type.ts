@@ -5,7 +5,7 @@ type GetLatestInformationAboutMeR = ReturnType<
   WorkFlow["getLatestInformationAboutMe"]
 >;
 
-type DomainDataObj = ReturnType<GetLatestInformationAboutMeR> extends Promise<
+type InitData = ReturnType<GetLatestInformationAboutMeR> extends Promise<
   infer U
 >
   ? U extends DomainData<infer V>
@@ -26,10 +26,10 @@ export type InputData = {
  * presenter向けの初期値
  * InputDataとUseCaseを使い生成
  */
-export type InitData = {
+export type Props = {
   reRender: () => void;
   service: ReturnType<Interactor>;
-  initData: DomainDataObj;
+  initData: InitData;
 };
 
 /**

@@ -1,5 +1,5 @@
 import type { Me } from "~/domain/me";
-import type { InitData } from "~/useCase/me/type";
+import type { Props } from "~/useCase/me/type";
 
 type Status = "started" | "done" | "failed";
 
@@ -35,4 +35,4 @@ type State = {
   };
 };
 
-export type UseMe = (p: InitData) => State;
+export type UseMe = (p: Props) => State;
