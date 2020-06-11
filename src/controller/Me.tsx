@@ -8,12 +8,12 @@ import { repository } from "~/gateway/repository/me";
 import type { InputData } from "~/useCase/me/type";
 
 type MeType = (p: InputData) => LazyExoticComponent<FC>;
-const Me: MeType = ({ reRender, id }) =>
+const Me: MeType = ({ id, reRender }) =>
   lazy(() => {
     // importされたタイミングで再生成
     const service = interactor({
       repository,
-      payload: { id },
+      id,
     });
 
     return service()
@@ -23,7 +23,7 @@ const Me: MeType = ({ reRender, id }) =>
           const { Content } = await import("~/presenter/components/Me/Content");
           const Component = () => (
             <Content
-              {...useMe({ initData: { ...res.value }, reRender, service })}
+              {...useMe({ initData: { ...res.value }, service, reRender })}
             />
           );
           return { default: Component };

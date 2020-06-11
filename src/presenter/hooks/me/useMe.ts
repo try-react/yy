@@ -27,7 +27,7 @@ export const useMe: UseMe = ({ initData, service, reRender }) => {
       reFetch: () => {
         setReFetchFlg(!reFetchFlg);
       },
-      reRender: reRender,
+      reRender,
     },
   };
 };

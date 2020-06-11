@@ -21,12 +21,12 @@ export const Content: FC<Props> = (props) => (
         onClick={props.operations.reFetch}
         disabled={props.selectors.isAsync}
       >
-        Re: Fetch
+        Re-Fetch
       </button>
       <span>{props.app.status}</span>
     </div>
     <div>
-      <button onClick={props.operations.reRender}>Re: Render</button>
+      <button onClick={props.operations.reRender}>Re-Render</button>
     </div>
   </>
 );
