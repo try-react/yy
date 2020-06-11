@@ -1,5 +1,6 @@
 import type { Repository } from "~/domain/me/type";
 import { DomainData } from "~/shared/typeGuard/Data";
+import { ReadonlyDeep } from "type-fest";
 
 /**
  * `controller`でキックされます
@@ -18,10 +19,10 @@ export type Interactor = (p: {
  * controllerが外部からもらう値
  * SPAだと、URLパラメタやpagesからもらう値
  */
-export type InputData = {
+export type InputData = ReadonlyDeep<{
   id: number;
   reRender: () => void;
-};
+}>;
 
 /**
  * presenter向けの初期値
@@ -31,7 +32,7 @@ export type InputData = {
 export type Props = {
   service: ReturnType<Interactor>;
   initData: InitData;
-  reRender: () => void;
+  reRender: InputData["reRender"];
 };
 
 type InitData = ReturnType<Repository["fetchMe"]> extends Promise<infer U>
