@@ -10,6 +10,7 @@ import type { InputData } from "~/useCase/me/type";
 type MeType = (p: InputData) => LazyExoticComponent<FC>;
 const Me: MeType = ({ reRender, id }) =>
   lazy(() => {
+    // importされたタイミングで再生成
     const service = interactor({
       repository,
       payload: { id },
