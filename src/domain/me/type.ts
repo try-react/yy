@@ -15,18 +15,16 @@ export type Me = ReadonlyDeep<{
   flg: boolean;
 }>;
 
-type Parameter = ReadonlyDeep<{ id: number }>;
-
 export type Repository = ReadonlyDeep<{
-  fetchMe: (
-    p: Parameter
-  ) => Promise<GatewayData<Me> | ExternalInterfaceDataException>;
+  fetchMe: (p: {
+    id: number;
+  }) => Promise<GatewayData<Me> | ExternalInterfaceDataException>;
 }>;
 
 export type WorkFlow = ReadonlyDeep<{
   getLatestInformationAboutMe: (p: {
     repository: Repository;
-    payload: Parameter;
+    payload: Parameters<Repository["fetchMe"]>[0];
   }) => () => ReturnType<Repository["fetchMe"]>;
 }>;
 
