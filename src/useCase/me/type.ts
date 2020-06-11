@@ -4,8 +4,8 @@ import { DomainData } from "~/shared/typeGuard/Data";
 /**
  * `controller`でキックされます
  * `hooks`や`Component`の初期値を取得します
- * 初期値を後は、自分自身を、`hooks`や`Component`に渡します
- * その後再取得処理などで利用します
+ * 初期値取得後は、自分自身を`hooks`や`Component`に渡します
+ * 再取得処理などで利用します
  */
 export type Interactor = (p: {
   repository: Repository;
