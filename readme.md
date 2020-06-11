@@ -159,6 +159,10 @@ if (!obj.isErr) {
 
 ![-](./doc/img/CleanArchitecture.png)
 
+## 役割
+
+![-](./doc/img/CleanArchitecture2.png)
+
 ## 方針など
 
 - `catch` どこで必要か？
