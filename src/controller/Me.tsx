@@ -2,9 +2,9 @@ import React, { lazy } from "react";
 import { ExternalInterfaceDataException } from "~/shared/typeGuard/Exception";
 import { GatewayData } from "~/shared/typeGuard/Data";
 import type { LazyExoticComponent, FC } from "react";
-import { useMe } from "~/app/presenter/hooks/me";
+import { useMe } from "~/presenter/hooks/me";
 import { interactor } from "~/useCase/me/interactor";
-import { repository } from "~/app/gateway/repository/me";
+import { repository } from "~/gateway/repository/me";
 import type { InputData } from "~/useCase/me/type";
 
 type MeType = (p: InputData) => LazyExoticComponent<FC>;
@@ -19,9 +19,7 @@ const Me: MeType = ({ reRender, id }) =>
       .fetch()
       .then(async (res) => {
         if (res instanceof GatewayData) {
-          const { Content } = await import(
-            "~/app/presenter/components/Me/Content"
-          );
+          const { Content } = await import("~/presenter/components/Me/Content");
           const Component = () => (
             <Content
               {...useMe({ initData: { ...res.value }, reRender, service })}
@@ -32,7 +30,7 @@ const Me: MeType = ({ reRender, id }) =>
 
         if (res instanceof ExternalInterfaceDataException) {
           const { Exception } = await import(
-            "~/app/presenter/components/Me/Exception"
+            "~/presenter/components/Me/Exception"
           );
           const Component = () => <Exception />;
 

@@ -2,12 +2,12 @@ import React from "react";
 import type { ComponentProps } from "react";
 import type { NextPage } from "next";
 import dynamic from "next/dynamic";
-import { controller } from "~/app/controller/Me";
-import { useReRender } from "~/app/presenter/hooks/common/useReRender";
-import type { Me } from "~/app/presenter/components/Me";
+import { controller } from "~/controller/Me";
+import { useReRender } from "~/presenter/hooks/common/useReRender";
+import type { Me } from "~/presenter/components/Me";
 
 const Presenter = dynamic<ComponentProps<typeof Me>>(
-  () => import("~/app/presenter/components/Me").then((_) => _.Me),
+  () => import("~/presenter/components/Me").then((_) => _.Me),
   { ssr: false }
 );
 

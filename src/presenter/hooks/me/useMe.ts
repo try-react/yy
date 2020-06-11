@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import type { Dispatch, SetStateAction } from "react";
-import type { UseMe } from "~/app/presenter/hooks/me/type";
+import type { UseMe } from "~/presenter/hooks/me/type";
 import { GatewayData } from "~/shared/typeGuard/Data";
 
 type Status = ReturnType<UseMe>["app"]["status"];

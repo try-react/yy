@@ -1,5 +1,5 @@
 import type { Repository } from "~/domain/me";
-import { dao } from "~/app/gateway/dao/me";
+import { dao } from "~/gateway/dao/me";
 import { ExternalInterfaceData, GatewayData } from "~/shared/typeGuard/Data";
 
 /**
