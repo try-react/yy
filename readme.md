@@ -38,7 +38,7 @@ CleanArchitecture の構成に寄せています。特に意識している点�
 
 - components
   - StatelessComponent です
-  - 正常系の Component, 例外系 Component, SuspenseComponent をじゅんびしています
+  - 正常系の Component, 例外系 Component, 取得中 Component を準備しています。
 - containers
   - 特殊な Component や TSX を配置しています。例えば Error ハンドリング用の Component です
 - hooks
@@ -172,7 +172,7 @@ if (!obj.isErr) {
   - 一番外側のレイヤーでする
 
 - `repository`はどこでもらうか？
-  - app/controller でもらう
+  - controller でもらう
 
 ## コードの重複度合い
 
