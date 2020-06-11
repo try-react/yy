@@ -28,13 +28,13 @@ CleanArchitecture の構成に寄せています。特に意識している点�
 
 ---
 
-### src/app/
-
-### src/app/controller/
+### src/controller/
 
 - Component の選択や初期値の準備をします
 
-### src/app/presenter/
+![-](https://yy-jscpd.netlify.app/madge/controller/graph.svg)
+
+### src/presenter/
 
 - components
   - StatelessComponent です
@@ -44,12 +44,14 @@ CleanArchitecture の構成に寄せています。特に意識している点�
 - hooks
   - hooks を配置しています
 
-#### src/app/gateway/
+![-](https://yy-jscpd.netlify.app/madge/presenter/graph.svg)
+
+#### src/gateway/
 
 - src/domain/の`type Repository`の実装
 - 外部に通信する際の中継役
 
-![-](https://yy-jscpd.netlify.app/madge/app/graph.svg)
+![-](https://yy-jscpd.netlify.app/madge/gateway/graph.svg)
 
 ---
 

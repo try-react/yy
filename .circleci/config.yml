@@ -38,7 +38,9 @@ jobs:
       - run: sudo apt-get install -y graphviz
       - run: yarn madge:domain
       - run: yarn madge:useCase
-      - run: yarn madge:app
+      - run: yarn madge:controller
+      - run: yarn madge:presenter
+      - run: yarn madge:gateway
       - run: yarn madge:externalInterface
       - run: yarn madge:pages
       - run: yarn madge:all
