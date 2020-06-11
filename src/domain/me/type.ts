@@ -15,7 +15,8 @@ export type Me = ReadonlyDeep<{
   flg: boolean;
 }>;
 
-type Payload = { id: number };
+type Payload = ReadonlyDeep<{ id: number }>;
+
 export type Repository = ReadonlyDeep<{
   fetchMe: (
     p: Payload
