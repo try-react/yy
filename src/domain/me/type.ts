@@ -15,17 +15,22 @@ export type Me = ReadonlyDeep<{
   flg: boolean;
 }>;
 
-type Payload = ReadonlyDeep<{ id: number }>;
+type Parameter = ReadonlyDeep<{ id: number }>;
 
 export type Repository = ReadonlyDeep<{
   fetchMe: (
-    p: Payload
+    p: Parameter
   ) => Promise<GatewayData<Me> | ExternalInterfaceDataException>;
 }>;
 
 export type WorkFlow = ReadonlyDeep<{
   getLatestInformationAboutMe: (p: {
     repository: Repository;
-    payload: Payload;
+    payload: Parameter;
   }) => () => ReturnType<Repository["fetchMe"]>;
 }>;
+
+/**
+ * `Repository`の実行結果の正常系
+ */
+export type InitData = Me;
