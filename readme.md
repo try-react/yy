@@ -1,7 +1,5 @@
 # Web アプリ
 
-## 概要
-
 CleanArchitecture の構成に寄せています。特に意識している点は下記の通りです。
 
 - domain について
@@ -24,7 +22,7 @@ CleanArchitecture の構成に寄せています。特に意識している点�
 - 動作環境
   - **非**SSR での使用を想定
 
----
+## 依存関係と責務
 
 ### src/controller/
 
