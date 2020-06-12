@@ -1,0 +1,14 @@
+.label::after {
+  content: ":";
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.reFetch {
+  color: red;
+}
+
+.reRender {
+  color: blue;
+}

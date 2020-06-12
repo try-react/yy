@@ -4,24 +4,24 @@ import type { NextPage } from "next";
 import dynamic from "next/dynamic";
 import { Selector } from "~/presenter/components/ecosystem/Me/Selector";
 import { useReRender } from "~/presenter/hooks/useReRender";
-import type { Me } from "~/presenter/components/ecosystem/Me";
+import type { Screen } from "~/presenter/components/ecosystem/Me/Screen";
 import { interactor } from "~/useCase/me/interactor";
 import { repository } from "~/gateway/repository/me";
 
-const Presenter = dynamic<ComponentProps<typeof Me>>(
-  () => import("~/presenter/components/ecosystem/Me").then((_) => _.Me),
+const Presenter = dynamic<ComponentProps<typeof Screen>>(
+  () => import("~/presenter/components/ecosystem/Me").then((_) => _.Screen),
   { ssr: false }
 );
 
 const Page: NextPage = () => {
-  const props = interactor({
+  const service = interactor({
     repository,
     id: 123, // location から取得
     ...useReRender(),
   });
 
   // eslint-disable-next-line new-cap
-  return <Presenter Component={Selector(props)} />;
+  return <Presenter Component={Selector(service)} />;
 };
 
 export default Page;
