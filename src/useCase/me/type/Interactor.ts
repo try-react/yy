@@ -1,11 +1,11 @@
-import { ControllerProps } from "./ControllerProps";
-import { PresenterProps } from "./PresenterProps";
+import { SelectorProps } from "./SelectorProps";
 import type { Repository } from "~/domain/me/type";
 
 /**
- * `controller`で引数をもらい`presenter`用の値を生成します
+ * `pages/`で引数をもらい`presenter/`に渡す値を生成します
  */
 export type Interactor = (p: {
   repository: Repository;
-  id: ControllerProps["id"];
-}) => PresenterProps["service"];
+  id: number;
+  reRender: () => void;
+}) => SelectorProps;

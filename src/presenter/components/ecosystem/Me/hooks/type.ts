@@ -1,5 +1,6 @@
 import type { Me } from "~/domain/me";
-import type { PresenterProps } from "~/useCase/me/type/PresenterProps";
+import type { SelectorProps } from "~/useCase/me/type/SelectorProps";
+import type { InitData } from "~/domain/me/type";
 
 type Status = "started" | "done" | "failed";
 
@@ -30,4 +31,7 @@ type Props = {
   };
 };
 
-export type UseMe = (p: PresenterProps) => Props;
+export type UseMe = (p: {
+  initData: InitData;
+  service: SelectorProps;
+}) => Props;

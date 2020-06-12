@@ -1,8 +1,8 @@
 import { useState } from "react";
-import type { UseMe } from "~/presenter/components/Me/hooks/type";
+import type { UseMe } from "~/presenter/components/ecosystem/Me/hooks/type";
 import { useRefetch } from "./useRefetch";
 
-export const useMe: UseMe = ({ initData, service, reRender }) => {
+export const useMe: UseMe = ({ initData, service }) => {
   const [data, setData] = useState(initData);
   const { status, reFetch, isAsync } = useRefetch({
     service,
@@ -23,7 +23,7 @@ export const useMe: UseMe = ({ initData, service, reRender }) => {
     },
     operations: {
       reFetch,
-      reRender,
+      reRender: service.reRender,
     },
   };
 };

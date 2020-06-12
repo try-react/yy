@@ -1,6 +1,6 @@
 import React from "react";
 import type { FC } from "react";
-import type { UseMe } from "~/presenter/components/Me/hooks/type";
+import type { UseMe } from "~/presenter/components/ecosystem/Me/hooks/type";
 
 type Props = ReturnType<UseMe>;
 

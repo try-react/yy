@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import type { Dispatch, SetStateAction } from "react";
-import type { UseMe } from "~/presenter/components/Me/hooks/type";
+import type { UseMe } from "~/presenter/components/ecosystem/Me/hooks/type";
 import { GatewayData } from "~/shared/typeGuard/Data";
 
 type Status = ReturnType<UseMe>["app"]["status"];
@@ -23,22 +23,20 @@ export const useRefetch: UseRefetch = ({ service, setData }) => {
 
     setStatus("started");
     let deletedFlg = false;
-    service()
-      .fetch()
-      .then((r) => {
-        if (deletedFlg) {
-          return;
-        }
+    service.fetch().then((r) => {
+      if (deletedFlg) {
+        return;
+      }
 
-        if (r instanceof GatewayData) {
-          setData({ ...r.value });
-          setStatus("done");
-          return;
-        }
+      if (r instanceof GatewayData) {
+        setData({ ...r.value });
+        setStatus("done");
+        return;
+      }
 
-        // eslint-disable-next-line consistent-return
-        return setStatus("failed");
-      });
+      // eslint-disable-next-line consistent-return
+      return setStatus("failed");
+    });
 
     return () => (deletedFlg = true);
   }, [reFetchFlg, service, setData]);
