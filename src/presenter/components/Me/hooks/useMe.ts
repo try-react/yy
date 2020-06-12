@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { UseMe } from "~/presenter/hooks/me/useMe/type";
+import type { UseMe } from "~/presenter/components/Me/hooks/type";
 import { useRefetch } from "./useRefetch";
 
 export const useMe: UseMe = ({ initData, service, reRender }) => {

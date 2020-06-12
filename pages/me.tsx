@@ -3,7 +3,7 @@ import type { ComponentProps } from "react";
 import type { NextPage } from "next";
 import dynamic from "next/dynamic";
 import { controller } from "~/controller/Me";
-import { useReRender } from "~/presenter/hooks/common/useReRender";
+import { useReRender } from "~/presenter/hooks/useReRender";
 import type { Me } from "~/presenter/components/Me";
 
 const Presenter = dynamic<ComponentProps<typeof Me>>(

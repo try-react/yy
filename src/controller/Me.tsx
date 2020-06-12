@@ -2,7 +2,7 @@ import React, { lazy } from "react";
 import { ExternalInterfaceDataException } from "~/shared/typeGuard/Exception";
 import { GatewayData } from "~/shared/typeGuard/Data";
 import type { LazyExoticComponent, FC } from "react";
-import { useMe } from "~/presenter/hooks/me";
+import { useMe } from "~/presenter/components/Me/hooks/useMe";
 import { interactor } from "~/useCase/me/interactor";
 import { repository } from "~/gateway/repository/me";
 import type { ControllerProps } from "~/useCase/me/type/ControllerProps";
