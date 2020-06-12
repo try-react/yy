@@ -43,7 +43,6 @@
     "react-content-loader": "5.0.4",
     "react-dom": "16.13.1",
     "react-test-renderer": "16.13.1",
-    "react-use": "15.2.2",
     "type-fest": "0.15.1",
     "typescript": "3.9.5"
   },
