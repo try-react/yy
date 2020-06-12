@@ -1,12 +1,9 @@
 import type { Me } from "~/domain/me";
-import type { Props } from "~/useCase/me/type";
+import type { PresenterProps } from "~/useCase/me/props/type";
 
 type Status = "started" | "done" | "failed";
 
-type State = {
-  /**
-   * meの情報
-   */
+type Props = {
   domain: {
     me: Me;
   };
@@ -18,14 +15,12 @@ type State = {
     status: Status;
   };
   selectors: {
-    /**
-     * 再取得中の状態 デバッグ用に表示
-     */
     isAsync: boolean;
   };
   operations: {
     /**
      * 再取得処理の発火
+     * 検証のの実装
      */
     reFetch: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
     /**
@@ -35,4 +30,4 @@ type State = {
   };
 };
 
-export type UseMe = (p: Props) => State;
+export type UseMe = (p: PresenterProps) => Props;

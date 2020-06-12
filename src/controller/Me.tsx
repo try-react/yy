@@ -5,9 +5,9 @@ import type { LazyExoticComponent, FC } from "react";
 import { useMe } from "~/presenter/hooks/me";
 import { interactor } from "~/useCase/me/interactor";
 import { repository } from "~/gateway/repository/me";
-import type { InputData } from "~/useCase/me/type";
+import type { ControllerProps } from "~/useCase/me/input/type";
 
-type MeType = (p: InputData) => LazyExoticComponent<FC>;
+type MeType = (p: ControllerProps) => LazyExoticComponent<FC>;
 const Me: MeType = ({ id, reRender }) =>
   lazy(() => {
     // importされたタイミングで再生成
