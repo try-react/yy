@@ -6,7 +6,10 @@ type Props = {
   Component: FC;
 };
 export const Me: FC<Props> = ({ Component }) => (
-  <Suspense fallback={<Placeholder />}>
-    <Component />
-  </Suspense>
+  <>
+    <h2>Me</h2>
+    <Suspense fallback={<Placeholder />}>
+      <Component />
+    </Suspense>
+  </>
 );
