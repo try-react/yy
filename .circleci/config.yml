@@ -25,24 +25,15 @@ jobs:
     executor: node12
     steps:
       - setup
-      - run: yarn valid:type
-      - run: yarn valid:lint
-      - run: yarn valid:test
-      - run: yarn valid:jscpd
+      - run: yarn valid
 
   doc:
     executor: node12
     steps:
       - setup
-      - run: yarn valid:jscpd
       - run: sudo apt-get install -y graphviz
-      - run: yarn madge:domain
-      - run: yarn madge:useCase
-      - run: yarn madge:presenter
-      - run: yarn madge:gateway
-      - run: yarn madge:externalInterface
-      - run: yarn madge:pages
-      - run: yarn madge:all
+      - run: yarn workspace @app/front valid:jscpd
+      - run: yarn workspace @app/front run-p madge:*
       - run: yarn netlify deploy --prod -d ./docs --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID
 
 workflows:

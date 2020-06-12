@@ -13,7 +13,7 @@ type Props = {
 };
 
 // 良い
-const List: FC<Props> = (props) => <>省略</>;
+const List: FC<Props> = props => <>省略</>;
 
 // 悪い
 const List: FC<Props> = ({ foo, bar }) => <>省略</>;
@@ -32,7 +32,7 @@ type User = {
 type Fn = (p: User) => any;
 
 // 良い
-const fn: Fn = (user) => {};
+const fn: Fn = user => {};
 
 // 悪い
 const fn: Fn = (id, name, age) => {};
