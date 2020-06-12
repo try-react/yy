@@ -12,10 +12,8 @@ const Presenter = dynamic<ComponentProps<typeof Me>>(
 );
 
 const Page: NextPage = () => (
-  <>
-    {/* eslint-disable-next-line new-cap */}
-    <Presenter Component={controller.Me({ ...useReRender(), id: 123 })} />
-  </>
+  // eslint-disable-next-line new-cap
+  <Presenter Component={controller.Me({ ...useReRender(), id: 123 })} />
 );
 
 export default Page;
