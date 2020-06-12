@@ -107,6 +107,6 @@ if (!obj.isErr) {
 
 ## コードの重複度合い
 
-- https://yy-jscpd.netlify.app/jscpd/jscpd-report
+- https://yy-doc.netlify.app/jscpd/jscpd-report
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/1576bb54-010d-4250-945c-ff9c5b2612fe/deploy-status)](https://app.netlify.com/sites/yy-jscpd/deploys)
