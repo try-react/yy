@@ -8,6 +8,10 @@ export class DomainDataError extends Error {
     super(JSON.stringify(_errObj));
   }
 
+  get value(): null {
+    return null;
+  }
+
   get errObj(): errObj {
     return this._errObj;
   }
