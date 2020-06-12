@@ -2,7 +2,7 @@ import React from "react";
 import type { ComponentProps } from "react";
 import type { NextPage } from "next";
 import dynamic from "next/dynamic";
-import { controller } from "~/controller/Me";
+import { controller } from "~/presenter/components/Me/Selector";
 import { useReRender } from "~/presenter/hooks/useReRender";
 import type { Me } from "~/presenter/components/Me";
 
