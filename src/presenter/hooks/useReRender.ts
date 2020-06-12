@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { ReadonlyDeep } from "type-fest";
 
-export type UseReRender = () => {
-  reRender: () => void;
+export type ReRender = ReadonlyDeep<() => void>;
+
+type UseReRender = () => {
+  reRender: ReRender;
 };
 
 export const useReRender: UseReRender = () => {

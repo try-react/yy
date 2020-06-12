@@ -1,5 +1,6 @@
 import { SelectorProps } from "./SelectorProps";
 import type { Repository } from "~/domain/me/type";
+import { ReRender } from "~/presenter/hooks/useReRender";
 
 /**
  * `pages/`で引数をもらい`presenter/`に渡す値を生成します
@@ -7,5 +8,5 @@ import type { Repository } from "~/domain/me/type";
 export type Interactor = (p: {
   repository: Repository;
   id: number;
-  reRender: () => void;
+  reRender: ReRender;
 }) => SelectorProps;
