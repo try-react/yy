@@ -5,7 +5,7 @@ import type { LazyExoticComponent, FC } from "react";
 import { useMe } from "~/presenter/hooks/me";
 import { interactor } from "~/useCase/me/interactor";
 import { repository } from "~/gateway/repository/me";
-import type { ControllerProps } from "~/useCase/me/input/type";
+import type { ControllerProps } from "~/useCase/me/type";
 
 type MeType = (p: ControllerProps) => LazyExoticComponent<FC>;
 const Me: MeType = ({ id, reRender }) =>
