@@ -24,19 +24,14 @@ export const useMe: UseMe = ({ initData, service, reRender }) => {
       isAsync: status !== "done",
     },
     operations: {
+      // TODO reFetchの Thank
+      // TODO reFetchの RxJS
       reFetch,
       reRender,
     },
   };
 };
 
-type UseRefetch = (p: {
-  service: Parameters<UseMe>[0]["service"];
-  setData: Dispatch<SetStateAction<Parameters<UseMe>[0]["initData"]>>;
-}) => {
-  status: Status;
-  reFetch: () => void;
-};
 /**
  * 再取得に関して (**もっとみる** などの事)
  *
@@ -81,4 +76,12 @@ const useRefetch: UseRefetch = ({ service, setData }) => {
       setReFetchFlg(!reFetchFlg);
     },
   };
+};
+
+type UseRefetch = (p: {
+  service: Parameters<UseMe>[0]["service"];
+  setData: Dispatch<SetStateAction<Parameters<UseMe>[0]["initData"]>>;
+}) => {
+  status: Status;
+  reFetch: () => void;
 };
