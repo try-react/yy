@@ -24,8 +24,6 @@ export const useMe: UseMe = ({ initData, service, reRender }) => {
       isAsync: status !== "done",
     },
     operations: {
-      // TODO reFetchの Thank
-      // TODO reFetchの RxJS
       reFetch,
       reRender,
     },
