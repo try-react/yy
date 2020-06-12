@@ -4,7 +4,7 @@ import { useRefetch } from "./useRefetch";
 
 export const useMe: UseMe = ({ initData, service, reRender }) => {
   const [data, setData] = useState(initData);
-  const { status, reFetch } = useRefetch({
+  const { status, reFetch, isAsync } = useRefetch({
     service,
     setData,
   });
@@ -19,7 +19,7 @@ export const useMe: UseMe = ({ initData, service, reRender }) => {
       status,
     },
     selectors: {
-      isAsync: status !== "done",
+      isAsync,
     },
     operations: {
       reFetch,

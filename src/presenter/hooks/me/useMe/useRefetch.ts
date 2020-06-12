@@ -48,6 +48,7 @@ export const useRefetch: UseRefetch = ({ service, setData }) => {
     reFetch: () => {
       setReFetchFlg(!reFetchFlg);
     },
+    isAsync: status !== "done",
   };
 };
 
@@ -57,4 +58,5 @@ type UseRefetch = (p: {
 }) => {
   status: Status;
   reFetch: () => void;
+  isAsync: boolean;
 };
