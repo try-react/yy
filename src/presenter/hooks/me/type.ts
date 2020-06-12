@@ -1,5 +1,5 @@
 import type { Me } from "~/domain/me";
-import type { PresenterProps } from "~/useCase/me/type";
+import type { PresenterProps } from "~/useCase/me/type/PresenterProps";
 
 type Status = "started" | "done" | "failed";
 
