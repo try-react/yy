@@ -1,6 +1,16 @@
 /** @type {import('@babel/core').TransformOptions} */
 module.exports = {
-  presets: ["@babel/preset-typescript", "@babel/preset-env"],
+  presets: [
+    "@babel/preset-typescript",
+    [
+      "@babel/preset-env",
+      {
+        targets: {
+          node: "current",
+        },
+      },
+    ],
+  ],
   plugins: [
     "@babel/plugin-proposal-class-properties",
     "@babel/plugin-transform-object-assign",
