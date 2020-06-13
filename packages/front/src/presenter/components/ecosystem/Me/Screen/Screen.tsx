@@ -8,7 +8,7 @@ type Props = {
 };
 export const Screen: FC<Props> = ({ Component }) => (
   <>
-    <h2 className={style.title}>Me Component</h2>
+    <h2 className={style.title}>Me</h2>
     <Suspense fallback={<Placeholder />}>
       <Component />
     </Suspense>
