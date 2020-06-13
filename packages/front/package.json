@@ -20,7 +20,7 @@
     "valid:type": "yarn tsc --noEmit",
     "valid:lint": "yarn eslint --fix '{src,pages}/**/*.{ts,tsx}'",
     "valid:test": "yarn jest",
-    "valid:jscpd": "yarn jscpd -c ./jscpd.json ./src"
+    "valid:jscpd": "yarn jscpd ./src"
   },
   "dependencies": {
     "@cybozu/eslint-config": "10.0.4",
