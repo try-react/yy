@@ -19,7 +19,7 @@
   "author": "baronTommy <16768208+baronTommy@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
-    "build": "yarn workspace @app/front build",
+    "build:front": "yarn workspace @app/front build",
     "build:functions": "yarn workspace @app/functions build",
     "valid": "yarn workspace @app/front run-s valid:*",
     "// ローカルでCI実行": "================================================================================",
@@ -27,13 +27,13 @@
     "local-ci": "circleci local execute -c process.yml"
   },
   "dependencies": {
-    "netlify-cli": "2.53.0",
     "commitizen": "4.1.2",
     "cz-emoji": "1.2.1",
     "husky": "4.2.5",
     "jscpd": "3.3.0-rc.8",
     "lint-staged": "10.2.9",
     "madge": "3.9.1",
+    "netlify-cli": "2.53.0",
     "npm-run-all": "4.1.5"
   }
 }

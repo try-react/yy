@@ -2,23 +2,22 @@ import { Handler, Context, Callback, APIGatewayEvent } from "aws-lambda";
 
 const sleep = () => new Promise((resolve) => setTimeout(resolve, 2000));
 
-interface HelloResponse {
+type HelloResponse = {
   statusCode: number;
   body: string;
-}
-export const handler: Handler = (
+};
+export const handler: Handler = async (
   event: APIGatewayEvent,
   context: Context,
   callback: Callback
 ) => {
-  console.log(`hello invoked`);
-  const params = event.queryStringParameters;
+  await sleep();
   const response: HelloResponse = {
     statusCode: 200,
     body: JSON.stringify({
-      msg: `Hello world ${Math.floor(Math.random() * 10)}`,
-      requestId: context.awsRequestId || "dummy",
-      params,
+      id_x_: 123,
+      name_x_: "tommy",
+      address_x_: `Github星 CleanArchitecture島 DDD丁目 ${new Date().getMilliseconds()}`,
     }),
   };
 
