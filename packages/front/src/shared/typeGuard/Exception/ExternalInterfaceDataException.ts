@@ -23,7 +23,7 @@ export class ExternalInterfaceDataException extends Error {
    *  `instanceof`で判定出来ない場合用
    */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types
-  static isMaybeDomainDataException(v: any): boolean {
+  static isMaybeExternalInterfaceDataException(v: any): boolean {
     return v?.name === ExternalInterfaceDataException.name;
   }
 }
