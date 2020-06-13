@@ -10,6 +10,9 @@ const orm: ORM = (r) => ({
 });
 
 const path = util.findPath("me");
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 const fetchMe: FetchMe = (p) => {
   return httpClient
     .get<OResponse>(path, `/${p.id}`)
@@ -21,7 +24,8 @@ const fetchMe: FetchMe = (p) => {
 };
 
 export const dao = {
-  fetchMe: () =>
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  fetchMe: (_: any) =>
     Promise.resolve(
       ExternalInterfaceData.of({ id: "1", name: "x", address: "y" })
     ),
