@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "next dev",
+    "dev": "node server.js",
     "// CI向けのスクリプト": "================================================================================",
     "build": "next build && next export",
     "// madge": "",
