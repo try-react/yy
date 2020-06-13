@@ -1,17 +1,13 @@
-import { useState } from "react";
 import type { UseMe } from "~/presenter/components/ecosystem/Me/hooks/type";
 
-export const useMe: UseMe = ({ initData, service }) => {
-  const [data] = useState(initData);
-
-  return {
-    domain: {
-      me: {
-        ...data,
-      },
+// useのprefixは、不要だが
+export const useMe: UseMe = ({ initData, service }) => ({
+  domain: {
+    me: {
+      ...initData,
     },
-    operations: {
-      reRender: service.reRender,
-    },
-  };
-};
+  },
+  operations: {
+    reRender: service.reRender,
+  },
+});
