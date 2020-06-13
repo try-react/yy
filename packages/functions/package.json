@@ -1,0 +1,14 @@
+{
+  "name": "@app/functions",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "netlify-lambda serve src"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "7.10.1",
+    "@types/aws-lambda": "8.10.56",
+    "netlify-lambda": "1.6.3"
+  }
+}

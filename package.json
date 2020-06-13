@@ -11,7 +11,8 @@
     },
     "cz-emoji": {
       "scopes": [
-        "front"
+        "front",
+        "functions"
       ]
     }
   },
