@@ -14,7 +14,7 @@ module.exports = {
   extends: [
     "eslint:recommended",
     "plugin:jest/recommended",
-    "@cybozu/eslint-config/presets/react-typescript-prettier",
+    "@cybozu/eslint-config/presets/react-typescript-prettier", // TODO 暫定
   ],
   globals: {
     Atomics: "readonly",

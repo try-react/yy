@@ -20,6 +20,7 @@
   "license": "MIT",
   "scripts": {
     "build": "yarn workspace @app/front build",
+    "build:functions": "yarn workspace @app/functions build",
     "valid": "yarn workspace @app/front run-s valid:*",
     "// ローカルでCI実行": "================================================================================",
     "prelocal-ci": "circleci config process .circleci/config.yml > process.yml",

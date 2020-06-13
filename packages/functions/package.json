@@ -4,11 +4,15 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "build": "netlify-lambda build src",
     "dev": "netlify-lambda serve src"
   },
   "devDependencies": {
     "@babel/preset-typescript": "7.10.1",
     "@types/aws-lambda": "8.10.56",
     "netlify-lambda": "1.6.3"
+  },
+  "dependencies": {
+    "@babel/preset-env": "7.10.2"
   }
 }
