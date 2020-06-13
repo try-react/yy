@@ -21,5 +21,12 @@ const fetchMe: FetchMe = (p) => {
 };
 
 export const dao = {
-  fetchMe,
+  fetchMe: () =>
+    Promise.resolve(
+      ExternalInterfaceData.of({ id: "1", name: "x", address: "y" })
+    ),
 };
+
+// export const dao = {
+//   fetchMe,
+// };
