@@ -15,6 +15,7 @@ type Status = ReturnType<UseMe>["app"]["status"];
  * 再取得失敗した場合に、正常系Componentに任せる事になるので全然だめ
  */
 export const useRefetch: UseRefetch = ({ service, setData }) => {
+  // TODO undefinedやめる
   const [reFetchFlg, setReFetchFlg] = useState<boolean | undefined>(undefined);
   const [status, setStatus] = useState<Status>("done");
 
