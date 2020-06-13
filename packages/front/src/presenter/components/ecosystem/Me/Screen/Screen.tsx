@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import React, { Suspense } from "react";
-import { Placeholder } from "./Placeholder";
+import { Placeholder } from "../Placeholder";
 import style from "./style.module.css";
 
 type Props = {
