@@ -11,10 +11,11 @@ const onRejected = (error: Response) =>
   });
 
 type Get = <T>(
-  path: Path
+  path: Path,
+  query?: string
 ) => Promise<ExternalInterfaceData<T> | ExternalInterfaceDataException>;
-const get: Get = (path) =>
-  fetch(`${env.basePath}${path}`)
+const get: Get = (path, query = "") =>
+  fetch(`${env.basePath}${path}${query}`)
     .then((r) => (r.ok ? r.json() : Promise.reject(r))) // 2XX
     .then(onFulfilled)
     .catch(onRejected);

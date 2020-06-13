@@ -10,14 +10,15 @@ const orm: ORM = (r) => ({
 });
 
 const path = util.findPath("me");
-const fetchMe: FetchMe = (_) =>
-  httpClient
-    .get<OResponse>(path)
+const fetchMe: FetchMe = (p) => {
+  return httpClient
+    .get<OResponse>(path, `/${p.id}`)
     .then((r) =>
       r instanceof ExternalInterfaceData
         ? ExternalInterfaceData.of(orm(r.value))
         : r
     );
+};
 
 export const dao = {
   fetchMe,

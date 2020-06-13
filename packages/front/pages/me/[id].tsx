@@ -7,6 +7,7 @@ import { useReRender } from "~/presenter/hooks/useReRender";
 import type { Screen } from "~/presenter/components/ecosystem/Me/Screen";
 import { interactor } from "~/useCase/me/interactor";
 import { repository } from "~/gateway/repository/me";
+import { useRouter } from "next/router";
 
 const Presenter = dynamic<ComponentProps<typeof Screen>>(
   () => import("~/presenter/components/ecosystem/Me").then((_) => _.Screen),
@@ -16,7 +17,7 @@ const Presenter = dynamic<ComponentProps<typeof Screen>>(
 const Page: NextPage = () => {
   const service = interactor({
     repository,
-    id: 123, // location から取得
+    id: Number(useRouter().query.id),
     ...useReRender(),
   });
 
