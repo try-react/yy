@@ -1,4 +1,4 @@
 [build]
-  command = "yarn build && yarn build:functions"
+  command = "yarn build:front && yarn build:functions"
   publish = "packages/front/out"
   functions = "packages/functions/dist"
