@@ -1,5 +1,7 @@
 # front アプリ
 
+- https://yy-site.netlify.app/
+
 CleanArchitecture の構成に寄せています。特に意識している点は下記の通りです。
 
 - domain について
