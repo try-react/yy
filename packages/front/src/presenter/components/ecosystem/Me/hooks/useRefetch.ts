@@ -3,7 +3,16 @@ import type { Dispatch, SetStateAction } from "react";
 import type { UseMe } from "~/presenter/components/ecosystem/Me/hooks/type";
 import { GatewayData } from "~/shared/typeGuard/Data";
 
-type Status = ReturnType<UseMe>["app"]["status"];
+type Status = "started" | "done" | "failed";
+
+type UseRefetch = (p: {
+  service: Parameters<UseMe>[0]["service"];
+  setData: Dispatch<SetStateAction<Parameters<UseMe>[0]["initData"]>>;
+}) => {
+  status: Status;
+  reFetch: () => void;
+  isAsync: boolean;
+};
 
 /**
  * 再取得に関して (**もっとみる** などの事)
@@ -15,13 +24,10 @@ type Status = ReturnType<UseMe>["app"]["status"];
  * 再取得失敗した場合に、正常系Componentに任せる事になるので全然だめ
  */
 export const useRefetch: UseRefetch = ({ service, setData }) => {
-  // TODO undefinedやめる
-  const [reFetchFlg, setReFetchFlg] = useState<boolean | undefined>(undefined);
+  const [reFetchFlg, setReFetchFlg] = useState<boolean>(false);
   const [status, setStatus] = useState<Status>("done");
 
   useEffect(() => {
-    if (reFetchFlg === undefined) return () => {};
-
     setStatus("started");
     let deletedFlg = false;
     service.fetch().then((r) => {
@@ -39,7 +45,9 @@ export const useRefetch: UseRefetch = ({ service, setData }) => {
       return setStatus("failed");
     });
 
-    return () => (deletedFlg = true);
+    return () => {
+      deletedFlg = true;
+    };
   }, [reFetchFlg, service, setData]);
 
   return {
@@ -49,13 +57,4 @@ export const useRefetch: UseRefetch = ({ service, setData }) => {
     },
     isAsync: status !== "done",
   };
-};
-
-type UseRefetch = (p: {
-  service: Parameters<UseMe>[0]["service"];
-  setData: Dispatch<SetStateAction<Parameters<UseMe>[0]["initData"]>>;
-}) => {
-  status: Status;
-  reFetch: () => void;
-  isAsync: boolean;
 };

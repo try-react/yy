@@ -1,13 +1,8 @@
 import { useState } from "react";
 import type { UseMe } from "~/presenter/components/ecosystem/Me/hooks/type";
-import { useRefetch } from "./useRefetch";
 
 export const useMe: UseMe = ({ initData, service }) => {
-  const [data, setData] = useState(initData);
-  const { status, reFetch, isAsync } = useRefetch({
-    service,
-    setData,
-  });
+  const [data] = useState(initData);
 
   return {
     domain: {
@@ -15,14 +10,7 @@ export const useMe: UseMe = ({ initData, service }) => {
         ...data,
       },
     },
-    app: {
-      status,
-    },
-    selectors: {
-      isAsync,
-    },
     operations: {
-      reFetch,
       reRender: service.reRender,
     },
   };
