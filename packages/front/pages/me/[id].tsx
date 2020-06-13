@@ -25,4 +25,14 @@ const Page: NextPage = () => {
   return <Presenter Component={Selector(service)} />;
 };
 
+export const getStaticProps = () => ({
+  // useRouterするので不要
+  props: {},
+});
+
+export const getStaticPaths = () => ({
+  paths: [{ params: { id: "123" } }],
+  fallback: false,
+});
+
 export default Page;
