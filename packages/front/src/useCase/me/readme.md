@@ -5,4 +5,4 @@ domain との中継役です。
 
 ## 全体像
 
-![-](https://yy-jscpd.netlify.app/madge/useCase/graph.svg)
+![-](https://yy-doc.netlify.app/madge/useCase/graph.svg)

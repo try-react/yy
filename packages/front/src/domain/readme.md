@@ -10,4 +10,4 @@ class ベースではなく、HoF です。処理の流れをあらわしてく�
 
 ## 全体像
 
-![-](https://yy-jscpd.netlify.app/madge/domain/graph.svg)
+![-](https://yy-doc.netlify.app/madge/domain/graph.svg)

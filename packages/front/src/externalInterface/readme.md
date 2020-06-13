@@ -10,4 +10,4 @@ fetch("path/")
 
 ## 全体像
 
-![-](https://yy-jscpd.netlify.app/madge/externalInterface/graph.svg)
+![-](https://yy-doc.netlify.app/madge/externalInterface/graph.svg)

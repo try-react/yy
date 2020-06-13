@@ -22,11 +22,11 @@ CleanArchitecture の構成に寄せています。特に意識している点�
 
 ### 全体像
 
-![-](https://yy-jscpd.netlify.app/madge/graph.svg)
+![-](https://yy-doc.netlify.app/madge/graph.svg)
 
 ### pages/
 
-![-](https://yy-jscpd.netlify.app/madge/pages/graph.svg)
+![-](https://yy-doc.netlify.app/madge/pages/graph.svg)
 
 ## データの流れと TypeGuard
 
@@ -109,4 +109,4 @@ if (!obj.isErr) {
 
 - https://yy-doc.netlify.app/jscpd/jscpd-report
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/1576bb54-010d-4250-945c-ff9c5b2612fe/deploy-status)](https://app.netlify.com/sites/yy-jscpd/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1576bb54-010d-4250-945c-ff9c5b2612fe/deploy-status)](https://app.netlify.com/sites/yy-doc/deploys)

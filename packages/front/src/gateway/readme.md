@@ -5,4 +5,4 @@
 
 ## 全体像
 
-![-](https://yy-jscpd.netlify.app/madge/gateway/graph.svg)
+![-](https://yy-doc.netlify.app/madge/gateway/graph.svg)

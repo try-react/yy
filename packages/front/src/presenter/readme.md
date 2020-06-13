@@ -13,4 +13,4 @@ React が頑張る世界です。
 
 ## 全体像
 
-![-](https://yy-jscpd.netlify.app/madge/presenter/graph.svg)
+![-](https://yy-doc.netlify.app/madge/presenter/graph.svg)
