@@ -32,8 +32,8 @@ jobs:
     steps:
       - setup
       - run: sudo apt-get install -y graphviz
-      - run: yarn workspace @app/front valid:jscpd
-      - run: yarn workspace @app/front run-p madge:*
+      - run: yarn workspace @app/front valid:jscpd && mkdir -p docs/jscpd && mv packages/front/docs/jscpd docs
+      - run: yarn workspace @app/front run-p "madge:*" && mkdir -p docs/madge && mv packages/front/docs/madge docs
       - run: yarn netlify deploy --prod -d ./docs --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID
 
 workflows:
