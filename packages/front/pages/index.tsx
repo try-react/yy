@@ -3,7 +3,7 @@ import type { NextPage } from "next";
 import Link from "next/link";
 
 const Component: NextPage = () => (
-  <Link href="/me/123">
+  <Link href="/me/[id]" as="/me/123">
     <a>me</a>
   </Link>
 );
