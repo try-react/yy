@@ -14,6 +14,17 @@ const Component: NextPage = () => (
         <a>you</a>
       </Link>
     </li>
+
+    <li>
+      <Link href="/me/123" as="/me/123">
+        <a>me-</a>
+      </Link>
+    </li>
+    <li>
+      <Link href="/you/456" as="/you/456">
+        <a>you-</a>
+      </Link>
+    </li>
   </ul>
 );
 
