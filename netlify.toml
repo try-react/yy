@@ -4,6 +4,6 @@
   functions = "packages/functions/dist"
 
 [[redirects]]
-  from = "/you/*"
+  from = "/you"
   to = "/index.html"
   status = 200
