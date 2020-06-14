@@ -50,6 +50,13 @@ const Page: NextPage = () => {
   return <Presenter Component={Selector(service)} />;
 };
 
+/**
+ * tasks/:id のようなページ向けの設定
+ *
+ * DBなどに登録即反映でみたいページ
+ * `_.html`を生成しそれに流す
+ */
+// ---------------------------------
 type GetStaticProps = () => { props: unknown };
 export const getStaticProps: GetStaticProps = () => ({
   // useRouterするので不要
@@ -57,12 +64,13 @@ export const getStaticProps: GetStaticProps = () => ({
 });
 
 type GetStaticPaths = () => {
-  paths: [{ params: { id: string } }];
+  paths: [{ params: { id: "_" } }];
   fallback: false;
 };
 export const getStaticPaths: GetStaticPaths = () => ({
   paths: [{ params: { id: "_" } }],
   fallback: false,
 });
+// ---------------------------------
 
 export default Page;
