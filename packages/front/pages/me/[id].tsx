@@ -19,7 +19,9 @@
  * ---
  *
  * ## 上記の複合パターン
- * redirects設定で頑張る
+ * redirects設定で頑張る + Linkも頑張る
+ *
+ * https://github.com/vercel/vercel/issues/3294#issuecomment-592303143
  */
 import React from "react";
 import type { ComponentProps } from "react";
