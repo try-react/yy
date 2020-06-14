@@ -21,7 +21,6 @@
  * ## 上記の複合パターン
  * redirects設定で頑張る
  */
-
 import React from "react";
 import type { ComponentProps } from "react";
 import type { NextPage } from "next";
@@ -48,20 +47,5 @@ const Page: NextPage = () => {
   // eslint-disable-next-line new-cap
   return <Presenter Component={Selector(service)} />;
 };
-
-type GetStaticProps = () => { props: unknown };
-export const getStaticProps: GetStaticProps = () => ({
-  // useRouterするので不要
-  props: {},
-});
-
-type GetStaticPaths = () => {
-  paths: [{ params: { id: string } }];
-  fallback: false;
-};
-export const getStaticPaths: GetStaticPaths = () => ({
-  paths: [{ params: { id: "123" } }],
-  fallback: false,
-});
 
 export default Page;

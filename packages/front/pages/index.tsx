@@ -10,7 +10,7 @@ const Component: NextPage = () => (
       </Link>
     </li>
     <li>
-      <Link href="you" as="/you">
+      <Link href="/you/[id]" as="/you/456">
         <a>you</a>
       </Link>
     </li>
