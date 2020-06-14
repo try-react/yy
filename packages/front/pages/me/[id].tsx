@@ -64,11 +64,11 @@ export const getStaticProps: GetStaticProps = () => ({
 });
 
 type GetStaticPaths = () => {
-  paths: [{ params: { _: "_" } }];
+  paths: [{ params: { id: "_" } }];
   fallback: false;
 };
 export const getStaticPaths: GetStaticPaths = () => ({
-  paths: [{ params: { _: "_" } }],
+  paths: [{ params: { id: "_" } }],
   fallback: false,
 });
 // ---------------------------------
