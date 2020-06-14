@@ -3,8 +3,6 @@ import type { NextPage } from "next";
 
 const Page: NextPage<InitData> = ({ params }) => <>you-{params.id}</>;
 
-// -------------
-
 type GetStaticProps = (initData: InitData) => { props: unknown };
 export const getStaticProps: GetStaticProps = ({ params }) => {
   return { props: { params } };
