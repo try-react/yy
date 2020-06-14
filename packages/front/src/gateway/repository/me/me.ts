@@ -6,9 +6,9 @@ import { ExternalInterfaceData, GatewayData } from "~/shared/typeGuard/Data";
  * 外の世界から取得した値を、こちらの世界のDomain.Repositoryが欲しい型に変更
  */
 export const repository: Repository = {
-  fetchMe: (p) =>
+  fetchMe: () =>
     dao
-      .fetchMe(p)
+      .fetchMe()
       .then((res) =>
         res instanceof ExternalInterfaceData
           ? GatewayData.of({ ...res.value, flg: true })

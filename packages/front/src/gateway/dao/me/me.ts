@@ -10,9 +10,9 @@ const orm: ORM = (r) => ({
 });
 
 const path = util.findPath("me");
-const fetchMe: FetchMe = (p) => {
+const fetchMe: FetchMe = () => {
   return httpClient
-    .get<OResponse>(path, `/${p.id}`)
+    .get<OResponse>(path)
     .then((r) =>
       r instanceof ExternalInterfaceData
         ? ExternalInterfaceData.of(orm(r.value))

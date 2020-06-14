@@ -2,8 +2,3 @@
   command = "yarn build:front && yarn build:functions"
   publish = "packages/front/out"
   functions = "packages/functions/dist"
-
-[[redirects]]
-  from = "/me/*"
-  to = "/me/_.html"
-  status = 200

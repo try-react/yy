@@ -7,6 +7,5 @@ import { ReRender } from "~/presenter/hooks/useReRender";
  */
 export type Interactor = (p: {
   repository: Repository;
-  id: number;
   reRender: ReRender;
 }) => SelectorProps;

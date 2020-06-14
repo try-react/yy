@@ -12,6 +12,7 @@ export const handler: Handler = async (
   callback: Callback
 ) => {
   await sleep();
+
   const response: HelloResponse = {
     statusCode: 200,
     body: JSON.stringify({

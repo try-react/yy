@@ -27,4 +27,4 @@ type FetchMeR = ExternalInterfaceData<Me> | ExternalInterfaceDataException;
  */
 export type ORM = (r: OResponse) => Me;
 
-export type FetchMe = (p: { id: number }) => Promise<FetchMeR>;
+export type FetchMe = () => Promise<FetchMeR>;
