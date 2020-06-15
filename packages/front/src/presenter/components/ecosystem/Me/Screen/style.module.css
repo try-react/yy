@@ -1,6 +1,11 @@
+.container {
+  width: 450px;
+  height: 210px;
+  border: 1px solid #555;
+  padding: 10px;
+}
+
 .title {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-size: 20px;
+  font-size: 24px;
   border-bottom: 1px solid #555;
 }

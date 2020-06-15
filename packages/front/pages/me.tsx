@@ -1,26 +1,8 @@
-/**
- * # Dynamic Routes と SSGの関係
- *
- * ## 更新頻度が低めなサービス
- * 相性が良い
- * `getStaticPaths`と`getStaticProps`の組み合わせで、事前にページを生成できるため
- *
- * article/:id このURLのid分取得して事前ビルドする為
- *
- * ---
- *
- * ## Task管理のようなサービス
- * 相性が悪い -> 不可能
- * task/:id タスク追加の度に、ページを生成する必要がある為
- *
- * タスク追加ボタンクリック -> DB登録 -> ページ生成 -> 配信
- * の流れになるはず。
- */
 import React from "react";
 import type { ComponentProps } from "react";
 import type { NextPage } from "next";
 import dynamic from "next/dynamic";
-import { Selector } from "~/presenter/components/ecosystem/Me/Selector";
+import { selector } from "~/presenter/components/ecosystem/Me/selector";
 import { useReRender } from "~/presenter/hooks/useReRender";
 import type { Screen } from "~/presenter/components/ecosystem/Me/Screen";
 import { interactor } from "~/useCase/me/interactor";
@@ -37,7 +19,12 @@ const Page: NextPage = () => {
     ...useReRender(),
   });
 
-  // eslint-disable-next-line new-cap
-  return <Presenter Component={Selector(service)} />;
+  return (
+    <div>
+      <div>
+        <Presenter Component={selector(service)} />
+      </div>
+    </div>
+  );
 };
 export default Page;

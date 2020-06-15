@@ -5,8 +5,8 @@ import type { LazyExoticComponent, FC } from "react";
 import { useMe } from "./hooks/useMe";
 import type { SelectorProps } from "~/useCase/me/type/SelectorProps";
 
-type Me = (p: SelectorProps) => LazyExoticComponent<FC>;
-export const Selector: Me = (service) =>
+type Selector = (p: SelectorProps) => LazyExoticComponent<FC>;
+export const selector: Selector = (service) =>
   lazy(() =>
     service
       .fetch()
