@@ -7,12 +7,14 @@ const repository: Repository = {
   fetchMe: () => Promise.resolve(GatewayData.of<Me>(me)),
 };
 
-describe("getLatestInformationAboutMe", () => {
-  it("データ取得", async () => {
-    const res = await workFlow.getLatestInformationAboutMe({
-      repository,
-    })();
+describe("workFlow", () => {
+  describe("getLatestInformationAboutMe", () => {
+    it("データ取得", async () => {
+      const res = await workFlow.getLatestInformationAboutMe({
+        repository,
+      })();
 
-    expect(res.value).toEqual(me);
+      expect(res.value).toEqual(me);
+    });
   });
 });
