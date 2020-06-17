@@ -1558,7 +1558,56 @@
     uuid "^7.0.2"
     yargs "^15.3.1"
 
-"@netlify/cache-utils@^0.4.1":
+"@netlify/build@^2.0.2":
+  version "2.0.10"
+  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-2.0.10.tgz#6c388325863746a838e7d3bd2fcef51cbc93286c"
+  integrity sha512-ouq68zZlrAudhtsiTUrWx7g0uUkFtnzJtJqRsZFeRt8IEgt7IulLADIw8S1MgstinvSi7zH+TJ4CHFnzrVPE/Q==
+  dependencies:
+    "@bugsnag/js" "^7.0.0"
+    "@netlify/cache-utils" "^0.4.2"
+    "@netlify/config" "^1.1.2"
+    "@netlify/functions-utils" "^1.0.0"
+    "@netlify/git-utils" "^1.0.0"
+    "@netlify/run-utils" "^0.1.1"
+    "@netlify/zip-it-and-ship-it" "^1.2.0"
+    analytics "0.3.1"
+    array-flat-polyfill "^1.0.1"
+    chalk "^3.0.0"
+    clean-stack "^2.2.0"
+    execa "^3.3.0"
+    figures "^3.2.0"
+    filter-obj "^2.0.1"
+    global-cache-dir "^1.0.1"
+    got "^9.6.0"
+    indent-string "^4.0.0"
+    is-ci "^2.0.0"
+    is-plain-obj "^2.1.0"
+    js-yaml "^3.13.1"
+    locate-path "^5.0.0"
+    log-process-errors "^5.1.2"
+    make-dir "^3.0.2"
+    map-obj "^4.1.0"
+    memoize-one "^5.1.1"
+    os-name "^3.1.0"
+    p-event "^4.1.0"
+    p-reduce "^2.1.0"
+    path-exists "^4.0.0"
+    path-type "^4.0.0"
+    pkg-dir "^4.2.0"
+    pretty-ms "^6.0.1"
+    read-pkg-up "^7.0.1"
+    readdirp "^3.4.0"
+    resolve "^2.0.0-next.1"
+    safe-json-stringify "^1.2.0"
+    semver "^7.1.3"
+    string-width "^4.2.0"
+    strip-ansi "^6.0.0"
+    supports-color "^7.1.0"
+    update-notifier "^4.1.0"
+    uuid "^7.0.2"
+    yargs "^15.3.1"
+
+"@netlify/cache-utils@^0.4.1", "@netlify/cache-utils@^0.4.2":
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/@netlify/cache-utils/-/cache-utils-0.4.2.tgz#2d8df0727dace3ad4b7c80a7e6c2dfd01da5e933"
   integrity sha512-uZKXReaVPO6NhmiEPhHvjQaEIRNL9165hwngXkX6XmDeER52SKRnQ+m4/No6UZLy2/hfw8vqSrQHCNJMIds92Q==
@@ -1596,7 +1645,7 @@
     tomlify-j0.4 "^3.0.0"
     yargs "^15.3.0"
 
-"@netlify/config@^1.0.7", "@netlify/config@^1.0.9":
+"@netlify/config@^1.0.7", "@netlify/config@^1.0.9", "@netlify/config@^1.1.2":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@netlify/config/-/config-1.1.2.tgz#760b3227dec796a6eabaef30cf4babc8ffafc7d7"
   integrity sha512-pk+9CAWvVkPJgoDr66SPGtpL/qlNKphhBejTzvj2ppxff4P3SEu2s/E7ZxTHetbkSyvBiDRyiSl2qxSG6JyUaA==
@@ -1626,10 +1675,29 @@
     cpy "^8.0.0"
     path-exists "^4.0.0"
 
+"@netlify/functions-utils@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@netlify/functions-utils/-/functions-utils-1.0.0.tgz#bcf570c67b88a1d34bede553f71ff08bce48adc2"
+  integrity sha512-r8CJLLgdC3xeejsAN2TEwk8aYi8fWoCJYi9xa2FMspull1xWMw0YLhvLiqagxm+lvSxr58yQGnDCX7Av2K7fpA==
+  dependencies:
+    "@netlify/zip-it-and-ship-it" "^1.2.0"
+    cpy "^8.0.0"
+    path-exists "^4.0.0"
+
 "@netlify/git-utils@^0.2.2":
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/@netlify/git-utils/-/git-utils-0.2.2.tgz#e78adf577ec70728c2d7df9c47d831dcf266b6d9"
   integrity sha512-zN4CEkR77fVSWX0WsEIMyrxJs+nze/No25c9sHt3gIxQfCzOxv8gN9+0SYOhdwyFJe3J7mD4RfWl1yjv2yypXA==
+  dependencies:
+    execa "^3.4.0"
+    map-obj "^4.1.0"
+    micromatch "^4.0.2"
+    moize "^5.4.5"
+
+"@netlify/git-utils@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@netlify/git-utils/-/git-utils-1.0.0.tgz#bf2dbe3dba5a084c5748566a010186cc25b34446"
+  integrity sha512-du9AXR0bPxwcackNXlDqJm5AbWay2lFccZd3I2RwyBWP86xPTH0sRCaAmWzoF5wrn75FcF4pcrXUPce046RFgA==
   dependencies:
     execa "^3.4.0"
     map-obj "^4.1.0"
@@ -2224,18 +2292,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*":
+"@types/react@*", "@types/react@16.9.36":
   version "16.9.36"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.36.tgz#ade589ff51e2a903e34ee4669e05dbfa0c1ce849"
   integrity sha512-mGgUb/Rk/vGx4NCvquRuSH0GHBQKb1OqpGS9cT9lFxlTLHZgkksgI60TuIxubmn7JuCb+sENHhQciqa0npm0AQ==
-  dependencies:
-    "@types/prop-types" "*"
-    csstype "^2.2.0"
-
-"@types/react@16.9.35":
-  version "16.9.35"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.35.tgz#a0830d172e8aadd9bd41709ba2281a3124bbd368"
-  integrity sha512-q0n0SsWcGc8nDqH2GJfWQWUOmZSJhXV64CjVN5SvcNti3TdEaA3AH0D8DwNmMdzjMAC/78tB8nAZIlV8yTz+zQ==
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
@@ -2282,12 +2342,12 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@typescript-eslint/eslint-plugin@3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-3.2.0.tgz#7fb997f391af32ae6ca1dbe56bcefe4dd30bda14"
-  integrity sha512-t9RTk/GyYilIXt6BmZurhBzuMT9kLKw3fQoJtK9ayv0tXTlznXEAnx07sCLXdkN3/tZDep1s1CEV95CWuARYWA==
+"@typescript-eslint/eslint-plugin@3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-3.3.0.tgz#89518e5c5209a349bde161c3489b0ec187ae5d37"
+  integrity sha512-Ybx/wU75Tazz6nU2d7nN6ll0B98odoiYLXwcuwS5WSttGzK46t0n7TPRQ4ozwcTv82UY6TQoIvI+sJfTzqK9dQ==
   dependencies:
-    "@typescript-eslint/experimental-utils" "3.2.0"
+    "@typescript-eslint/experimental-utils" "3.3.0"
     functional-red-black-tree "^1.0.1"
     regexpp "^3.0.0"
     semver "^7.3.2"
@@ -2313,24 +2373,24 @@
     eslint-scope "^5.0.0"
     eslint-utils "^2.0.0"
 
-"@typescript-eslint/experimental-utils@3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/experimental-utils/-/experimental-utils-3.2.0.tgz#4dab8fc9f44f059ec073470a81bb4d7d7d51e6c5"
-  integrity sha512-UbJBsk+xO9dIFKtj16+m42EvUvsjZbbgQ2O5xSTSfVT1Z3yGkL90DVu0Hd3029FZ5/uBgl+F3Vo8FAcEcqc6aQ==
+"@typescript-eslint/experimental-utils@3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/experimental-utils/-/experimental-utils-3.3.0.tgz#d72a946e056a83d4edf97f3411cceb639b0b8c87"
+  integrity sha512-d4pGIAbu/tYsrPrdHCQ5xfadJGvlkUxbeBB56nO/VGmEDi/sKmfa5fGty5t5veL1OyJBrUmSiRn1R1qfVDydrg==
   dependencies:
     "@types/json-schema" "^7.0.3"
-    "@typescript-eslint/typescript-estree" "3.2.0"
+    "@typescript-eslint/typescript-estree" "3.3.0"
     eslint-scope "^5.0.0"
     eslint-utils "^2.0.0"
 
-"@typescript-eslint/parser@3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-3.2.0.tgz#d9d7867456b1b8ecae9e724269b0bc932f06cbca"
-  integrity sha512-Vhu+wwdevDLVDjK1lIcoD6ZbuOa93fzqszkaO3iCnmrScmKwyW/AGkzc2UvfE5TCoCXqq7Jyt6SOXjsIlpqF4A==
+"@typescript-eslint/parser@3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-3.3.0.tgz#fcae40012ded822aa8b2739a1a03a4e3c5bbb7bb"
+  integrity sha512-a7S0Sqn/+RpOOWTcaLw6RD4obsharzxmgMfdK24l364VxuBODXjuJM7ImCkSXEN7oz52aiZbXSbc76+2EsE91w==
   dependencies:
     "@types/eslint-visitor-keys" "^1.0.0"
-    "@typescript-eslint/experimental-utils" "3.2.0"
-    "@typescript-eslint/typescript-estree" "3.2.0"
+    "@typescript-eslint/experimental-utils" "3.3.0"
+    "@typescript-eslint/typescript-estree" "3.3.0"
     eslint-visitor-keys "^1.1.0"
 
 "@typescript-eslint/parser@^2.34.0":
@@ -2356,10 +2416,10 @@
     semver "^7.3.2"
     tsutils "^3.17.1"
 
-"@typescript-eslint/typescript-estree@3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/typescript-estree/-/typescript-estree-3.2.0.tgz#c735f1ca6b4d3cd671f30de8c9bde30843e7ead8"
-  integrity sha512-uh+Y2QO7dxNrdLw7mVnjUqkwO/InxEqwN0wF+Za6eo3coxls9aH9kQ/5rSvW2GcNanebRTmsT5w1/92lAOb1bA==
+"@typescript-eslint/typescript-estree@3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/typescript-estree/-/typescript-estree-3.3.0.tgz#841ffed25c29b0049ebffb4c2071268a34558a2a"
+  integrity sha512-3SqxylENltEvJsjjMSDCUx/edZNSC7wAqifUU1Ywp//0OWEZwMZJfecJud9XxJ/40rAKEbJMKBOQzeOjrLJFzQ==
   dependencies:
     debug "^4.1.1"
     eslint-visitor-keys "^1.1.0"
@@ -4043,7 +4103,7 @@ chalk@^3.0.0, chalk@^3.0.0-beta.2:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
-chalk@^4.0.0:
+chalk@^4.0.0, chalk@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-4.1.0.tgz#4e14870a618d9e2edd97dd8345fd9d9dc315646a"
   integrity sha512-qwx12AxXe2Q5xQ43Ac//I6v5aXTipYrSESdOgzrN+9XjgEpyjpKuvSGaN4qE93f7TQTlerQQ8S+EQ0EyDoVL1A==
@@ -4500,7 +4560,7 @@ combined-stream@^1.0.6, combined-stream@^1.0.8, combined-stream@~1.0.6:
   dependencies:
     delayed-stream "~1.0.0"
 
-commander@^2.11.0, commander@^2.13.0, commander@^2.16.0, commander@^2.17.1, commander@^2.19.0, commander@^2.20.0, commander@^2.3.0, commander@^2.8.1, commander@~2.20.3:
+commander@^2.11.0, commander@^2.13.0, commander@^2.16.0, commander@^2.17.1, commander@^2.19.0, commander@^2.20.0, commander@^2.20.3, commander@^2.3.0, commander@^2.8.1, commander@~2.20.3:
   version "2.20.3"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
   integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
@@ -9934,6 +9994,27 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
+lint-staged@10.2.10:
+  version "10.2.10"
+  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-10.2.10.tgz#f0f78bf8786bbe90e1775a0dc540f7f12b6a79b2"
+  integrity sha512-dgelFaNH6puUGAcU+OVMgbfpKSerNYsPSn6+nlbRDjovL0KigpsVpCu0PFZG6BJxX8gnHJqaZlR9krZamQsb0w==
+  dependencies:
+    chalk "^4.0.0"
+    cli-truncate "2.1.0"
+    commander "^5.1.0"
+    cosmiconfig "^6.0.0"
+    debug "^4.1.1"
+    dedent "^0.7.0"
+    enquirer "^2.3.5"
+    execa "^4.0.1"
+    listr2 "^2.1.0"
+    log-symbols "^4.0.0"
+    micromatch "^4.0.2"
+    normalize-path "^3.0.0"
+    please-upgrade-node "^3.2.0"
+    string-argv "0.3.1"
+    stringify-object "^3.3.0"
+
 lint-staged@10.2.9:
   version "10.2.9"
   resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-10.2.9.tgz#6013ecfa80829cd422446b545fd30a96bca3098c"
@@ -10376,6 +10457,35 @@ madge@3.9.1:
     typescript "^3.7.5"
     walkdir "^0.4.1"
 
+madge@3.9.2:
+  version "3.9.2"
+  resolved "https://registry.yarnpkg.com/madge/-/madge-3.9.2.tgz#a432de2c858092d379c2910a21a622ad2b1b24c7"
+  integrity sha512-6ZvyKinAOOzcRpvpm1iyOuds+LvWIq3o3GmUYAHMJdIpDAgVY3mphxVzeWNo3agIOv0X0T/zbLycXQm9Rn19nA==
+  dependencies:
+    chalk "^4.1.0"
+    commander "^5.1.0"
+    commondir "^1.0.1"
+    debug "^4.0.1"
+    dependency-tree "^7.2.1"
+    detective-amd "^3.0.0"
+    detective-cjs "^3.1.1"
+    detective-es6 "^2.1.0"
+    detective-less "^1.0.2"
+    detective-postcss "^3.0.1"
+    detective-sass "^3.0.1"
+    detective-scss "^2.0.1"
+    detective-stylus "^1.0.0"
+    detective-typescript "^5.8.0"
+    graphviz "0.0.9"
+    ora "^4.0.4"
+    pify "^5.0.0"
+    pluralize "^8.0.0"
+    precinct "^6.3.1"
+    pretty-ms "^7.0.0"
+    rc "^1.2.7"
+    typescript "^3.9.5"
+    walkdir "^0.4.1"
+
 make-dir@^1.0.0, make-dir@^1.2.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/make-dir/-/make-dir-1.3.0.tgz#79c1033b80515bd6d24ec9933e860ca75ee27f0c"
@@ -10513,6 +10623,11 @@ mem@^1.1.0:
   integrity sha1-Xt1StIXKHZAP5kiVUFOZoN+kX3Y=
   dependencies:
     mimic-fn "^1.0.0"
+
+memoize-one@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-5.1.1.tgz#047b6e3199b508eaec03504de71229b8eb1d75c0"
+  integrity sha512-HKeeBpWvqiVJD57ZUAsJNm71eHTykffzcLZVYWiVfQeI1rJtuEaS7hQiEpWfVVk18donPwJEcFKIkCmPJNOhHA==
 
 memory-fs@^0.4.1:
   version "0.4.1"
@@ -10991,6 +11106,95 @@ netlify-cli@2.53.0:
     make-dir "^3.0.0"
     minimist "^1.2.5"
     netlify "^4.3.0"
+    netlify-redirect-parser "^2.5.0"
+    netlify-redirector "^0.2.0"
+    node-fetch "^2.6.0"
+    npm-packlist "^1.4.4"
+    open "^6.4.0"
+    ora "^3.4.0"
+    p-wait-for "^2.0.0"
+    parse-github-url "^1.0.2"
+    parse-gitignore "^1.0.1"
+    precinct "^6.1.2"
+    prettyjson "^1.2.1"
+    random-item "^1.0.0"
+    read-pkg-up "^6.0.0"
+    require-package-name "^2.0.1"
+    resolve "^1.12.0"
+    safe-join "^0.1.3"
+    static-server "^2.2.1"
+    strip-ansi-control-characters "^2.0.0"
+    update-notifier "^2.5.0"
+    uuid "^3.3.3"
+    wait-port "^0.2.2"
+    which "^2.0.2"
+    winston "^3.2.1"
+    wrap-ansi "^6.0.0"
+    write-file-atomic "^3.0.0"
+
+netlify-cli@2.54.0:
+  version "2.54.0"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.54.0.tgz#4e292033726c919d213074057095b9b0e6acc71f"
+  integrity sha512-q1u3LMLWv7H7y5RV2bYnBfkCV9xTRIpaHe8Pr+g37mXsYu6jwd6Pqhl/ybQvlZOYprmkq+UOOG7TZzDOH5YVhw==
+  dependencies:
+    "@netlify/build" "^2.0.2"
+    "@netlify/config" "^1.1.2"
+    "@netlify/zip-it-and-ship-it" "^1.2.0"
+    "@oclif/command" "^1.5.18"
+    "@oclif/config" "^1.13.2"
+    "@oclif/errors" "^1.1.2"
+    "@oclif/parser" "^3.8.4"
+    "@oclif/plugin-help" "^2.2.0"
+    "@oclif/plugin-not-found" "^1.1.4"
+    "@oclif/plugin-plugins" "^1.7.8"
+    "@octokit/rest" "^16.28.1"
+    ansi-styles "^3.2.1"
+    ascii-table "0.0.9"
+    body-parser "^1.19.0"
+    boxen "^4.1.0"
+    chalk "^2.4.2"
+    chokidar "^3.0.2"
+    ci-info "^2.0.0"
+    clean-deep "^3.0.2"
+    cli-spinners "^1.3.1"
+    cli-ux "^5.2.1"
+    concordance "^4.0.0"
+    configstore "^5.0.0"
+    cookie "^0.4.0"
+    copy-template-dir "^1.4.0"
+    debug "^4.1.1"
+    dot-prop "^5.1.0"
+    dotenv "^8.2.0"
+    envinfo "^7.3.1"
+    execa "^2.0.3"
+    express "^4.17.1"
+    express-logging "^1.1.1"
+    find-up "^3.0.0"
+    fs-extra "^8.1.0"
+    fuzzy "^0.1.3"
+    get-port "^5.1.0"
+    gh-release-fetch "^1.0.3"
+    git-repo-info "^2.1.0"
+    gitconfiglocal "^2.1.0"
+    http-proxy "^1.17.0"
+    http-proxy-middleware "^0.20.0"
+    inquirer "^6.5.1"
+    inquirer-autocomplete-prompt "^1.0.1"
+    is-docker "^1.1.0"
+    jwt-decode "^2.2.0"
+    lambda-local "^1.7.1"
+    lodash.get "^4.4.2"
+    lodash.isempty "^4.4.0"
+    lodash.isequal "^4.5.0"
+    lodash.isobject "^3.0.2"
+    lodash.merge "^4.6.2"
+    lodash.pick "^4.4.0"
+    lodash.sample "^4.2.1"
+    lodash.snakecase "^4.1.1"
+    log-symbols "^2.2.0"
+    make-dir "^3.0.0"
+    minimist "^1.2.5"
+    netlify "^4.3.1"
     netlify-redirect-parser "^2.5.0"
     netlify-redirector "^0.2.0"
     node-fetch "^2.6.0"
@@ -12620,6 +12824,25 @@ precinct@^6.1.2, precinct@^6.2.0:
     detective-scss "^2.0.0"
     detective-stylus "^1.0.0"
     detective-typescript "^5.1.1"
+    module-definition "^3.3.0"
+    node-source-walk "^4.2.0"
+
+precinct@^6.3.1:
+  version "6.3.1"
+  resolved "https://registry.yarnpkg.com/precinct/-/precinct-6.3.1.tgz#8ad735a8afdfc48b56ed39c9ad3bf999b6b928dc"
+  integrity sha512-JAwyLCgTylWminoD7V0VJwMElWmwrVSR6r9HaPWCoswkB4iFzX7aNtO7VBfAVPy+NhmjKb8IF8UmlWJXzUkOIQ==
+  dependencies:
+    commander "^2.20.3"
+    debug "^4.1.1"
+    detective-amd "^3.0.0"
+    detective-cjs "^3.1.1"
+    detective-es6 "^2.1.0"
+    detective-less "^1.0.2"
+    detective-postcss "^3.0.1"
+    detective-sass "^3.0.1"
+    detective-scss "^2.0.1"
+    detective-stylus "^1.0.0"
+    detective-typescript "^5.8.0"
     module-definition "^3.3.0"
     node-source-walk "^4.2.0"
 
@@ -15473,7 +15696,7 @@ typescript-plugin-css-modules@2.3.0:
     reserved-words "^0.1.2"
     sass "^1.26.5"
 
-typescript@3.9.5, typescript@^3.0.3, typescript@^3.7.5, typescript@^3.8.3:
+typescript@3.9.5, typescript@^3.0.3, typescript@^3.7.5, typescript@^3.8.3, typescript@^3.9.5:
   version "3.9.5"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.5.tgz#586f0dba300cde8be52dd1ac4f7e1009c1b13f36"
   integrity sha512-hSAifV3k+i6lEoCJ2k6R2Z/rp/H3+8sdmcn5NrS3/3kE7+RyZXm9aqvxWqjEXHAd8b0pShatpcdMTvEdvAJltQ==
