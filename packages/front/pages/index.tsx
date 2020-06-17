@@ -9,6 +9,11 @@ const Component: NextPage = () => (
         <a>me</a>
       </Link>
     </li>
+    <li>
+      <Link href="/foo/[abc]" as="/foo/123">
+        <a>foo</a>
+      </Link>
+    </li>
   </ul>
 );
 
