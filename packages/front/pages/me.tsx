@@ -4,11 +4,11 @@ import type { NextPage } from "next";
 import dynamic from "next/dynamic";
 import { selector } from "~/presenter/components/ecosystem/Me/selector";
 import { useReRender } from "~/presenter/hooks/useReRender";
-import type { Screen } from "~/presenter/components/ecosystem/Me/Screen";
+import type { Screen as ScreenType } from "~/presenter/components/ecosystem/Me/Screen";
 import { interactor } from "~/useCase/me/interactor";
 import { repository } from "~/gateway/repository/me";
 
-const Presenter = dynamic<ComponentProps<typeof Screen>>(
+const Screen = dynamic<ComponentProps<typeof ScreenType>>(
   () => import("~/presenter/components/ecosystem/Me").then((_) => _.Screen),
   { ssr: false }
 );
@@ -19,12 +19,7 @@ const Page: NextPage = () => {
     ...useReRender(),
   });
 
-  return (
-    <div>
-      <div>
-        <Presenter Component={selector(service)} />
-      </div>
-    </div>
-  );
+  return <Screen Component={selector(service)} />;
 };
+
 export default Page;

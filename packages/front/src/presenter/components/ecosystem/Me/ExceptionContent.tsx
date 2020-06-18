@@ -1,9 +1,9 @@
 import React from "react";
 import type { FC } from "react";
 
-export const Exception: FC = () => (
+export const ExceptionContent: FC = () => (
   <>
-    <span data-testid="Exception" />
+    <span data-testid="ExceptionContent" />
     <span>取得に失敗しました。</span>
   </>
 );

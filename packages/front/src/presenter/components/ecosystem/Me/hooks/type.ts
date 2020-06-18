@@ -15,7 +15,7 @@ type Props = {
   };
 };
 
-export type UseMe = (p: {
+export type UseContent = (p: {
   initData: InitData;
   service: SelectorProps;
 }) => Props;

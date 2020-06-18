@@ -2,7 +2,7 @@ import React, { lazy } from "react";
 import { ExternalInterfaceDataException } from "~/shared/typeGuard/Exception";
 import { GatewayData } from "~/shared/typeGuard/Data";
 import type { LazyExoticComponent, FC } from "react";
-import { useMe } from "./hooks/useMe";
+import { useContent } from "./hooks/useContent";
 import type { SelectorProps } from "~/useCase/me/type/SelectorProps";
 
 type Selector = (p: SelectorProps) => LazyExoticComponent<FC>;
@@ -11,31 +11,40 @@ export const selector: Selector = (service) =>
     service
       .fetch()
       .then(async (res) => {
+        /**
+         * 正常系
+         */
         if (res instanceof GatewayData) {
           const { Content } = await import(
             "~/presenter/components/ecosystem/Me/Content"
           );
           const Component = () => (
-            <Content {...useMe({ initData: { ...res.value }, service })} />
+            <Content {...useContent({ initData: { ...res.value }, service })} />
           );
           return { default: Component };
         }
 
+        /**
+         * APIに問題があるが、想定内
+         */
         if (res instanceof ExternalInterfaceDataException) {
-          const { Exception } = await import(
-            "~/presenter/components/ecosystem/Me/Exception"
+          const { ExceptionContent } = await import(
+            "~/presenter/components/ecosystem/Me/ExceptionContent"
           );
-          const Component = () => <Exception />;
-
+          const Component = () => <ExceptionContent />;
           return { default: Component };
         }
 
-        // 想定外のエラー
         return Promise.reject(res);
       })
       .catch(async () => {
-        const { Err } = await import("~/presenter/components/ecosystem/Me/Err");
-        const Component = () => <Err />;
+        /**
+         * 想定外のエラー
+         */
+        const { ErrorContent } = await import(
+          "~/presenter/components/ecosystem/Me/ErrorContent"
+        );
+        const Component = () => <ErrorContent />;
         return { default: Component };
       })
   );
