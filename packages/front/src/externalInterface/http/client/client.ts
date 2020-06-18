@@ -2,6 +2,7 @@ import { ExternalInterfaceExceptionData } from "~/shared/typeGuard/Exception";
 import { ExternalInterfaceData } from "~/shared/typeGuard/Data";
 import { env } from "~/externalInterface/env";
 import type { Path } from "./util";
+import wretch from "wretch";
 
 const onFulfilled = <T>(r: T) => ExternalInterfaceData.of(r);
 const onRejected = (error: Response) =>
@@ -14,9 +15,14 @@ type Get = <T>(
   path: Path,
   query?: string
 ) => Promise<ExternalInterfaceData<T> | ExternalInterfaceExceptionData>;
+
 const get: Get = (path, query = "") =>
-  fetch(`${env.basePath}${path}${query}`)
-    .then((r) => (r.ok ? r.json() : Promise.reject(r))) // 2XX
+  wretch(`${env.basePath}${path}${query}`)
+    .get()
+    /**
+     * type が `{[key: string]: any}` になるため `never`で封印
+     */
+    .json<never>()
     .then(onFulfilled)
     .catch(onRejected);
 

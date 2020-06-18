@@ -29,7 +29,8 @@
     "react-content-loader": "5.0.4",
     "react-dom": "16.13.1",
     "type-fest": "0.15.1",
-    "typescript": "3.9.5"
+    "typescript": "3.9.5",
+    "wretch": "1.7.2"
   },
   "devDependencies": {
     "@cybozu/eslint-config": "10.0.4",
