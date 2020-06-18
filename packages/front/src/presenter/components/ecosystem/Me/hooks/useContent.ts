@@ -7,6 +7,9 @@ export const useContent: UseContent = ({ initData, service }) => ({
       ...initData,
     },
   },
+  app: {
+    cnt: service.cnt,
+  },
   operations: {
     reRender: service.reRender,
   },

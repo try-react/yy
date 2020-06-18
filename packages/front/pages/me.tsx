@@ -18,8 +18,11 @@ const Page: NextPage = () => {
     repository,
     ...useReRender(),
   });
-
-  return <Screen Component={selector(service)} />;
+  return (
+    <>
+      <Screen Component={selector(service)} />
+    </>
+  );
 };
 
 export default Page;

@@ -1,1 +1,1 @@
-export * from "./ExternalInterfaceDataException";
+export * from "./ExternalInterfaceExceptionData";

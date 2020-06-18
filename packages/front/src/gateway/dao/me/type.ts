@@ -1,4 +1,4 @@
-import { ExternalInterfaceDataException } from "~/shared/typeGuard/Exception";
+import { ExternalInterfaceExceptionData } from "~/shared/typeGuard/Exception";
 import { ExternalInterfaceData } from "~/shared/typeGuard/Data";
 
 /**
@@ -20,7 +20,7 @@ type Me = {
   address: string;
 };
 
-type FetchMeR = ExternalInterfaceData<Me> | ExternalInterfaceDataException;
+type FetchMeR = ExternalInterfaceData<Me> | ExternalInterfaceExceptionData;
 
 /**
  * ここでは、Repositoryの事は、意識しない

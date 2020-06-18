@@ -1,4 +1,4 @@
-import { ExternalInterfaceDataException } from "~/shared/typeGuard/Exception";
+import { ExternalInterfaceExceptionData } from "~/shared/typeGuard/Exception";
 import { GatewayData } from "~/shared/typeGuard/Data";
 import { ReadonlyDeep } from "type-fest";
 
@@ -16,7 +16,7 @@ export type Me = ReadonlyDeep<{
 }>;
 
 export type Repository = ReadonlyDeep<{
-  fetchMe: () => Promise<GatewayData<Me> | ExternalInterfaceDataException>;
+  fetchMe: () => Promise<GatewayData<Me> | ExternalInterfaceExceptionData>;
 }>;
 
 export type WorkFlow = ReadonlyDeep<{

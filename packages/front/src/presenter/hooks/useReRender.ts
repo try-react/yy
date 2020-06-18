@@ -1,13 +1,13 @@
 import { useState } from "react";
-import { ReadonlyDeep } from "type-fest";
 
-export type ReRender = ReadonlyDeep<() => void>;
+export type ReRender = ReturnType<UseReRender>;
 
 type UseReRender = () => {
-  reRender: ReRender;
+  reRender: () => void;
+  cnt: number;
 };
 
 export const useReRender: UseReRender = () => {
-  const [toggle, setToggle] = useState(false);
-  return { reRender: () => setToggle(!toggle) };
+  const [cnt, setCnt] = useState(0);
+  return { reRender: () => setCnt(cnt + 1), cnt };
 };

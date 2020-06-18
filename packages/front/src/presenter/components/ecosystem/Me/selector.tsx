@@ -1,8 +1,9 @@
 import React, { lazy } from "react";
-import { ExternalInterfaceDataException } from "~/shared/typeGuard/Exception";
+import { ExternalInterfaceExceptionData } from "~/shared/typeGuard/Exception";
 import { GatewayData } from "~/shared/typeGuard/Data";
 import type { LazyExoticComponent, FC } from "react";
 import { useContent } from "./hooks/useContent";
+import { useExceptionContent } from "./hooks/useExceptionContent";
 import type { SelectorProps } from "~/useCase/me/type/SelectorProps";
 
 type Selector = (p: SelectorProps) => LazyExoticComponent<FC>;
@@ -25,13 +26,16 @@ export const selector: Selector = (service) =>
         }
 
         /**
-         * APIに問題があるが、想定内
+         * APIの結果に問題があったが、再取得を促す
          */
-        if (res instanceof ExternalInterfaceDataException) {
+        if (res instanceof ExternalInterfaceExceptionData) {
           const { ExceptionContent } = await import(
             "~/presenter/components/ecosystem/Me/ExceptionContent"
           );
-          const Component = () => <ExceptionContent />;
+
+          const Component = () => (
+            <ExceptionContent {...useExceptionContent({ service })} />
+          );
           return { default: Component };
         }
 
