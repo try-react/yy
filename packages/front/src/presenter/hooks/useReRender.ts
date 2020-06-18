@@ -8,6 +8,6 @@ type UseReRender = () => {
 };
 
 export const useReRender: UseReRender = () => {
-  const [cnt, setCnt] = useState(0);
+  const [cnt, setCnt] = useState(1);
   return { reRender: () => setCnt(cnt + 1), cnt };
 };
