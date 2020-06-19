@@ -20,10 +20,10 @@ const get: Get = (path, query = "") =>
   wretch(`${env.basePath}${path}${query}`)
     .get()
     /**
-     * type が `{[key: string]: any}` になるため `never`で封印
+     * type が `{[key: string]: any}` になるため `any`に変更
      */
-    .json<never>()
-    .then(onFulfilled)
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    .json<any>(onFulfilled)
     .catch(onRejected);
 
 type HttpClient = {
