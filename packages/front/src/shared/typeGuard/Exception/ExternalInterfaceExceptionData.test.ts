@@ -20,14 +20,3 @@ describe("元データから変更がないか確認", () => {
     expect(exception.errObj).toEqual(createData());
   });
 });
-
-describe("JSON.stringify -> JSON.parseして objectの検証", () => {
-  it("maybeDomainDataValue", () => {
-    const exception = ExternalInterfaceExceptionData.of(createData());
-    const obj = JSON.parse(JSON.stringify(exception));
-
-    expect(
-      ExternalInterfaceExceptionData.isMaybeExternalInterfaceExceptionData(obj)
-    ).toEqual(true);
-  });
-});

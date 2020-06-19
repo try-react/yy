@@ -13,8 +13,7 @@ describe("workFlow", () => {
       const res = await workFlow.getLatestInformationAboutMe({
         repository,
       })();
-
-      expect(res.value).toEqual(me);
+      expect(res instanceof GatewayData && res.value).toEqual(me);
     });
   });
 });
