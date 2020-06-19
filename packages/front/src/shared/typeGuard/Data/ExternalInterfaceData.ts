@@ -9,14 +9,9 @@ export class ExternalInterfaceData<T> extends Data<T> {
   }
 
   /**
-   *  `instanceof`で判定出来ない場合用
+   * ORM適用向け
    */
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types
-  static isMaybeExternalInterfaceData(v: any): boolean {
-    return v?._name === ExternalInterfaceData.name;
-  }
-
-  static getMaybeExternalInterfaceDataValue<V>(v: { _value: V }): V {
-    return v?._value;
+  map<R>(fn: (val: T) => R): ExternalInterfaceData<R> {
+    return ExternalInterfaceData.of(fn(this.value));
   }
 }
