@@ -6,7 +6,7 @@ import style from "./style.module.css";
 type Props = ReturnType<UseNormal>;
 
 export const Normal: FC<Props> = (props) => (
-  <div data-testid="Normal" className={style.container}>
+  <div data-testid="Normal" className={style.content}>
     <div>
       <p>
         <span className={style.label}>名前</span>
