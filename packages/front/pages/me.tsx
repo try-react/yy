@@ -3,6 +3,7 @@ import type { ComponentProps } from "react";
 import type { NextPage } from "next";
 import dynamic from "next/dynamic";
 import { selector } from "~/presenter/components/ecosystem/Me/selector";
+import type { UseCase } from "~/presenter/components/ecosystem/Me/selector";
 import { useReRender } from "~/presenter/hooks/useReRender";
 import type { Container as ContainerType } from "~/presenter/components/ecosystem/Me/Container";
 import { interactor } from "~/useCase/me/interactor";
@@ -14,11 +15,11 @@ const Container = dynamic<ComponentProps<typeof ContainerType>>(
 );
 
 const Page: NextPage = () => {
-  const service = interactor({
-    repository,
+  const useCase: UseCase = {
+    ...interactor({ repository }),
     ...useReRender(),
-  });
-  return <Container Content={selector(service)} />;
+  };
+  return <Container Content={selector({ useCase })} />;
 };
 
 export default Page;

@@ -4,36 +4,33 @@ import { GatewayData } from "~/shared/typeGuard/Data";
 import type { LazyExoticComponent } from "react";
 import { useNormal } from "./hooks/useNormal";
 import { useException } from "./hooks/useException";
-import type { OutputProps } from "~/useCase/me/outputProps/type";
 import { onRejected } from "~/presenter/containers/ThrowError";
+import type { Interactor } from "~/useCase/me/interactor/type";
+import type { ReRender } from "~/presenter/hooks/useReRender";
 
-type Selector = (p: OutputProps) => LazyExoticComponent<FC>;
-export const selector: Selector = (service) =>
+export type UseCase = ReturnType<Interactor> & ReRender;
+type Selector = (p: { useCase: UseCase }) => LazyExoticComponent<FC>;
+
+export const selector: Selector = ({ useCase }) =>
   lazy(() =>
-    service
+    useCase
       .fetch()
       .then(async (res) => {
-        /**
-         * 正常系
-         */
         if (res instanceof GatewayData) {
           const { Normal } = await import(
             "~/presenter/components/ecosystem/Me/Content/Normal"
           );
           const Component = () => (
-            <Normal {...useNormal({ initData: { ...res.value }, service })} />
+            <Normal {...useNormal({ initData: { ...res.value }, useCase })} />
           );
           return { default: Component };
         }
 
-        /**
-         * APIの結果に問題があったが、再取得を促す
-         */
         if (res instanceof ExternalInterfaceExceptionData) {
           const { Exception } = await import(
             "~/presenter/components/ecosystem/Me/Content/Exception"
           );
-          const Component = () => <Exception {...useException({ service })} />;
+          const Component = () => <Exception {...useException({ useCase })} />;
           return { default: Component };
         }
         return Promise.reject(res);

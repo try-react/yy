@@ -6,7 +6,7 @@ import { GatewayData } from "~/shared/typeGuard/Data";
 type Status = "started" | "done" | "failed";
 
 type UseRefetch = (p: {
-  service: Parameters<UseNormal>[0]["service"];
+  useCase: Parameters<UseNormal>[0]["useCase"];
   setData: Dispatch<SetStateAction<Parameters<UseNormal>[0]["initData"]>>;
 }) => {
   status: Status;
@@ -23,14 +23,14 @@ type UseRefetch = (p: {
  * しっかり書くと状態管理が複雑すぎる
  * 再取得失敗した場合に、正常系Componentに任せる事になるので全然だめ
  */
-export const useRefetch: UseRefetch = ({ service, setData }) => {
+export const useRefetch: UseRefetch = ({ useCase, setData }) => {
   const [reFetchFlg, setReFetchFlg] = useState<boolean>(false);
   const [status, setStatus] = useState<Status>("done");
 
   useEffect(() => {
     setStatus("started");
     let deletedFlg = false;
-    service.fetch().then((r) => {
+    useCase.fetch().then((r) => {
       if (deletedFlg) {
         return;
       }
@@ -48,7 +48,7 @@ export const useRefetch: UseRefetch = ({ service, setData }) => {
     return () => {
       deletedFlg = true;
     };
-  }, [reFetchFlg, service, setData]);
+  }, [reFetchFlg, useCase, setData]);
 
   return {
     status,
