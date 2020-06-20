@@ -15,7 +15,7 @@ export type Me = ReadonlyDeep<{
   /**
    * 取得日時
    */
-  getDateTime: string;
+  localeDateTime: string;
 }>;
 
 export type Repository = ReadonlyDeep<{

@@ -11,7 +11,7 @@ export const repository: Repository = {
       res instanceof ExternalInterfaceData
         ? GatewayData.of({
             ...res.value,
-            getDateTime: new Date().toLocaleString(),
+            localeDateTime: new Date().toLocaleString(),
           })
         : res
     ),
