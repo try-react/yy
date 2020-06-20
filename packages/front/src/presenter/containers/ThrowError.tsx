@@ -1,16 +1,15 @@
 import React from "react";
-import type { FC } from "react";
 
-const ThrowError: FC = () => {
+const ThrowError = (): JSX.Element => {
   React.useEffect(() => {
     throwError();
   }, []);
-  return null;
+  return <></>;
 };
 
 const throwError = (): never => {
   throw new Error();
 };
 
-type OnRejected = () => { default: FC };
+type OnRejected = () => { default: () => JSX.Element };
 export const onRejected: OnRejected = () => ({ default: ThrowError });

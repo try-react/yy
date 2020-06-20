@@ -18,11 +18,7 @@ const Page: NextPage = () => {
     repository,
     ...useReRender(),
   });
-  return (
-    <>
-      <Container Content={selector(service)} />
-    </>
-  );
+  return <Container Content={selector(service)} />;
 };
 
 export default Page;
