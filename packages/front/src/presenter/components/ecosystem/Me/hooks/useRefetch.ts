@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import type { Dispatch, SetStateAction } from "react";
-import type { UseNormal } from "~/presenter/components/ecosystem/Me/hooks/type";
+import type { MapToNormalContentProps } from "~/presenter/components/ecosystem/Me/Container/type";
 import { GatewayData } from "~/shared/typeGuard/Data";
 
 type Status = "started" | "done" | "failed";
 
 type UseRefetch = (p: {
-  useCase: Parameters<UseNormal>[0]["useCase"];
-  setData: Dispatch<SetStateAction<Parameters<UseNormal>[0]["initData"]>>;
+  useCase: Parameters<MapToNormalContentProps>[0]["useCase"];
+  setData: Dispatch<
+    SetStateAction<Parameters<MapToNormalContentProps>[0]["initData"]>
+  >;
 }) => {
   status: Status;
   reFetch: () => void;
@@ -15,13 +17,12 @@ type UseRefetch = (p: {
 };
 
 /**
- * 再取得に関して (**もっとみる** などの事)
+ * 再取得に処理 (**もっとみる** などの事)
  *
- * ## `useEffect`を使用した場合
- * 一応実装してみたがぜんぜんだめ
+ * `useEffect`を使用して実装してみたがぜんぜんだめ。状態管理が複雑すぎる
+ * 再取得失敗した場合を考慮するとこれもつらい
  *
- * しっかり書くと状態管理が複雑すぎる
- * 再取得失敗した場合に、正常系Componentに任せる事になるので全然だめ
+ * Reduxに頼るのもありだが、`lazy`のほうが 軽量で良い
  */
 export const useRefetch: UseRefetch = ({ useCase, setData }) => {
   const [reFetchFlg, setReFetchFlg] = useState<boolean>(false);

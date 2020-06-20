@@ -1,9 +1,9 @@
 import React from "react";
 import type { FC } from "react";
-import type { UseNormal } from "~/presenter/components/ecosystem/Me/hooks/type";
+import type { MapToNormalContentProps } from "~/presenter/components/ecosystem/Me/Container/type";
 import style from "./style.module.css";
 
-type Props = ReturnType<UseNormal>;
+type Props = ReturnType<MapToNormalContentProps>;
 
 export const Normal: FC<Props> = (props) => (
   <div data-testid="Normal" className={style.content}>

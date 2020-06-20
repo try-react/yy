@@ -2,8 +2,8 @@ import React, { lazy, FC } from "react";
 import { ExternalInterfaceExceptionData } from "~/shared/typeGuard/Exception";
 import { GatewayData } from "~/shared/typeGuard/Data";
 import type { LazyExoticComponent } from "react";
-import { useNormal } from "../hooks/useNormal";
-import { useException } from "../hooks/useException";
+import { mapToNormalContentProps } from "./mapToProps/mapToNormalContentProps";
+import { mapToExceptionContentProps } from "./mapToProps/mapToExceptionContentProps";
 import { onRejected } from "~/presenter/containers/ThrowError";
 import type { Interactor } from "~/useCase/me/interactor/type";
 import type { ReRender } from "~/presenter/hooks/useReRender";
@@ -21,7 +21,12 @@ export const selector: Selector = ({ useCase }) =>
             "~/presenter/components/ecosystem/Me/Content/Normal"
           );
           const Component = () => (
-            <Normal {...useNormal({ initData: { ...res.value }, useCase })} />
+            <Normal
+              {...mapToNormalContentProps({
+                initData: { ...res.value },
+                useCase,
+              })}
+            />
           );
           return { default: Component };
         }
@@ -30,7 +35,9 @@ export const selector: Selector = ({ useCase }) =>
           const { Exception } = await import(
             "~/presenter/components/ecosystem/Me/Content/Exception"
           );
-          const Component = () => <Exception {...useException({ useCase })} />;
+          const Component = () => (
+            <Exception {...mapToExceptionContentProps({ useCase })} />
+          );
           return { default: Component };
         }
         return Promise.reject(res);

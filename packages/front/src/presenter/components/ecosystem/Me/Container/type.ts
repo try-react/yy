@@ -1,5 +1,5 @@
 import type { Me } from "~/domain/me";
-import type { UseCase } from "../Container/selector";
+import type { UseCase } from "./selector";
 import type { InitData } from "~/domain/me/type";
 import { ReRender } from "~/presenter/hooks/useReRender";
 
@@ -15,8 +15,11 @@ type Props = {
   };
 };
 
-export type UseNormal = (p: { initData: InitData; useCase: UseCase }) => Props;
+export type MapToNormalContentProps = (p: {
+  initData: InitData;
+  useCase: UseCase;
+}) => Props;
 
-export type UseException = (p: {
+export type MapToExceptionContentProps = (p: {
   useCase: UseCase;
 }) => Pick<Props, "operations"> & Pick<Props, "app">;

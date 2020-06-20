@@ -1,9 +1,9 @@
 import React from "react";
 import type { FC } from "react";
-import type { UseException } from "~/presenter/components/ecosystem/Me/hooks/type";
+import type { MapToExceptionContentProps } from "~/presenter/components/ecosystem/Me/Container/type";
 import style from "./style.module.css";
 
-type Props = ReturnType<UseException>;
+type Props = ReturnType<MapToExceptionContentProps>;
 
 export const Exception: FC<Props> = (props) => (
   <div data-testid="Exception">
