@@ -23,15 +23,3 @@ describe("元データから変更がないか確認", () => {
     expect(gatewayData.value).toEqual(createData());
   });
 });
-
-describe("JSON.stringify -> JSON.parseして objectの検証", () => {
-  it("maybeGatewayDataValue", () => {
-    const gatewayData = GatewayData.of(createData());
-    const obj = JSON.parse(JSON.stringify(gatewayData));
-
-    expect(GatewayData.isMaybeGatewayData(obj)).toEqual(true);
-    expect(GatewayData.getMaybeGatewayDataValue(obj)).toEqual(
-      gatewayData.value
-    );
-  });
-});
