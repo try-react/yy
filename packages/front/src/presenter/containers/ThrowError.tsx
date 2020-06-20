@@ -1,6 +1,6 @@
 import React from "react";
 
-const ThrowError = (): JSX.Element => {
+const ThrowError = () => {
   React.useEffect(() => {
     throwError();
   }, []);
@@ -11,5 +11,6 @@ const throwError = (): never => {
   throw new Error();
 };
 
-type OnRejected = () => { default: () => JSX.Element };
-export const onRejected: OnRejected = () => ({ default: ThrowError });
+type OnRejected = () => Promise<{ default: () => JSX.Element }>;
+export const onRejected: OnRejected = () =>
+  Promise.resolve({ default: ThrowError });

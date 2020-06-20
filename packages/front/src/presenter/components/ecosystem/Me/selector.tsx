@@ -1,4 +1,4 @@
-import React, { lazy } from "react";
+import React, { lazy, FC } from "react";
 import { ExternalInterfaceExceptionData } from "~/shared/typeGuard/Exception";
 import { GatewayData } from "~/shared/typeGuard/Data";
 import type { LazyExoticComponent } from "react";
@@ -7,7 +7,7 @@ import { useException } from "./hooks/useException";
 import type { OutputProps } from "~/useCase/me/outputProps/type";
 import { onRejected } from "~/presenter/containers/ThrowError";
 
-type Selector = (p: OutputProps) => LazyExoticComponent<React.ComponentType>;
+type Selector = (p: OutputProps) => LazyExoticComponent<FC>;
 export const selector: Selector = (service) =>
   lazy(() =>
     service
