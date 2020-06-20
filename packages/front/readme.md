@@ -76,11 +76,12 @@ if (!obj.isErr) {
 ### State の種類
 
 - ui  
-  トグルの開閉、モーダルの切り替え
+  トグルの開閉、モーダルの切り替え  
+  `is` `has` `can` のような prefix がつく場合が多い
 
 - app  
   ローディング中  
-  ログイン者
+  ログインユーザ
 
 - domain  
   domain 特有のステート  
@@ -91,7 +92,7 @@ if (!obj.isErr) {
   複数の dispatch を束ねても良い
 
 - selectors  
-  計算が必要な値`is` `has` `can` のような prefix がつく  
+  計算が必要な値  
   domain の state に応じて生成される場合が多い
 
 ## 画面表示までの流れ
