@@ -36,7 +36,6 @@ export const selector: Selector = (service) =>
           const Component = () => <Exception {...useException({ service })} />;
           return { default: Component };
         }
-
         return Promise.reject(res);
       })
       .catch(onRejected)
