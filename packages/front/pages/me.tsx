@@ -1,11 +1,11 @@
 import React from "react";
 import type { ComponentProps } from "react";
 import type { NextPage } from "next";
-import dynamic from "next/dynamic";
-import { selector } from "~/presenter/components/ecosystem/Me/selector";
-import type { UseCase } from "~/presenter/components/ecosystem/Me/selector";
-import { useReRender } from "~/presenter/hooks/useReRender";
+import type { UseCase } from "~/presenter/components/ecosystem/Me/Container/selector";
 import type { Container as ContainerType } from "~/presenter/components/ecosystem/Me/Container";
+import dynamic from "next/dynamic";
+import { selector } from "~/presenter/components/ecosystem/Me/Container";
+import { useReRender } from "~/presenter/hooks/useReRender";
 import { interactor } from "~/useCase/me/interactor";
 import { repository } from "~/gateway/repository/me";
 

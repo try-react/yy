@@ -1,5 +1,5 @@
 import type { Me } from "~/domain/me";
-import type { UseCase } from "../selector";
+import type { UseCase } from "../Container/selector";
 import type { InitData } from "~/domain/me/type";
 import { ReRender } from "~/presenter/hooks/useReRender";
 
