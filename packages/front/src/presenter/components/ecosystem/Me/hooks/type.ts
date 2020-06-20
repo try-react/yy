@@ -1,5 +1,5 @@
 import type { Me } from "~/domain/me";
-import type { SelectorProps } from "~/useCase/me/type/SelectorProps";
+import type { OutputProps } from "~/useCase/me/outputProps/type";
 import type { InitData } from "~/domain/me/type";
 import { ReRender } from "~/presenter/hooks/useReRender";
 
@@ -15,9 +15,9 @@ type Props = {
 
 export type UseContent = (p: {
   initData: InitData;
-  service: SelectorProps;
+  service: OutputProps;
 }) => Props;
 
 export type UseExceptionContent = (p: {
-  service: SelectorProps;
+  service: OutputProps;
 }) => Pick<Props, "operations"> & Pick<Props, "app">;

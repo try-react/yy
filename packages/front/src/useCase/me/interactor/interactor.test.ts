@@ -1,4 +1,4 @@
-import { interactor } from "./interactor";
+import { interactor } from ".";
 
 describe("interactor", () => {
   type P = Parameters<typeof interactor>;

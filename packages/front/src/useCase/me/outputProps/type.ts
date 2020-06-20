@@ -2,8 +2,8 @@ import type { Repository } from "~/domain/me/type";
 import type { ReRender } from "~/presenter/hooks/useReRender";
 
 /**
- * `pages/`からもらう値
+ * `presenter/`に渡す値
  */
-export type SelectorProps = {
+export type OutputProps = {
   fetch: () => ReturnType<Repository["fetchMe"]>;
 } & ReRender;

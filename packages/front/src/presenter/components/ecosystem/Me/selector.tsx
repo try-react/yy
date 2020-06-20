@@ -4,9 +4,9 @@ import { GatewayData } from "~/shared/typeGuard/Data";
 import type { LazyExoticComponent, FC } from "react";
 import { useContent } from "./hooks/useContent";
 import { useExceptionContent } from "./hooks/useExceptionContent";
-import type { SelectorProps } from "~/useCase/me/type/SelectorProps";
+import type { OutputProps } from "~/useCase/me/outputProps/type";
 
-type Selector = (p: SelectorProps) => LazyExoticComponent<FC>;
+type Selector = (p: OutputProps) => LazyExoticComponent<FC>;
 export const selector: Selector = (service) =>
   lazy(() =>
     service
