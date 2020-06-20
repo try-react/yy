@@ -9,10 +9,12 @@ const addresses = [
   "FizzBuzz県 Fizz市",
 ];
 
+const statusCodes = [200, 400];
+
 export const handler: Handler = async () => {
   await sleep();
   return {
-    statusCode: 200,
+    statusCode: statusCodes[Math.floor(Math.random() * statusCodes.length)],
     body: JSON.stringify({
       id_x_: 100,
       name_x_: "Tommy",

@@ -11,6 +11,6 @@ export const useNormal: UseNormal = ({ initData, service }) => ({
     cnt: service.cnt,
   },
   operations: {
-    reRender: service.reRender,
+    reRender: service.reRenderBySuccess,
   },
 });

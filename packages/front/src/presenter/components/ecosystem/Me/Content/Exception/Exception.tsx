@@ -9,7 +9,7 @@ export const Exception: FC<Props> = (props) => (
   <div data-testid="Exception">
     <div>
       <p>
-        <span>取得に失敗しました。({props.app.cnt}回目)</span>
+        <span>取得に失敗しました。({props.app.cnt.exceptionCnt}回目)</span>
       </p>
     </div>
     <div>

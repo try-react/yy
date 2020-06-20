@@ -10,7 +10,9 @@ type Domain = {
 type Props = {
   domain: Domain;
   app: Pick<ReRender, "cnt">;
-  operations: Pick<ReRender, "reRender">;
+  operations: {
+    reRender: ReRender["reRenderByException"] | ReRender["reRenderBySuccess"];
+  };
 };
 
 export type UseNormal = (p: {
