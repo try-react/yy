@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import type { Dispatch, SetStateAction } from "react";
-import type { UseContent } from "~/presenter/components/ecosystem/Me/hooks/type";
+import type { UseNormal } from "~/presenter/components/ecosystem/Me/hooks/type";
 import { GatewayData } from "~/shared/typeGuard/Data";
 
 type Status = "started" | "done" | "failed";
 
 type UseRefetch = (p: {
-  service: Parameters<UseContent>[0]["service"];
-  setData: Dispatch<SetStateAction<Parameters<UseContent>[0]["initData"]>>;
+  service: Parameters<UseNormal>[0]["service"];
+  setData: Dispatch<SetStateAction<Parameters<UseNormal>[0]["initData"]>>;
 }) => {
   status: Status;
   reFetch: () => void;

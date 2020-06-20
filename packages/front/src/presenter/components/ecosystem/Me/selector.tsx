@@ -2,9 +2,10 @@ import React, { lazy } from "react";
 import { ExternalInterfaceExceptionData } from "~/shared/typeGuard/Exception";
 import { GatewayData } from "~/shared/typeGuard/Data";
 import type { LazyExoticComponent, FC } from "react";
-import { useContent } from "./hooks/useContent";
-import { useExceptionContent } from "./hooks/useExceptionContent";
+import { useNormal } from "./hooks/useNormal";
+import { useException } from "./hooks/useException";
 import type { OutputProps } from "~/useCase/me/outputProps/type";
+import { onRejected } from "~/presenter/containers/ThrowError";
 
 type Selector = (p: OutputProps) => LazyExoticComponent<FC>;
 export const selector: Selector = (service) =>
@@ -16,11 +17,11 @@ export const selector: Selector = (service) =>
          * 正常系
          */
         if (res instanceof GatewayData) {
-          const { Content } = await import(
-            "~/presenter/components/ecosystem/Me/Content"
+          const { Normal } = await import(
+            "~/presenter/components/ecosystem/Me/Content/Normal"
           );
           const Component = () => (
-            <Content {...useContent({ initData: { ...res.value }, service })} />
+            <Normal {...useNormal({ initData: { ...res.value }, service })} />
           );
           return { default: Component };
         }
@@ -29,26 +30,14 @@ export const selector: Selector = (service) =>
          * APIの結果に問題があったが、再取得を促す
          */
         if (res instanceof ExternalInterfaceExceptionData) {
-          const { ExceptionContent } = await import(
-            "~/presenter/components/ecosystem/Me/ExceptionContent"
+          const { Exception } = await import(
+            "~/presenter/components/ecosystem/Me/Content/Exception"
           );
-
-          const Component = () => (
-            <ExceptionContent {...useExceptionContent({ service })} />
-          );
+          const Component = () => <Exception {...useException({ service })} />;
           return { default: Component };
         }
 
         return Promise.reject(res);
       })
-      .catch(async () => {
-        /**
-         * 想定外のエラー
-         */
-        const { ErrorContent } = await import(
-          "~/presenter/components/ecosystem/Me/ErrorContent"
-        );
-        const Component = () => <ErrorContent />;
-        return { default: Component };
-      })
+      .catch(onRejected)
   );

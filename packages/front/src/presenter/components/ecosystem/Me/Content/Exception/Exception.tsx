@@ -1,12 +1,12 @@
 import React from "react";
 import type { FC } from "react";
-import type { UseExceptionContent } from "~/presenter/components/ecosystem/Me/hooks/type";
+import type { UseException } from "~/presenter/components/ecosystem/Me/hooks/type";
 import style from "./style.module.css";
 
-type Props = ReturnType<UseExceptionContent>;
+type Props = ReturnType<UseException>;
 
-export const ExceptionContent: FC<Props> = (props) => (
-  <div data-testid="ExceptionContent">
+export const Exception: FC<Props> = (props) => (
+  <div data-testid="Exception">
     <div>
       <p>
         <span>取得に失敗しました。({props.app.cnt}回目)</span>

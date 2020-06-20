@@ -1,7 +1,7 @@
-import type { UseContent } from "~/presenter/components/ecosystem/Me/hooks/type";
+import type { UseNormal } from "~/presenter/components/ecosystem/Me/hooks/type";
 
 // useのprefixは、不要だが
-export const useContent: UseContent = ({ initData, service }) => ({
+export const useNormal: UseNormal = ({ initData, service }) => ({
   domain: {
     me: {
       ...initData,

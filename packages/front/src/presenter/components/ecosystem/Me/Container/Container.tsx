@@ -1,16 +1,16 @@
 import type { FC } from "react";
 import React, { Suspense } from "react";
-import { ContentPlaceholder } from "../ContentPlaceholder";
+import { Placeholder } from "../Content/Placeholder";
 import style from "./style.module.css";
 
 type Props = {
-  Component: FC;
+  Content: FC;
 };
-export const Screen: FC<Props> = ({ Component }) => (
+export const Container: FC<Props> = ({ Content }) => (
   <div className={style.container}>
     <h2 className={style.title}>Profile</h2>
-    <Suspense fallback={<ContentPlaceholder />}>
-      <Component />
+    <Suspense fallback={<Placeholder />}>
+      <Content />
     </Suspense>
   </div>
 );

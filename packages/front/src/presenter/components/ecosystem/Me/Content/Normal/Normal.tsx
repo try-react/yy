@@ -1,12 +1,12 @@
 import React from "react";
 import type { FC } from "react";
-import type { UseContent } from "~/presenter/components/ecosystem/Me/hooks/type";
+import type { UseNormal } from "~/presenter/components/ecosystem/Me/hooks/type";
 import style from "./style.module.css";
 
-type Props = ReturnType<UseContent>;
+type Props = ReturnType<UseNormal>;
 
-export const Content: FC<Props> = (props) => (
-  <div data-testid="Content" className={style.container}>
+export const Normal: FC<Props> = (props) => (
+  <div data-testid="Normal" className={style.container}>
     <div>
       <p>
         <span className={style.label}>名前</span>

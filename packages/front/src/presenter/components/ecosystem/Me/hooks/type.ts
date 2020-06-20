@@ -13,11 +13,11 @@ type Props = {
   operations: Pick<ReRender, "reRender">;
 };
 
-export type UseContent = (p: {
+export type UseNormal = (p: {
   initData: InitData;
   service: OutputProps;
 }) => Props;
 
-export type UseExceptionContent = (p: {
+export type UseException = (p: {
   service: OutputProps;
 }) => Pick<Props, "operations"> & Pick<Props, "app">;
