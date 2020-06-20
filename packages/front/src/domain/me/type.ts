@@ -12,7 +12,10 @@ export type Me = ReadonlyDeep<{
    * 住所
    */
   address: string;
-  flg: boolean;
+  /**
+   * 取得日時
+   */
+  getDateTime: string;
 }>;
 
 export type Repository = ReadonlyDeep<{

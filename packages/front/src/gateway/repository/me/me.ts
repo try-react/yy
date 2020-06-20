@@ -7,11 +7,12 @@ import { ExternalInterfaceData, GatewayData } from "~/shared/typeGuard/Data";
  */
 export const repository: Repository = {
   fetchMe: () =>
-    dao
-      .fetchMe()
-      .then((res) =>
-        res instanceof ExternalInterfaceData
-          ? GatewayData.of({ ...res.value, flg: true })
-          : res
-      ),
+    dao.fetchMe().then((res) =>
+      res instanceof ExternalInterfaceData
+        ? GatewayData.of({
+            ...res.value,
+            getDateTime: new Date().toLocaleString(),
+          })
+        : res
+    ),
 };
