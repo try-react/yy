@@ -1,6 +1,7 @@
 .content {
   display: grid;
-  grid-template-rows: 120px 50px;
+  padding: 5px;
+  grid-template-rows: 150px 50px;
 }
 
 .label {

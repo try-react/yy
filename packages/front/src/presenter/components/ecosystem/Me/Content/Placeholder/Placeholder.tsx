@@ -3,5 +3,7 @@ import type { FC } from "react";
 import { List } from "react-content-loader";
 
 export const Placeholder: FC = () => (
-  <List backgroundColor="#333" foregroundColor="#999" height="130" />
+  <div style={{ marginTop: 15 }}>
+    <List backgroundColor="#333" foregroundColor="#999" height="160" />
+  </div>
 );
