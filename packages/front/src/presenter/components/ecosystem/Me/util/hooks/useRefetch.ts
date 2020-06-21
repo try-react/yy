@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import type { Dispatch, SetStateAction } from "react";
-import type { MapToNormalContentProps } from "~/presenter/components/ecosystem/Me/Container/type";
+import type { MapToNormalContentProps } from "~/presenter/components/ecosystem/Me/util/type";
 import { GatewayData } from "~/shared/typeGuard/Data";
 
 type Status = "started" | "done" | "failed";

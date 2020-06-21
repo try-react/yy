@@ -1,4 +1,4 @@
-import type { MapToExceptionContentProps } from "~/presenter/components/ecosystem/Me/Container/type";
+import type { MapToExceptionContentProps } from "~/presenter/components/ecosystem/Me/util/type";
 
 export const mapToExceptionContentProps: MapToExceptionContentProps = ({
   useCase,

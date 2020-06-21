@@ -1,6 +1,6 @@
 import React from "react";
 import type { FC } from "react";
-import type { MapToExceptionContentProps } from "~/presenter/components/ecosystem/Me/Container/type";
+import type { MapToExceptionContentProps } from "~/presenter/components/ecosystem/Me/util/type";
 import style from "./style.module.css";
 
 type Props = ReturnType<MapToExceptionContentProps>;

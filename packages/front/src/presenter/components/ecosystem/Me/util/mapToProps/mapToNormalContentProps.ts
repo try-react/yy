@@ -1,4 +1,4 @@
-import type { MapToNormalContentProps } from "~/presenter/components/ecosystem/Me/Container/type";
+import type { MapToNormalContentProps } from "~/presenter/components/ecosystem/Me/util/type";
 
 export const mapToNormalContentProps: MapToNormalContentProps = ({
   initData,
