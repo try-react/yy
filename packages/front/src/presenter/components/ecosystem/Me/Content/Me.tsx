@@ -11,6 +11,9 @@ export const Me: FC = () => {
     ...interactor({ repository }),
     ...useReRender(),
   };
+  /**
+   * このタイミングで`React.lazy`を実行する事で取得処理をスムーズに走らせる
+   */
   const Content = selector({ useCase });
 
   return (
