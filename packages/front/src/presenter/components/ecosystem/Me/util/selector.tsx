@@ -4,7 +4,7 @@ import { GatewayData } from "~/shared/typeGuard/Data";
 import type { LazyExoticComponent } from "react";
 import { mapToNormalContentProps } from "./mapToProps/mapToNormalContentProps";
 import { mapToExceptionContentProps } from "./mapToProps/mapToExceptionContentProps";
-import { onRejected } from "~/presenter/containers/ThrowError";
+import { onRejected } from "~/presenter/util/onRejected";
 import type { Interactor } from "~/useCase/me/interactor/type";
 import type { ReRender } from "~/presenter/hooks/useReRender";
 
