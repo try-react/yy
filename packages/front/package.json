@@ -55,6 +55,6 @@
     "react-content-loader": "5.1.1",
     "stylelint": "13.6.1",
     "stylelint-config-standard": "20.0.0",
-    "typescript-plugin-css-modules": "2.3.0"
+    "typescript-plugin-css-modules": "2.4.0"
   }
 }
