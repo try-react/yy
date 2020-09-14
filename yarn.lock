@@ -5622,9 +5622,9 @@ csstype@^2.5.2:
   integrity sha512-l8YyEC9NBkSm783PFTvh0FmJy7s5pFKrDp49ZL7zBGX3fWkO+N4EEyan1qqp8cwPLDcD0OSdyY6hAMoxp34JFw==
 
 csstype@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.2.tgz#ee5ff8f208c8cd613b389f7b222c9801ca62b3f7"
-  integrity sha512-ofovWglpqoqbfLNOTBNZLSbMuGrblAf1efvvArGKOZMBrIoJeu5UsAipQolkijtyQx5MtAzT/J9IHj/CEY1mJw==
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.3.tgz#2b410bbeba38ba9633353aff34b05d9755d065f8"
+  integrity sha512-jPl+wbWPOWJ7SXsWyqGRk3lGecbar0Cb0OvZF/r/ZU011R4YqiRehgkQ9p4eQfo9DSDLqLL3wHwfxeJiuIsNag==
 
 cyclist@^1.0.1:
   version "1.0.1"
@@ -10147,12 +10147,12 @@ jss-plugin-default-unit@^10.0.3:
     jss "^10.3.0"
 
 jss-plugin-global@^10.0.3:
-  version "10.3.0"
-  resolved "https://registry.yarnpkg.com/jss-plugin-global/-/jss-plugin-global-10.3.0.tgz#6b883e74900bb71f65ac2b19bea78f7d1e85af3f"
-  integrity sha512-etYTG/y3qIR/vxZnKY+J3wXwObyBDNhBiB3l/EW9/pE3WHE//BZdK8LFvQcrCO48sZW1Z6paHo6klxUPP7WbzA==
+  version "10.4.0"
+  resolved "https://registry.yarnpkg.com/jss-plugin-global/-/jss-plugin-global-10.4.0.tgz#19449425a94e4e74e113139b629fd44d3577f97d"
+  integrity sha512-b8IHMJUmv29cidt3nI4bUI1+Mo5RZE37kqthaFpmxf5K7r2aAegGliAw4hXvA70ca6ckAoXMUl4SN/zxiRcRag==
   dependencies:
     "@babel/runtime" "^7.3.1"
-    jss "^10.3.0"
+    jss "10.4.0"
 
 jss-plugin-nested@^10.0.3:
   version "10.3.0"
