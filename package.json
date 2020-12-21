@@ -27,7 +27,7 @@
     "local-ci": "circleci local execute -c process.yml"
   },
   "dependencies": {
-    "commitizen": "4.1.2",
+    "commitizen": "4.2.2",
     "cz-emoji": "1.2.1",
     "husky": "4.2.5",
     "jscpd": "3.3.0-rc.10",
