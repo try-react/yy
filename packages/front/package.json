@@ -44,7 +44,7 @@
     "@typescript-eslint/eslint-plugin": "4.6.0",
     "@typescript-eslint/parser": "4.14.0",
     "babel-plugin-react-remove-properties": "0.3.0",
-    "eslint": "7.7.0",
+    "eslint": "7.18.0",
     "eslint-plugin-import": "2.22.0",
     "eslint-plugin-jest": "23.20.0",
     "eslint-plugin-jsx-a11y": "6.3.1",
