@@ -10,7 +10,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "7.10.4",
     "@babel/plugin-proposal-object-rest-spread": "7.12.1",
-    "@babel/plugin-transform-object-assign": "7.10.4",
+    "@babel/plugin-transform-object-assign": "7.12.13",
     "@babel/preset-typescript": "7.12.1",
     "@types/aws-lambda": "8.10.57",
     "netlify-lambda": "2.0.1",
