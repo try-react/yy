@@ -1,0 +1,21 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: weekly
+  open-pull-requests-limit: 10
+  labels:
+  - dependencies
+  versioning-strategy: increase
+  ignore:
+  - dependency-name: es-abstract
+    versions:
+    - 1.18.0
+  - dependency-name: unist-util-visit-parents
+    versions:
+    - 3.1.1
+  - dependency-name: netlify-cli
+    versions:
+    - 3.5.0
+    - 3.8.0
