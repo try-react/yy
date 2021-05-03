@@ -10819,10 +10819,10 @@ netlify-cli@3.8.5:
     wrap-ansi "^6.0.0"
     write-file-atomic "^3.0.0"
 
-netlify-lambda@2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/netlify-lambda/-/netlify-lambda-2.0.3.tgz#810253064584ee684efe0f5776d702a51b305507"
-  integrity sha512-QiFKYlCookKF0we/ny65ejHfDK5rKSC7jC0KbSVehsS/nh9eRTip2lnJ1ecVwDUbeyAnq20s5YsCK14Tr//DjA==
+netlify-lambda@2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/netlify-lambda/-/netlify-lambda-2.0.5.tgz#f848b189b266c1239c3013cafdb11d0371bcf03a"
+  integrity sha512-5Ktj0arzP2GQfofH0sQG8TSCqy2Z132lkmFf6Flhy5GfobWG4+mgt7b0fZmmEslT9oCDeDMDKAVgV5B1GfUGqQ==
   dependencies:
     "@babel/core" "^7.10.4"
     "@babel/plugin-proposal-class-properties" "^7.10.4"

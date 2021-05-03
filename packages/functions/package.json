@@ -13,7 +13,7 @@
     "@babel/plugin-transform-object-assign": "7.12.13",
     "@babel/preset-typescript": "7.12.1",
     "@types/aws-lambda": "8.10.73",
-    "netlify-lambda": "2.0.3",
+    "netlify-lambda": "2.0.5",
     "type-fest": "0.16.0"
   },
   "dependencies": {
