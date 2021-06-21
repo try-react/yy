@@ -27,7 +27,7 @@
     "madge": "3.9.2",
     "netlify-cli": "3.8.5",
     "next": "10.2.2",
-    "react": "16.13.1",
+    "react": "17.0.2",
     "react-content-loader": "6.0.3",
     "react-dom": "17.0.2",
     "type-fest": "0.16.0",
