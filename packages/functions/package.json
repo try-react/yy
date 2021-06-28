@@ -14,7 +14,7 @@
     "@babel/preset-typescript": "7.12.1",
     "@types/aws-lambda": "8.10.76",
     "netlify-lambda": "2.0.5",
-    "type-fest": "0.16.0"
+    "type-fest": "1.2.1"
   },
   "dependencies": {
     "@cybozu/eslint-config": "11.0.1",
