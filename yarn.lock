@@ -5160,19 +5160,20 @@ cz-conventional-changelog@3.3.0:
   optionalDependencies:
     "@commitlint/load" ">6.1.1"
 
-cz-emoji@1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/cz-emoji/-/cz-emoji-1.2.1.tgz#94400b07d5399295328fe71e29a1026c3a160771"
-  integrity sha512-3OZvxnYJRraxUslFO2RN0ECO7YeWvgOTcZJcQoIZhmMzZMUgFs5TJXOI+iSFU/lNPhROivtJkf9dcXXMgy9HQA==
+cz-emoji@1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/cz-emoji/-/cz-emoji-1.3.1.tgz#b851990772c3a49619167b8b24654caa86ebf0d9"
+  integrity sha512-ARLPw7Q4+7F1xxVuYvf/c2c4AYJpP1yDEJb+7xwRbXCw+mDXUGSXJQ0z9uoI7jN/8s0uC7LVC0ZAEFuLfETm1A==
   dependencies:
     cli-truncate "^1.0.0"
+    find-up "^5.0.0"
     fuse.js "^3.4.5"
-    home-dir "^1.0.0"
+    homedir "^0.6.0"
     inquirer-autocomplete-prompt "^0.12.0"
-    inquirer-maxlength-input-prompt "^1.0.0"
+    inquirer-maxlength-input-prompt "^1.0.1"
     pad "^2.3.0"
     prettier "^1.18.2"
-    read-pkg-up "^2.0.0"
+    read-pkg-up "^7.0.1"
     wrap-ansi "^3.0.0"
 
 damerau-levenshtein@^1.0.6:
@@ -7641,17 +7642,17 @@ hoist-non-react-statics@^3.3.2:
   dependencies:
     react-is "^16.7.0"
 
-home-dir@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/home-dir/-/home-dir-1.0.0.tgz#2917eb44bdc9072ceda942579543847e3017fe4e"
-  integrity sha1-KRfrRL3JByztqUJXlUOEfjAX/k4=
-
 homedir-polyfill@^1.0.1:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/homedir-polyfill/-/homedir-polyfill-1.0.3.tgz#743298cef4e5af3e194161fbadcc2151d3a058e8"
   integrity sha512-eSmmWE5bZTK2Nou4g0AI3zZ9rswp7GRKoKXS1BLUkvPviOqs4YTN1djQIqrXy9k5gEtdLPy86JjRwsNM9tnDcA==
   dependencies:
     parse-passwd "^1.0.0"
+
+homedir@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/homedir/-/homedir-0.6.0.tgz#2b21db66bf08a6db38249a3eff52d7d18706af1e"
+  integrity sha1-KyHbZr8Ipts4JJo+/1LX0YcGrx4=
 
 hosted-git-info@^2.1.4:
   version "2.8.9"
@@ -8005,7 +8006,7 @@ inquirer-autocomplete-prompt@^1.0.1:
     figures "^2.0.0"
     run-async "^2.3.0"
 
-inquirer-maxlength-input-prompt@^1.0.0:
+inquirer-maxlength-input-prompt@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/inquirer-maxlength-input-prompt/-/inquirer-maxlength-input-prompt-1.0.2.tgz#1156d3ec5ee2f33847889731211a44e8acf738b9"
   integrity sha512-bRs4PfQ7k+M3dDGadFo4//PlEYwWV/tKMNHV0m1jVHSGocyLvlRLuWrNgDuVAmXiEydM5QgfEEP7hbWNtgv0oA==
